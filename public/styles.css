@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,700,900');
+
+*{
+    font-family: 'Poppins';
+    letter-spacing: 0.02em;
+}
+
+
+/* * * * * * * * *
+*                *
+*     SIGN IN    *
+*                *
+* * * * * * * * */
+.containerSignIn{
+    
+    height: 100vh;
+    
+}
+
+.rowFormulari{
+    margin-top: 20vh;
+}
+
+
+.SignInTitle{
+
+    font-weight: 600;
+    font-size: 2em;
+}
+
+
+.checkBoxContrasenya{
+    margin-left: 4.1em;
+    margin-top: 1em;
+}
+
+#etiquetaShowPassword{
+    margin-left: 0.4em;
+}
+
+.nextButton{
+    margin-left: 1.8em;
+}
+
+
+/* * * * * * * * *
+*                *
+*    Main.php    *
+*                *
+* * * * * * * * */
+
+/*----------------CONTAINER----------------*/
+.container {
+    background-color: #E4FDFF;
+}
+
+/*-----------------BOX-----------------*/
+.box{
+    background: #8FC0FB;
+}
+
+/*-----------------BOX-----------------*/
+.reserves{
+    background: #A2D7F7;
+}
+
+
+/*----------------SCROLL MENU----------------*/
+div.scrollmenu {
+    overflow: auto;
+    white-space: nowrap;
+}
+
+div.scrollmenu div {
+    display: inline-block;
+    color: white;
+    padding: 14px;
+    text-decoration: none;
+}
+
+/*-----------------TIME DAY-----------------*/
+.tod{
+    font-weight: 500;
+}
