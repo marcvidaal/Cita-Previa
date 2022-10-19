@@ -6,6 +6,10 @@
 }
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8ab2e41 (CSS Sign Up acabat/Sign In per finalitzar)
 /* * * * * * * * *
 *                *
 *     SIGN IN    *
@@ -45,6 +49,7 @@
 
 /* * * * * * * * *
 *                *
+<<<<<<< HEAD
 *    Main.php    *
 *                *
 * * * * * * * * */
@@ -81,4 +86,24 @@ div.scrollmenu div {
 /*-----------------TIME DAY-----------------*/
 .tod{
     font-weight: 500;
+=======
+*     SIGN UP    *
+*                *
+* * * * * * * * */
+@media (min-width: 300px) { 
+    .NextButtonSignUp{
+        text-align: end;
+    }
+ }
+  @media (max-width: 411px) { 
+    .NextButtonSignUp{
+        margin-top: 16px;
+        
+    }
+ } 
+
+.SignUpTitle{
+    font-weight: bold;
+    font-size: 1em;
+>>>>>>> 8ab2e41 (CSS Sign Up acabat/Sign In per finalitzar)
 }
