@@ -3,41 +3,81 @@
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="../public/styles.css">
 
-    <body class = "d-flex justify-content-center" >
-        <div class="border border rounded ">
-            <form action="index.php" method="post">
-                <div id="h">
-                    <p>Piscina de Peralada</p>
-                    <p>Create your Piscina de Peralada Account</p>
+    <body class = "">
+        <div class="container">
+            <div class="row d-flex justify-content-center align-items-center" style="height: 90vh">
+                <div class="col-11 col-sm-11 col-md-10 col-lg-9 col-xl-8 col-xxl-7 border rounded" >
+                    <form action="index.php" method="post" class="mx-3">
+                        <div class="row">
+                            <div class="col-md-12 mt-5">Piscina de Peralada</div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12 mt-3 mb-5 SignUpTitle TitleAccount">Create your Piscina de Peralada Account</div>
+                        </div>
+
+                        <div id="i">
+                            <div class="row mb-4">
+                                <div class="col-md-6">
+                                    <input type="text" placeholder="First name" name="firstName" required                   class="form-control">
+                                    <!-- <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email" name="correuID"> -->
+                                </div>
+
+                                <div class="col-md-6">
+                                    <input type="text" placeholder="Second name" name="secondName" required                 class="form-control">
+                                </div>
+                            </div>
+                            
+                            <div class="row mb-4">
+                                <div class="col-md-12">
+                                    <input type="email" placeholder="Email" name="email" required                           class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="row mb-4">
+
+                                <div class="col-md-6">
+                                    <input type="password" placeholder="Password" name="password" id="password" required    class="form-control">
+                                </div>
+
+                                <div class="col-md-6">
+                                    <input type="password" placeholder="Confirm" name="confirm" required                    class="form-control">
+                                </div>
+                                
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-md-12 ms-3">
+                                    <input type="checkbox" name="showPassword" onclick="togglePassword()">
+                                    <label id="etiquetaShowPassword" for="showPassword">Show password</label>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="row mt-4 mb-4">
+                                <div class="col-6 col-sm-6 col-md-6 SignIntButtonSignUp">
+                                    <!-- <input type="button" value="Sign in instead" name="singIn"                              class="btn text-primary"> -->
+                                    <button type="button" class="btn text-primary">Sign in instead</button>
+
+                                </div>
+                                <div class="col-6 col-sm-6 col-md-6 NextButtonSignUp">
+                                    <!-- <input type="submit" value="Next" name="next"                                           class="btn btn-primary"> -->
+                                    <!-- vigilar amb el text end ja que quan es torna en mida telefon mobil l'alinea de totes maneres a la dreta i queda mal soci -->
+                                    <button type="submit" class="btn btn-primary">Next</button>
+
+                                </div>    
+                         </div>
+                    </form>
                 </div>
-                <div id="i">
-                    <div class="r">
-                        <input type="text" placeholder="First name" name="firstName" required                   class="rounded border">
-                        <input type="text" placeholder="Second name" name="secondName" required                 class="rounded border">
-                    </div>
-                    <div class="r">
-                        <input type="email" placeholder="Email" name="email" required                           class="rounded border w-100 p-3">
-                    </div>
-                    <div class="r">
-                        <input type="password" placeholder="Password" name="password" id="password" required    class="rounded border">
-                        <input type="password" placeholder="Confirm" name="confirm" required                    class="rounded border">
-                    </div>
-                    <div class="r">
-                        <input type="checkbox" name="showPassword" onclick="togglePassword()">
-                        <label id="etiquetaShowPassword" for="showPassword">Show password</label>
-                    </div>
-                    <div class="r">
-                        <input type="button" value="Sign in instead" name="singIn"                              class="rounded border">
-                        <input type="submit" value="Next" name="next"                                           class="rounded border float-right text-white next">
-                    </div>
-                </div>
-            </form>
+            </div>
         </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
         <script src="../public/system.js"></script>
     </body>
 </html> 
