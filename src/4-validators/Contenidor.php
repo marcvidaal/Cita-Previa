@@ -34,7 +34,7 @@ class Contenidor
 
     public function resposta()
     {
-        return new \Emeset\Resposta();
+        return new \Emeset\Resposta("../src/1-vistes/");
     }
 
     public function peticio()
