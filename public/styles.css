@@ -6,10 +6,6 @@
 }
 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 8ab2e41 (CSS Sign Up acabat/Sign In per finalitzar)
 /* * * * * * * * *
 *                *
 *     SIGN IN    *
@@ -49,44 +45,6 @@
 
 /* * * * * * * * *
 *                *
-<<<<<<< HEAD
-*    Main.php    *
-*                *
-* * * * * * * * */
-
-/*----------------CONTAINER----------------*/
-.container {
-    background-color: #E4FDFF;
-}
-
-/*-----------------BOX-----------------*/
-.box{
-    background: #8FC0FB;
-}
-
-/*-----------------BOX-----------------*/
-.reserves{
-    background: #A2D7F7;
-}
-
-
-/*----------------SCROLL MENU----------------*/
-div.scrollmenu {
-    overflow: auto;
-    white-space: nowrap;
-}
-
-div.scrollmenu div {
-    display: inline-block;
-    color: white;
-    padding: 14px;
-    text-decoration: none;
-}
-
-/*-----------------TIME DAY-----------------*/
-.tod{
-    font-weight: 500;
-=======
 *     SIGN UP    *
 *                *
 * * * * * * * * */
@@ -105,5 +63,4 @@ div.scrollmenu div {
 .SignUpTitle{
     font-weight: bold;
     font-size: 1em;
->>>>>>> 8ab2e41 (CSS Sign Up acabat/Sign In per finalitzar)
 }
