@@ -11,12 +11,6 @@
 *     SIGN IN    *
 *                *
 * * * * * * * * */
-.containerSignIn{
-    
-    height: 100vh;
-    
-}
-
 .rowFormulari{
     margin-top: 20vh;
 }
@@ -29,18 +23,27 @@
 }
 
 
-.checkBoxContrasenya{
-    margin-left: 4.1em;
-    margin-top: 1em;
+    
+.CreateAccountButtonSignIn{
+    text-align: start;
+
 }
 
-#etiquetaShowPassword{
-    margin-left: 0.4em;
+.NextButtonSignIn{
+    text-align: end;
 }
 
-.nextButton{
-    margin-left: 1.8em;
-}
+
+ 
+  @media (max-width: 1400px) { 
+    .NextButtonSignIn{
+        margin-bottom: 0px;
+        
+    }
+    .CreateAccountButtonSignIn{
+        margin-bottom: 0px;
+    }
+ } 
 
 
 /* * * * * * * * *
