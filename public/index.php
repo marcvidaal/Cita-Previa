@@ -17,9 +17,8 @@
     include "../src/2-controls/homeControl.php";
 
 
-
     /* ----- MODELS ----- */
-
+    require_once "../src/3-models/connexio.php";
 
 
     /* ----- DATA ----- */
