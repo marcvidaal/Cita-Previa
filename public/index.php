@@ -13,9 +13,7 @@
 
 
     /* ----- MODELS ----- */
-    include "";
-    include "";
-
+    require_once "../src/3-models/connexio.php";
 
     /* ----- DATA ----- */
     $contenidor = new \Emeset\Contenidor($config);
