@@ -1,21 +1,22 @@
 <?php
 
     /* ----- DATABASE CONFIGS ----- */
-    include "../src/config.php";
+    require_once "../src/config.php";
 
 
     /* ----- CONTROLERS ----- */
-    include "../src/2-controls/adminControl.php";
-    include "../src/2-controls/mainControl.php";
-    include "../src/2-controls/profileControl.php";
-    include "../src/2-controls/signinControl.php";
-    include "../src/2-controls/signupControl.php";
+    require_once "../src/2-controls/adminControl.php";
+    require_once "../src/2-controls/mainControl.php";
+    require_once "../src/2-controls/profileControl.php";
+    require_once "../src/2-controls/signinControl.php";
+    require_once "../src/2-controls/signupControl.php";
 
 
     /* ----- MODELS ----- */
     require_once "../src/3-models/connexio.php";
 
-    /* ----- DATA ----- */
+    
+    /* ----- EMESET ----- */
     $contenidor = new \Emeset\Contenidor($config);
 
     $peticio = $contenidor->peticio();
@@ -26,7 +27,7 @@
     $r = $_REQUEST['r'];
 
     if($r == "") {
-        $resposta = signInPageControler();
+        $resposta = homeControl();
     }
     elseif($r === "signUp"){   
         $resposta = signUpPageControler();
@@ -36,10 +37,4 @@
     }
     elseif($r === "mainPage"){   
         $resposta = mainPageControler();
-    }
-    elseif($r === "adminPage"){   
-        $resposta = adminPageControler();
-    }
-    elseif($r === "profilePage"){   
-        $resposta = profilePageControler();
     }
