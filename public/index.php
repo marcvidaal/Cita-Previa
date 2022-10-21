@@ -27,7 +27,7 @@
     $r = $_REQUEST['r'];
 
     if($r == "") {
-        $resposta = homeControl();
+        $resposta = homeControl($peticio, $resposta, $contenidor);
     }
     elseif($r === "signUp"){   
         $resposta = signUpPageControler();
