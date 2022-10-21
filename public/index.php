@@ -17,14 +17,18 @@
 
     
     /* ----- EMESET ----- */
-    $contenidor = new \Emeset\Contenidor($config);
+    //$contenidor = new \Emeset\Contenidor($config);
 
     // $peticio = $contenidor->peticio();
     // $resposta = $contenidor->resposta();
 
     
     // /* ----- REQUESTER ----- */
-    // $r = $_REQUEST['r'];
+    if($_REQUEST['r']){
+        $r = $_REQUEST['r'];
+    }else{
+        $r = "";
+    }
 
     if($r == "") {
         $resposta = homeControl($peticio, $resposta, $contenidor);
