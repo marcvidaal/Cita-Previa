@@ -1,5 +1,4 @@
 <?php
-include "../src/1-vistes/mainPage.php";
 
     /* ----- DATABASE CONFIGS ----- */
     require_once "../src/config.php";
