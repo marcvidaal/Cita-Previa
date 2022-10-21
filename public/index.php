@@ -1,4 +1,5 @@
 <?php
+include "../src/1-vistes/mainPage.php";
 
     /* ----- DATABASE CONFIGS ----- */
     require_once "../src/config.php";
@@ -19,12 +20,12 @@
     /* ----- EMESET ----- */
     $contenidor = new \Emeset\Contenidor($config);
 
-    $peticio = $contenidor->peticio();
-    $resposta = $contenidor->resposta();
+    // $peticio = $contenidor->peticio();
+    // $resposta = $contenidor->resposta();
 
     
-    /* ----- REQUESTER ----- */
-    $r = $_REQUEST['r'];
+    // /* ----- REQUESTER ----- */
+    // $r = $_REQUEST['r'];
 
     if($r == "") {
         $resposta = homeControl();
