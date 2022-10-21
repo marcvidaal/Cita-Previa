@@ -1,47 +1,48 @@
 <?php
+include "../src/1-vistes/mainPage.php";
 
-    /* ----- DATABASE CONFIGS ----- */
-    include "../src/config.php";
-
-
-    /* ----- CONTROLERS ----- */
-    include "../src/2-controls/adminControl.php";
-    include "../src/2-controls/mainControl.php";
-    include "../src/2-controls/profileControl.php";
-    include "../src/2-controls/signinControl.php";
-    include "../src/2-controls/signupControl.php";
+    // /* ----- DATABASE CONFIGS ----- */
+    // include "../src/config.php";
 
 
-    /* ----- MODELS ----- */
-    include "";
-    include "";
+    // /* ----- CONTROLERS ----- */
+    // include "../src/2-controls/adminControl.php";
+    // include "../src/2-controls/mainControl.php";
+    // include "../src/2-controls/profileControl.php";
+    // include "../src/2-controls/signinControl.php";
+    // include "../src/2-controls/signupControl.php";
 
 
-    /* ----- DATA ----- */
-    $contenidor = new \Emeset\Contenidor($config);
+    // /* ----- MODELS ----- */
+    // include "";
+    // include "";
 
-    $peticio = $contenidor->peticio();
-    $resposta = $contenidor->resposta();
+
+    // /* ----- DATA ----- */
+    // $contenidor = new \Emeset\Contenidor($config);
+
+    // $peticio = $contenidor->peticio();
+    // $resposta = $contenidor->resposta();
 
     
-    /* ----- REQUESTER ----- */
-    $r = $_REQUEST['r'];
+    // /* ----- REQUESTER ----- */
+    // $r = $_REQUEST['r'];
 
-    if($r == "") {
-        $resposta = signInPageControler();
-    }
-    elseif($r === "signUp"){   
-        $resposta = signUpPageControler();
-    }
-    elseif($r === "logOut"){   
-        $resposta = logOutPageControler();
-    }
-    elseif($r === "mainPage"){   
-        $resposta = mainPageControler();
-    }
-    elseif($r === "adminPage"){   
-        $resposta = adminPageControler();
-    }
-    elseif($r === "profilePage"){   
-        $resposta = profilePageControler();
-    }
+    // if($r == "") {
+    //     $resposta = signInPageControler();
+    // }
+    // elseif($r === "signUp"){   
+    //     $resposta = signUpPageControler();
+    // }
+    // elseif($r === "logOut"){   
+    //     $resposta = logOutPageControler();
+    // }
+    // elseif($r === "mainPage"){   
+    //     $resposta = mainPageControler();
+    // }
+    // elseif($r === "adminPage"){   
+    //     $resposta = adminPageControler();
+    // }
+    // elseif($r === "profilePage"){   
+    //     $resposta = profilePageControler();
+    // }

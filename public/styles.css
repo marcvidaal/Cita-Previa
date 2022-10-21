@@ -67,3 +67,31 @@
     font-weight: bold;
     font-size: 1em;
 }
+
+
+
+
+
+/* * * * * * * * *
+*                *
+*     MAIN       *
+*                *
+* * * * * * * * */
+.mainPageBody{
+    background-color: #e4f1ff;
+}
+
+div.scrollmenu {
+    overflow: auto;
+    white-space: nowrap;
+    background-color: #8fc0fb;
+}
+
+div.scrollmenu div {
+    display: inline-block;
+    background-color: #a2d7f7;
+}
+.prova{
+    padding-bottom: 50vh;
+    background-color: #8fc0fb;
+}
