@@ -38,17 +38,19 @@
     // /* ----- ROUTER ----- */
 
     if($r == "") {
- 
         $resposta = homeControl($peticio, $resposta, $contenidor);
     }
-    elseif($r === "signUp"){   
-        $resposta = signUpPageControler();
+    elseif($r === "signup"){ 
+        $resposta = signUpPageControl($peticio, $resposta, $contenidor);
     }
-    elseif($r === "logOut"){   
-        $resposta = logOutPageControler();
+    elseif($r === "login"){   
+        $resposta = logOutPageControl();
     }
     elseif($r === "mainPage"){   
-        $resposta = mainPageControler();
+        $resposta = mainPageControl();
+    }
+    else {
+        //$resposta = ctrlError($peticio, $resposta, $contenidor);
     }
 
     $resposta->resposta();
