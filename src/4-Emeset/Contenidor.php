@@ -30,7 +30,7 @@ class Contenidor
     public function __construct($config)
     {
         $this->config = $config;
-        $this->sql = new \Daw\connexio($this->config["sqlite"]);
+        $this->sql = new \Daw\connexio($this->config["db"]);
     }
 
     public function resposta()
