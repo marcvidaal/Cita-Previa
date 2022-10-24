@@ -31,7 +31,7 @@ class Resposta
      *
      * @param $path string path fins a la carpeta de plantilles.
      **/
-    public function __construct($path = "../src/views/")
+    public function __construct($path = "../src/1-vistes/")
     {
         $this->path = $path;
     }

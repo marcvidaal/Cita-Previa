@@ -35,19 +35,13 @@ class Contenidor
 
     public function resposta()
     {
-        return new \Emeset\Resposta("../src/vistes/");
+        return new \Emeset\Resposta("../src/1-vistes/");
     }
 
     public function peticio()
     {
         return new \Emeset\Peticio();
     }
-
-    public function imatges()
-    {
-        return new \Daw\ImatgesSQLite($this->connexio());;
-    }
-    
 
     public function connexio()
     {

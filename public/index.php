@@ -38,6 +38,7 @@
     // /* ----- ROUTER ----- */
 
     if($r == "") {
+ 
         $resposta = homeControl($peticio, $resposta, $contenidor);
     }
     elseif($r === "signUp"){   
@@ -49,3 +50,5 @@
     elseif($r === "mainPage"){   
         $resposta = mainPageControler();
     }
+
+    $resposta->resposta();
