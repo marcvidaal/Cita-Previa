@@ -36,39 +36,39 @@
                 <div class="row mb-5 g-0 justify-content-between adminPageMidContainer">
                     <!--LEFT - COLUMN-->
                     <div class="box col-sm-4 rounded mid">
-                        <div class="row d-flex justify-content-center align-items-center g-0">
-                            <div class="col-sm-10 d-flex justify-content-center align-items-center configurations rounded g-0 mt-3">
+                        <div class="row d-flex justify-content-center  g-0">
+                            <div class="col-sm-10 d-flex justify-content-center  configurations rounded g-0 mt-3">
                                 Configurations
                             </div>
                         </div>
 
-                        <div class="row d-flex justify-content-center align-items-center g-0">
-                            <div class="col-sm-4 d-flex justify-content-center align-items-center configurations rounded mt-3">
-                                Test
+                        <div class="row d-flex justify-content-center g-0">
+                            <div class="col-sm-5 d-flex justify-content-start rounded mt-3">
+                                <button type="button" class="btn btn-light btn-lg ps-5 pe-5" >Test</button>
                             </div>
 
-                            <div class="col-sm-4 d-flex justify-content-center align-items-center configurations  rounded mt-3">
-                                Test
-                            </div>
-                        </div>
-
-                        <div class="row d-flex justify-content-center align-items-center g-0">
-                            <div class="col-sm-4 d-flex justify-content-center align-items-center configurations rounded mt-3">
-                                Test
-                            </div>
-
-                            <div class="col-sm-4 d-flex justify-content-center align-items-center configurations  rounded mt-3">
-                                Test
+                            <div class="col-sm-5 d-flex justify-content-end rounded mt-3">
+                                <button type="button" class="btn btn-light btn-lg ps-5 pe-5" >Test</button>
                             </div>
                         </div>
 
-                        <div class="row d-flex justify-content-center align-items-center g-0">
-                            <div class="col-sm-4 d-flex justify-content-center align-items-center configurations rounded mt-3">
-                                Test
+                        <div class="row d-flex justify-content-center g-0">
+                            <div class="col-sm-5 d-flex justify-content-start rounded mt-3">
+                                <button type="button" class="btn btn-light ps-5 pe-5" >Test</button>
                             </div>
 
-                            <div class="col-sm-4 d-flex justify-content-center align-items-center configurations  rounded mt-3">
-                                Test
+                            <div class="col-sm-5 d-flex justify-content-end rounded mt-3">
+                                <button type="button" class="btn btn-light ps-5 pe-5" >Test</button>
+                            </div>
+                        </div>
+
+                        <div class="row d-flex justify-content-center g-0">
+                            <div class="col-sm-5 d-flex justify-content-start rounded mt-3">
+                                <button type="button" class="btn btn-light ps-5 pe-5" >Test</button>
+                            </div>
+
+                            <div class="col-sm-5 d-flex justify-content-end rounded mt-3">
+                                <button type="button" class="btn btn-light ps-5 pe-5" >Test</button>
                             </div>
                         </div>
 
