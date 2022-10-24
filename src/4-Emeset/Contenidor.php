@@ -30,24 +30,18 @@ class Contenidor
     public function __construct($config)
     {
         $this->config = $config;
-        $this->sql = new \Daw\connexio($this->config["sqlite"]);
+        $this->sql = new \Daw\connexio($this->config["db"]);
     }
 
     public function resposta()
     {
-        return new \Emeset\Resposta("../src/vistes/");
+        return new \Emeset\Resposta("../src/1-vistes/");
     }
 
     public function peticio()
     {
         return new \Emeset\Peticio();
     }
-
-    public function imatges()
-    {
-        return new \Daw\ImatgesSQLite($this->connexio());;
-    }
-    
 
     public function connexio()
     {
