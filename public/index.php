@@ -45,12 +45,6 @@
     elseif($r === "signup"){ 
         $resposta = signUpPageControl($peticio, $resposta, $contenidor);
     }
-    elseif($r === "login"){   
-        $resposta = logOutPageControl();
-    }
-    elseif($r === "mainPage"){   
-        $resposta = mainPageControl();
-    }
     elseif ($r === "adminPageRes") {
         $resposta = adminPageResControl($peticio, $resposta, $contenidor);
     }

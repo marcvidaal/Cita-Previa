@@ -39,12 +39,12 @@
                             </a>
                         </div>
                         <div class="row d-flex justify-content-center  g-0">
-                            <a href=" " class="col-sm-10 btn d-flex justify-content-center rounded g-0 mt-3 p-3 configurations">
+                            <a href="index.php?r=adminPageConfig" class="col-sm-10 btn d-flex justify-content-center rounded g-0 mt-3 p-3 configurations">
                                 CONFIGS
                             </a>
                         </div>
                         <div class="row d-flex justify-content-center  g-0">
-                            <a href=" " class="col-sm-10 btn d-flex justify-content-center rounded g-0 mt-3 p-3 configurations">
+                            <a href="index.php?r=adminPageBlock" class="col-sm-10 btn d-flex justify-content-center rounded g-0 mt-3 p-3 configurations">
                                 BLOCK DATES
                             </a>
                         </div>
