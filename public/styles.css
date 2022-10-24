@@ -95,3 +95,29 @@ div.scrollmenu div {
     padding-bottom: 50vh;
     background-color: #8fc0fb;
 }
+
+
+
+/* * * * * * * * *
+*                *
+*   admin page   *
+*                *
+* * * * * * * * */
+
+.adminPageBody{
+    background-color: rgb(175, 175, 175);
+}
+
+.adminPageMidContainer{
+    /* padding-bottom: 5vh; */
+    background-color: rgb(175, 175, 175);
+}
+
+.configurations{
+    background-color: white;
+    color: #000000;
+}
+.mid{
+    background-color: rgb(0, 0, 0);
+    padding-bottom: 55vh;
+}
