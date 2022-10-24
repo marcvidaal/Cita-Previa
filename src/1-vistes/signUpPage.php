@@ -26,7 +26,6 @@
                             <div class="row mb-4">
                                 <div class="col-md-6">
                                     <input type="text" placeholder="First name" name="firstName" required                   class="form-control">
-                                    <!-- <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email" name="correuID"> -->
                                 </div>
 
                                 <div class="col-md-6">
@@ -52,7 +51,6 @@
                                 
                             </div>
 
-
                             <div class="row">
                                 <div class="col-md-12 ms-3">
                                     <input type="checkbox" name="showPassword" onclick="togglePassword()">
@@ -63,22 +61,17 @@
                         </div>
                         <div class="row mt-4 mb-4">
                                 <div class="col-6 col-sm-6 col-md-6 SignIntButtonSignUp">
-                                    <!-- <input type="button" value="Sign in instead" name="singIn"                              class="btn text-primary"> -->
-                                    <button type="button" class="btn text-primary">Sign in instead</button>
-
+                                    <a href="index.php"  class="btn text-primary" >Sign in instead</a>
                                 </div>
                                 <div class="col-6 col-sm-6 col-md-6 NextButtonSignUp">
-                                    <!-- <input type="submit" value="Next" name="next"                                           class="btn btn-primary"> -->
-                                    <!-- vigilar amb el text end ja que quan es torna en mida telefon mobil l'alinea de totes maneres a la dreta i queda mal soci -->
-                                    <button type="submit" class="btn btn-primary">Next</button>
-
-                                </div>    
+                                    <a href="index.php?r=createuser"  class="btn btn-primary" >Next</a>
+                                </div>
                          </div>
                     </form>
                 </div>
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-        <script src="../public/system.js"></script>
+        <script src="script.js"></script>
     </body>
-</html> 
+</html>

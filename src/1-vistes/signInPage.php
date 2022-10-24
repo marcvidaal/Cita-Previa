@@ -44,10 +44,14 @@
             
               <div class="row mt-4 mb-4 ms-4 me-4">
                 <div class="col-6 col-sm-6 col-md-6 CreateAccountButtonSignIn">
-                  <button type="button" class="btn text-primary CreateAccountButtonSignIn">Create account</button>
+                  <a href="index.php?r=signup" class="btn text-primary CreateAccountButtonSignIn">
+                    Create account
+                  </a>
                 </div>
                 <div class="col-6 col-sm-6 col-md-6 NextButtonSignIn">
-                  <button type="submit" class="btn btn-primary nextButton NextButtonSignIn">Next</button>
+                  <a href="index.php?r=login" class="btn btn-primary nextButton NextButtonSignIn">
+                    Next
+                  </a>
                 </div>
               </div>
           </form>
