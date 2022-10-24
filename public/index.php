@@ -1,7 +1,7 @@
 <?php
 
     /* ----- DATABASE CONFIGS ----- */
-    require_once "../src/1-vistes/adminPage.php";
+    require_once "../src/config.php";
 
 
     /* ----- CONTROLERS ----- */
@@ -14,7 +14,7 @@
 
 
     /* ----- MODELS ----- */
-    // require_once "../src/3-models/connexio.php";
+    require_once "../src/3-models/connexio.php";
 
     
     /* ----- EMESET ----- */
