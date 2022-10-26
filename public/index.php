@@ -5,7 +5,6 @@
 
 
     /* ----- CONTROLERS ----- */
-    require_once "../src/2-controls/adminControl.php";
     require_once "../src/2-controls/mainControl.php";
     require_once "../src/2-controls/profileControl.php";
     require_once "../src/2-controls/signinControl.php";
@@ -46,11 +45,14 @@
     elseif($r === "signup"){ 
         $resposta = signUpPageControl($peticio, $resposta, $contenidor);
     }
-    elseif($r === "login"){   
-        $resposta = logOutPageControl();
+    elseif($r === "adminPageBlock"){ 
+        $resposta = adminPageBlock($peticio, $resposta, $contenidor);
     }
-    elseif($r === "mainPage"){   
-        $resposta = mainPageControl();
+    elseif($r === "adminPageConfig"){ 
+        $resposta = adminControlConfig($peticio, $resposta, $contenidor);
+    }
+    elseif($r === "adminPageRes"){ 
+        $resposta = adminControlRes($peticio, $resposta, $contenidor);
     }
     else {
         //$resposta = ctrlError($peticio, $resposta, $contenidor);
