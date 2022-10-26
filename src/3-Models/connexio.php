@@ -9,10 +9,10 @@ namespace Daw;
         public function __construct($config)
         {
             
-            //$dsn = "mysql:dbname={$config['db']};host={$config['host']}";
+            $dsn = "mysql:host={$config['host']};dbname={$config['dbname']}";
             $usuari = $config["user"];
             $clau = $config["pass"];
-            $dsn =  "mysql:unix_socket=/Applications/MAMP/tmp/mysql/mysql.sock;dbname=cita_previa;";
+            //$dsn =  "mysql:unix_socket=/Applications/MAMP/tmp/mysql/mysql.sock;dbname=cita_previa;";
             
             try {
             $this->sql = new \PDO($dsn, $usuari, $clau);
