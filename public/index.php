@@ -45,14 +45,14 @@
     elseif($r === "signup"){ 
         $resposta = signUpPageControl($peticio, $resposta, $contenidor);
     }
-    elseif ($r === "adminPageRes") {
-        $resposta = adminPageResControl($peticio, $resposta, $contenidor);
+    elseif($r === "adminPageBlock"){ 
+        $resposta = adminPageBlock($peticio, $resposta, $contenidor);
     }
-    elseif ($r === "adminPageBlok") {
-        $resposta = adminPageBlokControl($peticio, $resposta, $contenidor);
+    elseif($r === "adminPageConfig"){ 
+        $resposta = adminControlConfig($peticio, $resposta, $contenidor);
     }
-    elseif ($r === "adminPageConfig") {
-        $resposta = adminPageConfigControl($peticio, $resposta, $contenidor);
+    elseif($r === "adminPageRes"){ 
+        $resposta = adminControlRes($peticio, $resposta, $contenidor);
     }
     else {
         //$resposta = ctrlError($peticio, $resposta, $contenidor);
