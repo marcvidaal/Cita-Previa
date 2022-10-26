@@ -11,7 +11,7 @@
     require_once "../src/2-controls/signupControl.php";
     require_once "../src/2-controls/homeControl.php";
     require_once "../src/2-controls/adminResControl.php";
-    require_once "../src/2-controls/adminBlokControl.php";
+    require_once "../src/2-controls/adminBlockControl.php";
     require_once "../src/2-controls/adminConfigControl.php";
 
 
@@ -46,13 +46,13 @@
         $resposta = signUpPageControl($peticio, $resposta, $contenidor);
     }
     elseif($r === "adminPageBlock"){ 
-        $resposta = adminPageBlock($peticio, $resposta, $contenidor);
+        $resposta = adminBlockControl($peticio, $resposta, $contenidor);
     }
     elseif($r === "adminPageConfig"){ 
-        $resposta = adminControlConfig($peticio, $resposta, $contenidor);
+        $resposta = adminConfigControl($peticio, $resposta, $contenidor);
     }
     elseif($r === "adminPageRes"){ 
-        $resposta = adminControlRes($peticio, $resposta, $contenidor);
+        $resposta = adminResControl($peticio, $resposta, $contenidor);
     }
     else {
         //$resposta = ctrlError($peticio, $resposta, $contenidor);

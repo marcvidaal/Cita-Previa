@@ -1,6 +1,6 @@
 <?php
 
-    function adminPageResControl($peticio, $resposta, $contenidor){
+    function adminResControl($peticio, $resposta, $contenidor){
 
         $resposta->setTemplate("adminPageReserves.php");
         

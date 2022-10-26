@@ -1,6 +1,6 @@
 <?php
 
-    function adminPageBlokControl($peticio, $resposta, $contenidor){
+    function adminBlokControl($peticio, $resposta, $contenidor){
 
         $resposta->setTemplate("adminPageBlok.php");
         
