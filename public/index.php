@@ -11,6 +11,9 @@
     require_once "../src/2-controls/signinControl.php";
     require_once "../src/2-controls/signupControl.php";
     require_once "../src/2-controls/homeControl.php";
+    require_once "../src/2-controls/adminControlBlock.php";
+    require_once "../src/2-controls/adminControlConfig.php";
+    require_once "../src/2-controls/adminControlRes.php";
 
 
     /* ----- MODELS ----- */
