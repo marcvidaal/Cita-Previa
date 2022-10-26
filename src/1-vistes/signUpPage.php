@@ -13,7 +13,7 @@
             <div class="row d-flex justify-content-center align-items-center" style="height: 90vh">
                 <div class="col-11 col-sm-11 col-md-10 col-lg-9 col-xl-8 col-xxl-7 border rounded" >
                     <form action="index.php" method="POST" class="mx-3">
-                        <input type="hidden" name="r" value="signup">
+                        <input type="hidden" name="r" value="createuser">
                         <div class="row">
                             <div class="col-md-12 mt-5">Piscina de Peralada</div>
                         </div>
@@ -64,7 +64,7 @@
                                     <a href="index.php"  class="btn text-primary" >Sign in instead</a>
                                 </div>
                                 <div class="col-6 col-sm-6 col-md-6 NextButtonSignUp">
-                                    <a href="index.php?r=createuser"  class="btn btn-primary" >Next</a>
+                                    <button type="submit" class="btn btn-primary">Next</button>
                                 </div>
                          </div>
                     </form>

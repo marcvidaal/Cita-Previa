@@ -31,6 +31,8 @@ class Contenidor
     {
         $this->config = $config;
         $this->sql = new \Daw\connexio($this->config["db"]);
+        
+        
     }
 
     public function resposta()
@@ -46,6 +48,11 @@ class Contenidor
     public function connexio()
     {
         return $this->sql;
+    }
+
+    public function usuari()
+    {
+        return new \bd\usuari($this->connexio());;
     }
 
 }

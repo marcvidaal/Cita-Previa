@@ -13,10 +13,12 @@
     require_once "../src/2-controls/adminResControl.php";
     require_once "../src/2-controls/adminBlockControl.php";
     require_once "../src/2-controls/adminConfigControl.php";
+    require_once "../src/2-controls/createUserControl.php";
 
 
     /* ----- MODELS ----- */
     require_once "../src/3-models/connexio.php";
+    require_once "../src/3-models/usuari.php";
 
     
     /* ----- EMESET ----- */
@@ -53,6 +55,9 @@
     }
     elseif($r === "adminPageRes"){ 
         $resposta = adminResControl($peticio, $resposta, $contenidor);
+    }
+    elseif($r === "createuser"){   
+        $resposta = crearUsuari($peticio,$resposta,$contenidor);
     }
     else {
         //$resposta = ctrlError($peticio, $resposta, $contenidor);
