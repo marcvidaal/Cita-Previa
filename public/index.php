@@ -5,12 +5,14 @@
 
 
     /* ----- CONTROLERS ----- */
-    require_once "../src/2-controls/adminControl.php";
     require_once "../src/2-controls/mainControl.php";
     require_once "../src/2-controls/profileControl.php";
     require_once "../src/2-controls/signinControl.php";
     require_once "../src/2-controls/signupControl.php";
     require_once "../src/2-controls/homeControl.php";
+    require_once "../src/2-controls/adminResControl.php";
+    require_once "../src/2-controls/adminBlokControl.php";
+    require_once "../src/2-controls/adminConfigControl.php";
 
 
     /* ----- MODELS ----- */
@@ -43,11 +45,14 @@
     elseif($r === "signup"){ 
         $resposta = signUpPageControl($peticio, $resposta, $contenidor);
     }
-    elseif($r === "login"){   
-        $resposta = logOutPageControl();
+    elseif ($r === "adminPageRes") {
+        $resposta = adminPageResControl($peticio, $resposta, $contenidor);
     }
-    elseif($r === "mainPage"){   
-        $resposta = mainPageControl();
+    elseif ($r === "adminPageBlok") {
+        $resposta = adminPageBlokControl($peticio, $resposta, $contenidor);
+    }
+    elseif ($r === "adminPageConfig") {
+        $resposta = adminPageConfigControl($peticio, $resposta, $contenidor);
     }
     else {
         //$resposta = ctrlError($peticio, $resposta, $contenidor);
