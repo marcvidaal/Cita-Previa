@@ -37,42 +37,21 @@
                     <!--LEFT - COLUMN-->
                     <div class="box col-sm-4 rounded mid">
                         <div class="row d-flex justify-content-center  g-0">
-                            <div class="col-sm-10 d-flex justify-content-center  configurations rounded g-0 mt-3">
-                                Configurations
-                            </div>
+                            <a href="index.php?r=adminPageRes" class="col-sm-10 btn d-flex justify-content-center rounded g-0 mt-3 p-3 configurations">
+                                RESERVES
+                            </a>
                         </div>
-
-                        <div class="row d-flex justify-content-center g-0">
-                            <div class="col-sm-5 d-flex justify-content-start rounded mt-3">
-                                <button type="button" class="btn btn-light btn-lg ps-5 pe-5" >Test</button>
-                            </div>
-
-                            <div class="col-sm-5 d-flex justify-content-end rounded mt-3">
-                                <button type="button" class="btn btn-light btn-lg ps-5 pe-5" >Test</button>
-                            </div>
+                        <div class="row d-flex justify-content-center  g-0">
+                            <a href="index.php?r=adminPageConfig" class="col-sm-10 btn d-flex justify-content-center rounded g-0 mt-3 p-3 configurations">
+                                CONFIGS
+                            </a>
                         </div>
-
-                        <div class="row d-flex justify-content-center g-0">
-                            <div class="col-sm-5 d-flex justify-content-start rounded mt-3">
-                                <button type="button" class="btn btn-light ps-5 pe-5" >Test</button>
-                            </div>
-
-                            <div class="col-sm-5 d-flex justify-content-end rounded mt-3">
-                                <button type="button" class="btn btn-light ps-5 pe-5" >Test</button>
-                            </div>
+                        <div class="row d-flex justify-content-center  g-0">
+                            <a href="index.php?r=adminPageBlock" class="col-sm-10 btn d-flex justify-content-center rounded g-0 mt-3 p-3 configurations">
+                                BLOCK DATES
+                            </a>
                         </div>
-
-                        <div class="row d-flex justify-content-center g-0">
-                            <div class="col-sm-5 d-flex justify-content-start rounded mt-3">
-                                <button type="button" class="btn btn-light ps-5 pe-5" >Test</button>
-                            </div>
-
-                            <div class="col-sm-5 d-flex justify-content-end rounded mt-3">
-                                <button type="button" class="btn btn-light ps-5 pe-5" >Test</button>
-                            </div>
-                        </div>
-
-                    </div>  
+                    </div>   
 
                     <div class="box col-sm-7 rounded mid">
                         

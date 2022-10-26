@@ -1,6 +1,6 @@
 <?php
 
-    function adminPageConfigControl($peticio, $resposta, $contenidor){
+    function adminConfigControl($peticio, $resposta, $contenidor){
 
         $resposta->setTemplate("adminPageConfig.php");
         
