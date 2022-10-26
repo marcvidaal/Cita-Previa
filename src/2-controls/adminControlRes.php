@@ -1,6 +1,6 @@
 <?php
 
-    function homeControl($peticio, $resposta, $contenidor){
+    function adminControlRes($peticio, $resposta, $contenidor){
 
         $resposta->setTemplate("adminPageRes.php");
         
