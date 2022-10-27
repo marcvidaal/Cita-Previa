@@ -29,30 +29,148 @@
                     </div>
                 </div>
                 <!--ROW - MID-->
-                <div class="row mb-5 g-0 justify-content-between adminPageMidContainer">
+                <div class="row mb-5 g-0 justify-content-between adminPageMidContainer h-auto">
 
                     <!--LEFT - COLUMN-->
-                    <div class="box col-sm-4 rounded mid">
-                        <div class="row d-flex justify-content-center  g-0">
+                    <div class="col-sm-4 rounded mid h-100">
+                        <div class="row d-flex justify-content-center g-0">
                             <a href="index.php?r=adminPageRes" class="col-sm-10 btn d-flex justify-content-center rounded g-0 mt-3 p-3 configurations">
                                 RESERVES
                             </a>
                         </div>
-                        <div class="row d-flex justify-content-center  g-0">
-                            <a href="index.php?r=adminPageConfig" class="col-sm-10 btn d-flex justify-content-center rounded g-0 mt-3 p-3 configurations">
+                        <div class="row d-flex justify-content-center g-0">
+                            <a href="index.php?r=adminPageConfig" class="col-sm-10 btn d-flex justify-content-center rounded g-0 m-3 p-3 configurations">
                                 CONFIGS
                             </a>
                         </div>
-                        <div class="row d-flex justify-content-center  g-0">
-                            <a href="index.php?r=adminPageBlock" class="col-sm-10 btn d-flex justify-content-center rounded g-0 mt-3 p-3 configurations">
+                        <div class="row d-flex justify-content-center g-0">
+                            <a href="index.php?r=adminPageBlock" class="col-sm-10 btn d-flex justify-content-center rounded g-0 mb-3 p-3 configurations">
                                 BLOCK DATES
                             </a>
                         </div>
                     </div> 
 
                     <!--RIGHT - COLUMN-->
-                    <div class="box col-sm-7 rounded mid">
-                        
+                    <div class="col-sm-7 rounded mid">
+                        <form method="POST" acction="index.php" class="row g-0">
+                            <div class="col-sm-12">
+                                <div class="row g-0">
+                                    <div class="col-sm-12 p-3">
+                                        <h2 class="text-center">CONFIGURATIONS</h2>
+                                    </div>
+                                </div>
+                                <div class="row g-0 mb-3">
+                                    <div class="col-sm-4 justify-content-center text-start px-4 daycolumn">
+                                        monday
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <input type="time" name="iniciMonday" class="form-control text-center hourinput " >
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <input type="time" name="iniciMonday" class="form-control text-center hourinput " >
+                                    </div>
+                                    <div class="col-sm-2 py-2">
+                                        <input type="checkbox" name="tencatMonday" class="align-middle">
+                                        <label for="tencatMonday">Closed</label>
+                                    </div>
+                                </div>
+                                <div class="row g-0 mb-3">
+                                    <div class="col-sm-4 justify-content-center text-start px-4 daycolumn">
+                                        tuesday
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <input type="time" name="iniciMonday" class="form-control text-center hourinput " >
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <input type="time" name="iniciMonday" class="form-control text-center hourinput " >
+                                    </div>
+                                    <div class="col-sm-2 py-2">
+                                        <input type="checkbox" name="tencatMonday" class="align-middle">
+                                        <label for="tencatMonday">Closed</label>
+                                    </div>
+                                </div>
+                                <div class="row g-0 mb-3">
+                                    <div class="col-sm-4 justify-content-center text-start px-4 daycolumn">
+                                        wednesday
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <input type="time" name="iniciMonday" class="form-control text-center hourinput " >
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <input type="time" name="iniciMonday" class="form-control text-center hourinput " >
+                                    </div>
+                                    <div class="col-sm-2 py-2">
+                                        <input type="checkbox" name="tencatMonday" class="align-middle">
+                                        <label for="tencatMonday">Closed</label>
+                                    </div>
+                                </div>
+                                <div class="row g-0 mb-3">
+                                    <div class="col-sm-4 justify-content-center text-start px-4 daycolumn">
+                                        thursday
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <input type="time" name="iniciMonday" class="form-control text-center hourinput " >
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <input type="time" name="iniciMonday" class="form-control text-center hourinput " >
+                                    </div>
+                                    <div class="col-sm-2 py-2">
+                                        <input type="checkbox" name="tencatMonday" class="align-middle">
+                                        <label for="tencatMonday">Closed</label>
+                                    </div>
+                                </div>
+                                <div class="row g-0 mb-3">
+                                    <div class="col-sm-4 justify-content-center text-start px-4 daycolumn">
+                                        friday
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <input type="time" name="iniciMonday" class="form-control text-center hourinput " >
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <input type="time" name="iniciMonday" class="form-control text-center hourinput " >
+                                    </div>
+                                    <div class="col-sm-2 py-2">
+                                        <input type="checkbox" name="tencatMonday" class="align-middle">
+                                        <label for="tencatMonday">Closed</label>
+                                    </div>
+                                </div>
+                                <div class="row g-0 mb-3">
+                                    <div class="col-sm-4 justify-content-center text-start px-4 daycolumn">
+                                        saturday
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <input type="time" name="iniciMonday" class="form-control text-center hourinput " >
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <input type="time" name="iniciMonday" class="form-control text-center hourinput " >
+                                    </div>
+                                    <div class="col-sm-2 py-2">
+                                        <input type="checkbox" name="tencatMonday" class="align-middle">
+                                        <label for="tencatMonday">Closed</label>
+                                    </div>
+                                </div>
+                                <div class="row g-0">
+                                    <div class="col-sm-4 justify-content-center text-start px-4 daycolumn">
+                                        sunday
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <input type="time" name="iniciMonday" class="form-control text-center hourinput " >
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <input type="time" name="iniciMonday" class="form-control text-center hourinput " >
+                                    </div>
+                                    <div class="col-sm-2 py-2">
+                                        <input type="checkbox" name="tencatMonday" class="align-middle">
+                                        <label for="tencatMonday">Closed</label>
+                                    </div>
+                                </div>
+                                <div class="row g-0">
+                                    <div class="col-sm-12 p-3 NextButtonSignUp">
+                                        <button type="submit" class="btn btn-primary">Next</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
                     </div>  
                 </div>
             </div>
