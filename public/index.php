@@ -4,7 +4,7 @@
     require_once "../src/config.php";
 
 
-    /* ----- CONTROLERS ----- */
+    /* ----- CONTROLLERS ----- */
     require_once "../src/2-controls/mainControl.php";
     require_once "../src/2-controls/profileControl.php";
     require_once "../src/2-controls/signinControl.php";
@@ -14,6 +14,7 @@
     require_once "../src/2-controls/adminBlockControl.php";
     require_once "../src/2-controls/adminConfigControl.php";
     require_once "../src/2-controls/createUserControl.php";
+    require_once "../src/2-controls/loginTester.php";
 
 
     /* ----- MODELS ----- */
@@ -63,6 +64,13 @@
         $resposta = timeControl($peticio, $resposta, $contenidor);
     }
     
+    elseif($r === "login"){   
+        $resposta = login($peticio,$resposta,$contenidor);
+    }
+    elseif($r === "mainPage"){   
+        $resposta = mainController($peticio,$resposta,$contenidor);
+    }
+
     else {
         //$resposta = ctrlError($peticio, $resposta, $contenidor);
     }
