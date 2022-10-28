@@ -7,6 +7,7 @@
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
         <link rel="stylesheet" href="styles.css">
+        <script   src="https://code.jquery.com/jquery-3.6.1.js"   integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="   crossorigin="anonymous"></script>
     </head>
     
         <body class="p-2">
@@ -64,14 +65,14 @@
                                         monday
                                     </div>
                                     <div class="col-sm-3">
-                                        <input type="time" name="iniciMonday" class="form-control text-center hourinput " >
+                                        <input type="time" name="startMonday" class="form-control text-center hourinput" >
                                     </div>
                                     <div class="col-sm-3">
-                                        <input type="time" name="iniciMonday" class="form-control text-center hourinput " >
+                                        <input type="time" name="endMonday" class="form-control text-center hourinput" >
                                     </div>
                                     <div class="col-sm-2 py-2">
-                                        <input type="checkbox" name="tencatMonday" class="align-middle">
-                                        <label for="tencatMonday">Closed</label>
+                                        <input type="checkbox" name="closedMonday" class="align-middle">
+                                        <label for="closedMonday">Closed</label>
                                     </div>
                                 </div>
                                 <div class="row g-0 mb-3">
@@ -79,14 +80,14 @@
                                         tuesday
                                     </div>
                                     <div class="col-sm-3">
-                                        <input type="time" name="iniciMonday" class="form-control text-center hourinput " >
+                                        <input type="time" name="startTuesday" class="form-control text-center hourinput " >
                                     </div>
                                     <div class="col-sm-3">
-                                        <input type="time" name="iniciMonday" class="form-control text-center hourinput " >
+                                        <input type="time" name="endTuesday" class="form-control text-center hourinput " >
                                     </div>
                                     <div class="col-sm-2 py-2">
-                                        <input type="checkbox" name="tencatMonday" class="align-middle">
-                                        <label for="tencatMonday">Closed</label>
+                                        <input type="checkbox" name="closedTuesday" class="align-middle">
+                                        <label for="closedTuesday">Closed</label>
                                     </div>
                                 </div>
                                 <div class="row g-0 mb-3">
@@ -94,14 +95,14 @@
                                         wednesday
                                     </div>
                                     <div class="col-sm-3">
-                                        <input type="time" name="iniciMonday" class="form-control text-center hourinput " >
+                                        <input type="time" name="startWednesday" class="form-control text-center hourinput " >
                                     </div>
                                     <div class="col-sm-3">
-                                        <input type="time" name="iniciMonday" class="form-control text-center hourinput " >
+                                        <input type="time" name="endWednesday" class="form-control text-center hourinput " >
                                     </div>
                                     <div class="col-sm-2 py-2">
-                                        <input type="checkbox" name="tencatMonday" class="align-middle">
-                                        <label for="tencatMonday">Closed</label>
+                                        <input type="checkbox" name="closedWednesday" class="align-middle">
+                                        <label for="closedWednesday">Closed</label>
                                     </div>
                                 </div>
                                 <div class="row g-0 mb-3">
@@ -109,14 +110,14 @@
                                         thursday
                                     </div>
                                     <div class="col-sm-3">
-                                        <input type="time" name="iniciMonday" class="form-control text-center hourinput " >
+                                        <input type="time" name="startThursday" class="form-control text-center hourinput " >
                                     </div>
                                     <div class="col-sm-3">
-                                        <input type="time" name="iniciMonday" class="form-control text-center hourinput " >
+                                        <input type="time" name="endThursday" class="form-control text-center hourinput " >
                                     </div>
                                     <div class="col-sm-2 py-2">
-                                        <input type="checkbox" name="tencatMonday" class="align-middle">
-                                        <label for="tencatMonday">Closed</label>
+                                        <input type="checkbox" name="closedThursday" class="align-middle">
+                                        <label for="closedThursday">Closed</label>
                                     </div>
                                 </div>
                                 <div class="row g-0 mb-3">
@@ -124,14 +125,14 @@
                                         friday
                                     </div>
                                     <div class="col-sm-3">
-                                        <input type="time" name="iniciMonday" class="form-control text-center hourinput " >
+                                        <input type="time" name="startFriday" class="form-control text-center hourinput " >
                                     </div>
                                     <div class="col-sm-3">
-                                        <input type="time" name="iniciMonday" class="form-control text-center hourinput " >
+                                        <input type="time" name="endFireday" class="form-control text-center hourinput " >
                                     </div>
                                     <div class="col-sm-2 py-2">
-                                        <input type="checkbox" name="tencatMonday" class="align-middle">
-                                        <label for="tencatMonday">Closed</label>
+                                        <input type="checkbox" name="closedFriday" class="align-middle">
+                                        <label for="closedFriday">Closed</label>
                                     </div>
                                 </div>
                                 <div class="row g-0 mb-3">
@@ -139,34 +140,33 @@
                                         saturday
                                     </div>
                                     <div class="col-sm-3">
-                                        <input type="time" name="iniciMonday" class="form-control text-center hourinput " >
+                                        <input type="time" name="startSatruday" class="form-control text-center hourinput " >
                                     </div>
                                     <div class="col-sm-3">
-                                        <input type="time" name="iniciMonday" class="form-control text-center hourinput " >
+                                        <input type="time" name="endSaturday" class="form-control text-center hourinput " >
                                     </div>
                                     <div class="col-sm-2 py-2">
-                                        <input type="checkbox" name="tencatMonday" class="align-middle">
-                                        <label for="tencatMonday">Closed</label>
+                                        <input type="checkbox" name="closedSaturday" class="align-middle">
+                                        <label for="closedSaturday">Closed</label>
                                     </div>
                                 </div>
-                                <div class="row g-0">
+                                <div class="row g-0 rounded">
                                     <div class="col-sm-4 justify-content-center text-start px-4 daycolumn">
                                         sunday
                                     </div>
                                     <div class="col-sm-3">
-                                        <input type="time" name="iniciMonday" class="form-control text-center hourinput " >
+                                        <input type="time" name="startSunday" class="form-control text-center hourinput " >
                                     </div>
                                     <div class="col-sm-3">
-                                        <input type="time" name="iniciMonday" class="form-control text-center hourinput " >
+                                        <input type="time" name="endSunday" class="form-control text-center hourinput " >
                                     </div>
                                     <div class="col-sm-2 py-2">
-                                        <input type="checkbox" name="tencatMonday" class="align-middle">
-                                        <label for="tencatMonday">Closed</label>
+                                        <input type="checkbox" name="closedSunday" class="align-middle ">
+                                        <label for="closedSunday">Closed</label>
                                     </div>
-                                </div>
                                 <div class="row g-0">
                                     <div class="col-sm-12 p-3 NextButtonSignUp">
-                                        <button type="submit" class="btn btn-primary">Next</button>
+                                        <button type="submit" href="index.php?r=timeConfigs" class="btn btn-primary">Apply changes</button>
                                     </div>
                                 </div>
                             </div>
@@ -177,4 +177,5 @@
         </body>
         <!--Bootstrap JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+        <script src="script.js"></script>
 </html>
