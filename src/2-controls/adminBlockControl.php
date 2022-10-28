@@ -1,8 +1,8 @@
 <?php
 
-    function adminBlokControl($peticio, $resposta, $contenidor){
+    function adminBlockControl($peticio, $resposta, $contenidor){
 
-        $resposta->setTemplate("adminPageBlok.php");
+        $resposta->setTemplate("adminPageBlock.php");
         
         return $resposta;
     }
