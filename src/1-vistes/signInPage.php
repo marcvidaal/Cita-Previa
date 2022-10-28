@@ -13,7 +13,7 @@
       <div class="row d-flex justify-content-center align-items-center">
         <div class= "col-10 col-sm-10 col-md-8 col-lg-6 col-xl-4 rowFormulari rounded border">
           <form class="form-container" action="index.php" method="post">
-            <input type="hidden" name="r" value="signin">
+            <input type="hidden" name="r" value="login">
             <div class="text-center">
               <div class="row">
                 <div class="col-md-12 mt-5">Piscina de Peralada</div>
@@ -49,9 +49,7 @@
                   </a>
                 </div>
                 <div class="col-6 col-sm-6 col-md-6 NextButtonSignIn">
-                  <a href="index.php?r=login" class="btn btn-primary nextButton NextButtonSignIn">
-                    Next
-                  </a>
+                  <button type="submit" class="btn btn-primary nextButton NextButtonSignIn">Next</button>
                 </div>
               </div>
           </form>

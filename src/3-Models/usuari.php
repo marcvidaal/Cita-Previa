@@ -24,4 +24,13 @@ namespace bd;
         $stm->execute([':email' => $email]);
         return $stm->fetch();
     }
+
+    public function comprovarCompteUsuari($email,$contrasenya)
+    {
+        $stm = $this->sql->prepare('select * from client_tb where email=:email and password=:password limit 1');
+        $stm->execute([':email' => $email, ':password' => $contrasenya]);
+
+        return $stm->fetch();
+    }
+
  }
