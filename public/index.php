@@ -63,7 +63,6 @@
     elseif($r === "timeConfigs"){ 
         $resposta = timeControl($peticio, $resposta, $contenidor);
     }
-    
     elseif($r === "login"){   
         $resposta = login($peticio,$resposta,$contenidor);
     }
