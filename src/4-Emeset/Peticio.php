@@ -36,7 +36,7 @@ class Peticio
      * @param $filtre  int filtre a aplicar
      * @param $opcions int opcions del filtre si volem un array FILTER_REQUIRE_ARRAY
      **/
-    public function get($input, $id, $filtre = FILTER_SANITIZE_STRING, $opcions = 0)
+    public function get($input, $id, $filtre = FILTER_UNSAFE_RAW, $opcions = 0)
     {
         $result = false;
         if ($input === 'SESSION') {

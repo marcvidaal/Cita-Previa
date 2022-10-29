@@ -53,7 +53,8 @@
 
                     <!--RIGHT - COLUMN-->
                     <div class="col-sm-7 rounded mid">
-                        <form method="POST" acction="index.php" class="row g-0">
+                        <form method="POST" action="index.php" class="row g-0">
+                            <input type="hidden" name="r" value="timeConfigs">
                             <div class="col-sm-12">
                                 <div class="row g-0">
                                     <div class="col-sm-12 p-3">
@@ -166,7 +167,7 @@
                                     </div>
                                 <div class="row g-0">
                                     <div class="col-sm-12 p-3 NextButtonSignUp">
-                                        <button type="submit" href="index.php?r=timeConfigs" class="btn btn-primary">Apply changes</button>
+                                        <input type="submit" class="btn btn-primary" value= "Apply changes">
                                     </div>
                                 </div>
                             </div>
