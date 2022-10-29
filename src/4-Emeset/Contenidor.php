@@ -55,4 +55,10 @@ class Contenidor
         return new \bd\usuari($this->connexio());;
     }
 
+    public function time()
+    {
+        return new \bd\time($this->connexio());;
+    }
+
+
 }

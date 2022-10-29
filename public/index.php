@@ -14,11 +14,13 @@
     require_once "../src/2-controls/adminBlockControl.php";
     require_once "../src/2-controls/adminConfigControl.php";
     require_once "../src/2-controls/createUserControl.php";
+    require_once "../src/2-controls/timeControl.php";
 
 
     /* ----- MODELS ----- */
     require_once "../src/3-models/connexio.php";
     require_once "../src/3-models/usuari.php";
+    require_once "../src/3-models/time.php";
 
     
     /* ----- EMESET ----- */
