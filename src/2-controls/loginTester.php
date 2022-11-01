@@ -9,10 +9,13 @@
         
 
         if($usuari->comprovarCompteUsuari($email, $contrasenya)===false){
+            $resposta->setSession("logat", false);
             $resposta->redirect("location: index.php"); 
 
         }
         else{
+            $resposta->setSession("logat", true);
+            $resposta->setSession("user", $usuari);
             $resposta->redirect("location: index.php?r=mainPage");
         }
 
