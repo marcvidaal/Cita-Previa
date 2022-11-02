@@ -18,6 +18,9 @@
         }
 
 
+        $usuari->inserirUsuari($email,$nom,$cognoms,$contrasenya);
+        $resposta->redirect("location: index.php");
+
         return $resposta;
 
     }
