@@ -36,11 +36,24 @@
                 <div class="row mb-5 g-0 justify-content-between">
                     <!--RIGHT - COLUMN-->
                     <div class="box col-sm-12 rounded prova">
-                        <div class="row d-flex justify-content-center align-items-center m-4">
-                            <div class="col-sm-12">
-                                <input type="date" name="date" class="rounded form-control text-center" min="<?php echo date('Y-m-d'); ?>" max="<?php echo date('Y-m-d', strtotime(date('Y-m-d'). ' + 1 month')); ?>">
-                            </div>
-                            <div class="row">
+                        <form action="index.php" method="POST" class="mx-3">
+                            <input type="hidden" name="r" value="createuser">
+                                <div class="row d-flex justify-content-center align-items-center m-4">
+                                    <div class="col-sm-12">
+                                        <input type="date" name="date" class="rounded form-control text-center" min="<?php echo date('Y-m-d'); ?>" max="<?php echo date('Y-m-d', strtotime(date('Y-m-d'). ' + 1 month')); ?>">
+                                    </div>
+                                </div>
+                                <div class="row d-flex justify-content-center align-items-center m-4">
+                                    <div class="col-sm-12">
+                                        <button type="submit" class="btn btn-primary col-sm-12">Next</button>
+                                    </div>
+                                </div>
+                        </form>
+                    
+
+
+
+                            <!-- <div class="row"> -->
                                 <!-- <div class="col-sm-3">
                                     <div class="row">
                                         <div class="col-sm-6">
@@ -57,8 +70,8 @@
                                 <div class="col-sm-3">
                                     
                                 </div> -->
-                            </div> 
-                        </div>
+                            <!-- </div>  -->
+                       
                     </div>  
                     <!--LEFT - COLUMN-->
                     
