@@ -26,7 +26,6 @@ namespace bd;
             $stmt->execute([':horari_hora_obert' => $day['start'], ':horari_hora_tencat' => $day['end'], ':horari_tencat' => $closed, ':horari_id' => $i]);
             $i = $i + 1;
             
-            die();
             if ($stmt->errorCode() !== '00000') {
                 $err = $stmt->errorInfo();
                 $code = $stmt->errorCode();
