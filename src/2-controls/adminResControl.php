@@ -2,7 +2,10 @@
 
     function adminResControl($peticio, $resposta, $contenidor){
 
-        $resposta->setTemplate("adminPageRes.php");
+        $adminRes = $contenidor->adminRes();
+        $reserves = $adminRes->pullRes();
         
+        $resposta->set("reserves", $reserves);
+        $resposta->setTemplate("adminPageRes.php");
         return $resposta;
     }

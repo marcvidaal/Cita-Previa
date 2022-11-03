@@ -58,6 +58,11 @@ class Contenidor
     public function time()
     {
         return new \bd\time($this->connexio());;
+    }    
+    
+    public function adminRes()
+    {
+        return new \bd\adminRes($this->connexio());;
     }
 
 
