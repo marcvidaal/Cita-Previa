@@ -36,10 +36,23 @@
                 <div class="row mb-5 g-0 justify-content-between">
                     <!--RIGHT - COLUMN-->
                     <div class="box col-sm-12 rounded prova">
-                        <div class="row d-flex justify-content-center align-items-center m-4">
-                            <div class="col-sm-12">
-                                <input type="date" name="date" class="rounded form-control text-center" min="<?php echo date('Y-m-d'); ?>" max="<?php echo date('Y-m-d', strtotime(date('Y-m-d'). ' + 1 month')); ?>">
-                            </div>
+                        <form action="index.php" method="POST" class="mx-3">
+                            <input type="hidden" name="r" value="createuser">
+                                <div class="row d-flex justify-content-center align-items-center m-4">
+                                    <div class="col-sm-12">
+                                        <input type="date" name="date" class="rounded form-control text-center" min="<?php echo date('Y-m-d'); ?>" max="<?php echo date('Y-m-d', strtotime(date('Y-m-d'). ' + 1 month')); ?>">
+                                    </div>
+                                </div>
+                                <div class="row d-flex justify-content-center align-items-center m-4">
+                                    <div class="col-sm-12">
+                                        <button type="submit" class="btn btn-primary col-sm-12">Next</button>
+                                    </div>
+                                </div>
+                        </form>
+                    
+
+
+
                             <div class="row">
                                 <!-- <div class="col-sm-3">
                                     <div class="row">
@@ -58,7 +71,7 @@
                                     
                                 </div> -->
                             </div> 
-                        </div>
+                       
                     </div>  
                     <!--LEFT - COLUMN-->
                     
@@ -68,7 +81,19 @@
                     <!--COLUMN - RESEVES-->
                     <div class="box col-sm-12 rounded">
                         <div class="scrollmenu rounded">
-                            <div class="col-sm-3 p-3 m-3 rounded text-light reserves">
+
+
+                            <?php foreach($list as $entry) { ?>
+                                <div class="col-sm-3 p-3 m-3 rounded text-light reserves">
+                                <p class="m-2">Inici: <?=$entry["reserva_data_entrada"];?></p>
+                                <p class="m-2">Final: <?=$entry["reserva_data_sortida"];?></p>
+                                <p class="m-2">Carril: <?=$entry["carril_numero"];?></p>
+                                </div>
+                            <?php } ?>
+
+
+
+                            <!-- <div class="col-sm-3 p-3 m-3 rounded text-light reserves">
                                 <p class="m-2">data de reserva:</p>
                                 <p class="m-2">hora de reserva:</p>
                                 <p class="m-2">carril reservat:</p>
@@ -92,7 +117,7 @@
                                 <p class="m-2">data de reserva:</p>
                                 <p class="m-2">hora de reserva:</p>
                                 <p class="m-2">carril reservat:</p>
-                            </div> 
+                            </div>  -->
                         </div>          
                     </div> 
                 </div>
