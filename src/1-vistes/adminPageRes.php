@@ -53,7 +53,32 @@
 
                     <!--RIGHT - COLUMN-->
                     <div class="col-sm-7 rounded mid">
-                        
+                        <table class ="table" id = "taulaAdmin">
+                            <thead>
+                                <tr>
+                                    <th scope="col" >#</th>
+                                    <th scope="col" >EMAIL</th>
+                                    <th scope="col" >HORA ENTRADA</th>
+                                    <th scope="col" >HORA SORTIDA</th>
+                                    <th class="col" >CARRIL</th>
+                                    <th class="col" ></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <?php 
+                            foreach ($reserves as $reserva) {
+                                echo "<tr>";
+                                    echo "<td>".$reserva["reserva_id"]."</td>";
+                                    echo "<td>".$reserva["reserva_client_email"]."</td>";
+                                    echo "<td>".$reserva["reserva_data_entrada"]."</td>";
+                                    echo "<td>".$reserva["reserva_data_sortida"]."</td>";
+                                    echo "<td>".$reserva["carril_numero"]."</td>";
+                                    echo "<td><button type = 'button' class='btn btn-danger btn-sm' id='".$reserva["reserva_id"]."'>eliminar</button></td>";
+                                echo "</tr>";
+                            }
+                            ?>
+                            </tbody>
+                        </table>
                     </div>  
                 </div>
             </div>

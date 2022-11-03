@@ -17,12 +17,14 @@
     require_once "../src/2-controls/loginTester.php";
     require_once "../src/2-controls/timeControl.php";
     require_once "../src/2-controls/showReserves.php";
+    require_once "../src/2-controls/adminResControl.php";
 
 
     /* ----- MODELS ----- */
     require_once "../src/3-models/connexio.php";
     require_once "../src/3-models/usuari.php";
     require_once "../src/3-models/time.php";
+    require_once "../src/3-models/adminRes.php";
 
     
     /* ----- EMESET ----- */
