@@ -15,7 +15,7 @@
         }
         else{
             $resposta->setSession("logat", true);
-            $resposta->setSession("user", $usuari);
+            $resposta->setSession("user", $email);
             $resposta->redirect("location: index.php?r=mainPage");
         }
 

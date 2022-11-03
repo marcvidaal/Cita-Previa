@@ -15,6 +15,7 @@
     require_once "../src/2-controls/adminConfigControl.php";
     require_once "../src/2-controls/createUserControl.php";
     require_once "../src/2-controls/loginTester.php";
+    require_once "../src/2-controls/showReserves.php";
 
 
     /* ----- MODELS ----- */
@@ -67,7 +68,9 @@
         $resposta = login($peticio,$resposta,$contenidor);
     }
     elseif($r === "mainPage"){   
-        $resposta = mainController($peticio,$resposta,$contenidor);
+        $resposta = mostrarReserves($peticio,$resposta,$contenidor);
+        // $resposta = mainController($peticio, $resposta, $contenidor);
+
     }
 
     else {

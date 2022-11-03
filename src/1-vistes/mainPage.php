@@ -53,7 +53,7 @@
 
 
 
-                            <!-- <div class="row"> -->
+                            <div class="row">
                                 <!-- <div class="col-sm-3">
                                     <div class="row">
                                         <div class="col-sm-6">
@@ -70,7 +70,7 @@
                                 <div class="col-sm-3">
                                     
                                 </div> -->
-                            <!-- </div>  -->
+                            </div> 
                        
                     </div>  
                     <!--LEFT - COLUMN-->
@@ -81,7 +81,19 @@
                     <!--COLUMN - RESEVES-->
                     <div class="box col-sm-12 rounded">
                         <div class="scrollmenu rounded">
-                            <div class="col-sm-3 p-3 m-3 rounded text-light reserves">
+
+
+                            <?php foreach($list as $entry) { ?>
+                                <div class="col-sm-3 p-3 m-3 rounded text-light reserves">
+                                <p class="m-2">Inici: <?=$entry["reserva_data_entrada"];?></p>
+                                <p class="m-2">Final: <?=$entry["reserva_data_sortida"];?></p>
+                                <p class="m-2">Carril: <?=$entry["carril_numero"];?></p>
+                                </div>
+                            <?php } ?>
+
+
+
+                            <!-- <div class="col-sm-3 p-3 m-3 rounded text-light reserves">
                                 <p class="m-2">data de reserva:</p>
                                 <p class="m-2">hora de reserva:</p>
                                 <p class="m-2">carril reservat:</p>
@@ -105,7 +117,7 @@
                                 <p class="m-2">data de reserva:</p>
                                 <p class="m-2">hora de reserva:</p>
                                 <p class="m-2">carril reservat:</p>
-                            </div> 
+                            </div>  -->
                         </div>          
                     </div> 
                 </div>
