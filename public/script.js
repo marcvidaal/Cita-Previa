@@ -52,19 +52,19 @@ $('input[name=closedThursday]').click(function enable_disable() {
 $('input[name=closedFriday]').click(function enable_disable() {
   if (this.checked) {
     $("input[name=startFriday]").prop('disabled', true);
-    $("input[name=endFireday]").prop('disabled', true);
+    $("input[name=endFriday]").prop('disabled', true);
   } else {
     $("input[name=startFriday]").prop('disabled', false);
-    $("input[name=endFireday]").prop('disabled', false);
+    $("input[name=endFriday]").prop('disabled', false);
   }
 });
 $('input[name=closedSaturday]').click(function enable_disable() {
   if (this.checked) {
-    $("input[name=startSatruday]").prop('disabled', true);
+    $("input[name=startSaturday]").prop('disabled', true);
     $("input[name=endSaturday]").prop('disabled', true);
   } else {
     $("input[name=startSatruday]").prop('disabled', false);
-    $("input[name=endSaturday]").prop('disabled', false);
+    $("input[name=endSatruday]").prop('disabled', false);
   }
 });
 $('input[name=closedSunday]').click(function enable_disable() {
