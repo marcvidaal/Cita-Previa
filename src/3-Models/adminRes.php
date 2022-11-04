@@ -22,4 +22,12 @@
 
             return $reserves;
         }
+
+        /* ----- ELIMINA UNA RESERVA ----- */
+        public function deleteRes($id)
+        {
+            $stmt = $this->sql->prepare('DELETE FROM reserva_tb WHERE reserva_id = :id;');
+            $stmt->bindParam(':id', $id);
+            $stmt->execute();
+        }
     }

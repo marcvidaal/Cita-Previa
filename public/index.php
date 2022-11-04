@@ -18,6 +18,7 @@
     require_once "../src/2-controls/timeControl.php";
     require_once "../src/2-controls/showReserves.php";
     require_once "../src/2-controls/adminResControl.php";
+    require_once "../src/2-controls/deleteControl.php";
 
 
     /* ----- MODELS ----- */
@@ -73,9 +74,11 @@
     }
     elseif($r === "mainPage"){   
         $resposta = mostrarReserves($peticio,$resposta,$contenidor);
-        // $resposta = mainController($peticio, $resposta, $contenidor);
-
     }
+    elseif($r === "deleteRow"){   
+        $resposta = deleteControl($peticio,$resposta,$contenidor);
+    }
+
 
     else {
         //$resposta = ctrlError($peticio, $resposta, $contenidor);

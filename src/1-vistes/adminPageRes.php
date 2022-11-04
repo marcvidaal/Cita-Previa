@@ -67,14 +67,18 @@
                             <tbody>
                             <?php 
                             foreach ($reserves as $reserva) {
-                                echo "<tr>";
-                                    echo "<td>".$reserva["reserva_id"]."</td>";
-                                    echo "<td>".$reserva["reserva_client_email"]."</td>";
-                                    echo "<td>".$reserva["reserva_data_entrada"]."</td>";
-                                    echo "<td>".$reserva["reserva_data_sortida"]."</td>";
-                                    echo "<td>".$reserva["carril_numero"]."</td>";
-                                    echo "<td><button type = 'button' class='btn btn-danger btn-sm' id='".$reserva["reserva_id"]."'>eliminar</button></td>";
-                                echo "</tr>";
+                                echo"
+                                <tr>
+                                    <td>".$reserva['reserva_id']."</td>
+                                    <td>".$reserva['reserva_client_email']."</td>
+                                    <td>".$reserva['reserva_data_entrada']."</td>
+                                    <td>".$reserva['reserva_data_sortida']."</td>
+                                    <td>".$reserva['carril_numero']."</td>
+                                    <td>
+                                        <a href='index.php?r=deleteRow&id=".$reserva['reserva_id']."' type = 'button' class='btn btn-danger btn-sm' id='".$reserva['reserva_id']."'>eliminar</a>
+                                    </td>
+                                </tr>
+                                ";
                             }
                             ?>
                             </tbody>
