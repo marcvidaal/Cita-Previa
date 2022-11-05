@@ -41,39 +41,20 @@ function ferReserva($peticio, $resposta, $contenidor){
     //Retorna nombre de minuts del periode introduït de la piscina retorna en minuts els periode definit per admin. Ex 30 min per reserva
     $periodeMin = $usuari->getPeriode();
 
-    
-    //Obtenim els minuts totals entre l'interval del dia. Exemple: 8:00 a 9:00 son 60 min
-    $minutsTotals=$usuari->diferenciaMinutsEntrePeriode($nomDiaSetmana);
-
-    //Dividim els minuts totals 
-    $periodesPossibles=$minutsTotals/$periodeMin;
+    //Array que retorna els dies bloquejats  retorna totes les dates bloquejades
+    $diesBloquejats= $usuari->getBlockedDays();
     
 
-    
-    /*
-        hi ha dos maneres de ferho. La anterior amb periodesPossibles o amb un while i anant afegint el periode necessari a la hora inici
-        pero si no coincideix mai el periode final sempre s'executara.
-    */
 
+    $email = $peticio->getRaw("SESSION", "user");
 
-    // $email = $peticio->getRaw("SESSION", "user");
-
-    $resposta->set("periodesPossibles", $periodesPossibles);
     
     
     
-    // $list = $entries->list($user["id"]);
-    // $resposta->set("list", $list);
 
 
 
-
-    
-    
-
-     
-
-    
+    $resposta->set("list", $list);
 
     $resposta->setTemplate("mainPage.php");
 
