@@ -13,6 +13,7 @@
             <div class="row d-flex justify-content-center align-items-center" style="height: 90vh">
                 <div class="col-11 col-sm-11 col-md-10 col-lg-9 col-xl-8 col-xxl-7 border rounded" >
                     <form action="index.php" method="post" class="mx-3">
+                    <input type="hidden" name="r" value="profilePage">
                         <div class="row">
                             <div class="col-md-12 mt-5">Piscina de Peralada</div>
                         </div>

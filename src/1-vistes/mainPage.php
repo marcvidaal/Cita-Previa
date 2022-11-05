@@ -16,7 +16,7 @@
                 <div class="row d-flex justify-content-between g-0 mb-4 ">
                     <!--MY PROFILE - COLUMN-->
                     <div class="col-sm-2">
-                        <a href="../public/index.php">
+                        <a href="index.php?r=profilePage">
                             <button data-toggle="button" aria-pressed="false" autocomplete="off" class="rounded btn btn-info btn-lg text-light">
                                 My profile
                             </button>
@@ -37,10 +37,10 @@
                     <!--RIGHT - COLUMN-->
                     <div class="box col-sm-12 rounded prova">
                         <form action="index.php" method="POST" class="mx-3">
-                            <input type="hidden" name="r" value="createuser">
+                            <input type="hidden" name="r" value="reserve">
                                 <div class="row d-flex justify-content-center align-items-center m-4">
                                     <div class="col-sm-12">
-                                        <input type="date" name="date" class="rounded form-control text-center" min="<?php echo date('Y-m-d'); ?>" max="<?php echo date('Y-m-d', strtotime(date('Y-m-d'). ' + 1 month')); ?>">
+                                        <input type="date" name="data" class="rounded form-control text-center" min="<?php echo date('Y-m-d'); ?>" max="<?php echo date('Y-m-d', strtotime(date('Y-m-d'). ' + 1 month')); ?>">
                                     </div>
                                 </div>
                                 <div class="row d-flex justify-content-center align-items-center m-4">
