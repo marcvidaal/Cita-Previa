@@ -94,5 +94,14 @@ namespace bd;
     }
 
 
+    public function diferenciaMinutsEntrePeriode($nomDiaSetmana)
+    {
+        $stm = $this->sql->prepare('select timestampdiff(minute,horari_hora_obert,horari_hora_tencat) from horari_tb where horari_dia=:diaSetmana;');
+        $stm->execute([':diaSetmana' => $nomDiaSetmana]);
+        $diferenciaHores = $stm->fetchColumn() ;
+        return $diferenciaHores;
+    
+    }
+
 
  }
