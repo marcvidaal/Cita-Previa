@@ -36,7 +36,7 @@ namespace bd;
     public function llistarReserves($email)
     {
         // $stm = $this->sql->prepare('select reserva_data_entrada, reserva_data_sortida, reserva_carril_id from reserva_tb where reserva_client_email=:reserva_client_email;');
-        $stm = $this->sql->prepare('select r.reserva_data_entrada, r.reserva_data_sortida, c.carril_numero from reserva_tb r join carril_tb c on(r.reserva_carril_id=c.carril_id) where reserva_client_email=:reserva_client_email;');
+        $stm = $this->sql->prepare('select r.reserva_data_entrada, r.reserva_data_sortida, c.carril_numero from reserva_tb r join carril_tb c on(r.reserva_carril_id=c.carril_id) where r.reserva_client_email=:reserva_client_email;');
         $stm->execute([':reserva_client_email' => $email]);
 
         $entries = $stm->fetchAll(\PDO::FETCH_ASSOC) ;
@@ -44,4 +44,55 @@ namespace bd;
         return $entries;
     
     }
+
+    public function getPeriode()
+    {
+        // $stm = $this->sql->prepare('select reserva_data_entrada, reserva_data_sortida, reserva_carril_id from reserva_tb where reserva_client_email=:reserva_client_email;');
+        // $stm = $this->sql->prepare('select p.piscina_periode from client_tb cli join reserva r on(cli.client_email=r.reserva_client_email) join carril_tb c on(r.reserva_carril_id=c.carril_id) join piscina_tb p on(c.carril_piscina_id=p.piscina_id) where cli.client_email=:client_email;');
+        $stm = $this->sql->prepare('select MINUTE(piscina_periode) from piscina_tb limit 1;');
+        $stm->execute();
+
+        //retorna un valor que ens interessa directament. no un array
+        return $stm->fetchColumn();
+    
+    }
+
+    public function getHorariDia($email)
+    {
+        // $stm = $this->sql->prepare('select reserva_data_entrada, reserva_data_sortida, reserva_carril_id from reserva_tb where reserva_client_email=:reserva_client_email;');
+        $stm = $this->sql->prepare('select horari_hora_obert;');
+        $stm->execute([':client_email' => $email]);
+        $entries = $stm->fetchAll(\PDO::FETCH_ASSOC) ;
+        return $entries;
+    
+    }
+
+    public function getNomDiaData($data)
+    {
+        $stm = $this->sql->prepare("select DAYNAME(:data)");
+        $stm->execute([':data' => $data]);
+        return $stm->fetchColumn();
+    
+    }
+
+    public function getBlockedDays()
+    {
+        $stm = $this->sql->prepare('select dia_bloquejat from dia_bloquejat_tb;');
+        $stm->execute();
+        $blockedDaysArray = $stm->fetchAll(\PDO::FETCH_ASSOC) ;
+        return $blockedDaysArray;
+    
+    }
+
+    public function periodePerDia($nomDiaSetmana)
+    {
+        $stm = $this->sql->prepare('select horari_hora_obert,horari_hora_tencat from horari_tb where horari_dia=:diaSetmana;');
+        $stm->execute([':diaSetmana' => $nomDiaSetmana]);
+        $horariEntradaiSortida = $stm->fetchAll(\PDO::FETCH_ASSOC) ;
+        return $horariEntradaiSortida;
+    
+    }
+
+
+
  }

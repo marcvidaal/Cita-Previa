@@ -17,11 +17,10 @@
     require_once "../src/2-controls/loginTester.php";
     require_once "../src/2-controls/timeControl.php";
     require_once "../src/2-controls/showReserves.php";
-    require_once "../src/2-controls/adminResControl.php";
     require_once "../src/2-controls/deleteControl.php";
+    require_once "../src/2-controls/reserveControl.php";
 
 
-    /* ----- MODELS ----- */
     require_once "../src/3-models/connexio.php";
     require_once "../src/3-models/usuari.php";
     require_once "../src/3-models/time.php";
@@ -77,6 +76,15 @@
     }
     elseif($r === "deleteRow"){   
         $resposta = deleteControl($peticio,$resposta,$contenidor);
+        // $resposta = mainController($peticio, $resposta, $contenidor);
+    }
+    elseif($r === "reserve"){   
+        $resposta = ferReserva($peticio,$resposta,$contenidor);
+        // $resposta = mainController($peticio, $resposta, $contenidor);
+    }
+    elseif($r === "profilePage"){   
+        $resposta = profilePageControl($peticio,$resposta,$contenidor);
+        // $resposta = mainController($peticio, $resposta, $contenidor);
     }
 
 
