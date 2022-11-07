@@ -86,7 +86,7 @@ namespace bd;
 
     public function periodePerDia($nomDiaSetmana)
     {
-        $stm = $this->sql->prepare('select horari_hora_obert,horari_hora_tencat from horari_tb where horari_dia=:diaSetmana;');
+        $stm = $this->sql->prepare('select time_format(horari_hora_obert,"%H:%i") as horari_hora_obert,time_format(horari_hora_tencat,"%H:%i") as horari_hora_tencat from horari_tb where horari_dia=:diaSetmana;');
         $stm->execute([':diaSetmana' => $nomDiaSetmana]);
         $horariEntradaiSortida = $stm->fetchAll(\PDO::FETCH_ASSOC) ;
         return $horariEntradaiSortida;
@@ -105,12 +105,15 @@ namespace bd;
 
     public function retornaHoraAmbPeriodeAfegit($hora,$periode)
     {
-        $stm = $this->sql->prepare('select addtime(:hora,"0:'.$periode.':0");');
+        // TIME_FORMAT(opentime, "%H:%i")
+        $stm = $this->sql->prepare('select time_format(addtime(:hora,"0:'.$periode.':0"),"%H:%i");');
         $stm->execute([':hora' => $hora]);
         $horaAfegida = $stm->fetchColumn();
         return $horaAfegida;
     
     }
+
+    
 
 
  }
