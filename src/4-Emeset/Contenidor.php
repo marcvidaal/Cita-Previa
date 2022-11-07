@@ -60,9 +60,9 @@ class Contenidor
         return new \bd\time($this->connexio());;
     }    
     
-    public function adminRes()
+    public function admin()
     {
-        return new \bd\adminRes($this->connexio());;
+        return new \bd\admin($this->connexio());;
     }
 
 

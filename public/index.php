@@ -20,11 +20,14 @@
     require_once "../src/2-controls/reserveControl.php";
     require_once "../src/2-controls/profilePageControl.php";
     require_once "../src/2-controls/actualitzarDades.php";
+    require_once "../src/2-controls/adminResControl.php";
+    require_once "../src/2-controls/deleteResControl.php";
+    require_once "../src/2-controls/deleteDateControl.php";    
 
     require_once "../src/3-models/connexio.php";
     require_once "../src/3-models/usuari.php";
     require_once "../src/3-models/time.php";
-    require_once "../src/3-models/adminRes.php";
+    require_once "../src/3-models/admin.php";
 
     
     /* ----- EMESET ----- */
@@ -89,6 +92,10 @@
     elseif($r === "actualitzarDades"){
         $resposta = actualitzarDades($peticio, $resposta, $contenidor);
         // $resposta = mainController($peticio, $resposta, $contenidor);
+        $resposta = deleteResControl($peticio,$resposta,$contenidor);
+    }
+    elseif($r === "deleteDate"){   
+        $resposta = deleteDateControl($peticio,$resposta,$contenidor);
     }
 
 
