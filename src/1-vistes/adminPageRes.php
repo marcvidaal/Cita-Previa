@@ -32,7 +32,7 @@
                 <div class="row mb-5 g-0 justify-content-between adminPageMidContainer h-auto">
 
                     <!--LEFT - COLUMN-->
-                    <div class="col-sm-4 rounded mid h-100">
+                    <div class="col-sm-3 rounded mid h-100">
                         <div class="row d-flex justify-content-center g-0">
                             <a href="index.php?r=adminPageRes" class="col-sm-10 btn d-flex justify-content-center rounded g-0 mt-3 p-3 configurations">
                                 RESERVES
@@ -51,7 +51,7 @@
                     </div> 
 
                     <!--RIGHT - COLUMN-->
-                    <div class="col-sm-7 rounded mid">
+                    <div class="col-sm-8 rounded mid p-2">
                         <table class ="table table-striped" id = "taulaAdmin">
                             <thead>
                                 <tr>

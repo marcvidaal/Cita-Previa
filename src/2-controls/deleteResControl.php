@@ -1,13 +1,13 @@
 <?php
 
-    function deleteControl($peticio, $resposta, $contenidor){
+    function deleteResControl($peticio, $resposta, $contenidor){
 
         $id = $peticio->get(INPUT_GET,"id");        
 
-        $adminRes = $contenidor->adminRes();
+        $admin = $contenidor->admin();
 
-        $adminRes->deleteRes($id);
-        $reserves = $adminRes->pullRes();
+        $admin->deleteRes($id);
+        $reserves = $admin->pullRes();
 
         $resposta->set("reserves", $reserves);
         $resposta->setTemplate("adminPageRes.php");

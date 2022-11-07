@@ -18,14 +18,15 @@
     require_once "../src/2-controls/timeControl.php";
     require_once "../src/2-controls/showReserves.php";
     require_once "../src/2-controls/adminResControl.php";
-    require_once "../src/2-controls/deleteControl.php";
+    require_once "../src/2-controls/deleteResControl.php";
+    require_once "../src/2-controls/deleteDateControl.php";    
 
 
     /* ----- MODELS ----- */
     require_once "../src/3-models/connexio.php";
     require_once "../src/3-models/usuari.php";
     require_once "../src/3-models/time.php";
-    require_once "../src/3-models/adminRes.php";
+    require_once "../src/3-models/admin.php";
 
     
     /* ----- EMESET ----- */
@@ -76,7 +77,10 @@
         $resposta = mostrarReserves($peticio,$resposta,$contenidor);
     }
     elseif($r === "deleteRow"){   
-        $resposta = deleteControl($peticio,$resposta,$contenidor);
+        $resposta = deleteResControl($peticio,$resposta,$contenidor);
+    }
+    elseif($r === "deleteDate"){   
+        $resposta = deleteDateControl($peticio,$resposta,$contenidor);
     }
 
 
