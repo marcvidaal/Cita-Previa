@@ -53,6 +53,7 @@
 
 
 
+<<<<<<< HEAD
                             <div class="row">
                                 <div class="col-sm-10">
                                
@@ -70,6 +71,50 @@
                                     echo "</table>";
                                     ?>
 
+=======
+                        <div class="row">
+                                <div class="col-sm-10">
+                               
+                                
+                                <?php
+                                    echo "<table>";
+                                    for ($i=0; $i <= $periodesPossibles; $i++) { 
+                                        echo "<tr>";
+                                            for ($j=0; $j < 9; $j++) {
+                                                if($i==0){?>
+                                                    <th><?=$tableHeader[$j];?></th>
+                                                <?php
+                                                }
+                                                elseif ($j==0) {
+                                                    if($i==$periodesPossibles){
+                                                    ?>
+                                                
+                                                    <td><?=$hores[$i-1];?></td>
+
+
+                                                    <?php
+                                                    }
+
+                                                    else {?>
+                                                        
+                                                    <?php
+                                                    }
+
+                                                }
+
+                                                
+
+                                                
+
+                                               
+                                                 }
+                                        echo "</tr>";
+                                    }
+                                    echo "</table>";
+                                    
+                                     ?>
+
+>>>>>>> 2407cf8 (Afegeix quasi totes les hores a la taula)
                                 </div>
         
                             </div> 

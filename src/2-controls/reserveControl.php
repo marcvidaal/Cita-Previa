@@ -37,6 +37,7 @@ function ferReserva($peticio, $resposta, $contenidor){
         $horariSortida = $entry["horari_hora_tencat"];  
     }
     
+    
 
     //Retorna nombre de minuts del periode introduït de la piscina retorna en minuts els periode definit per admin. Ex 30 min per reserva
     $periodeMin = $usuari->getPeriode();
@@ -44,6 +45,47 @@ function ferReserva($peticio, $resposta, $contenidor){
     //Array que retorna els dies bloquejats  retorna totes les dates bloquejades
     $diesBloquejats= $usuari->getBlockedDays();
     
+
+
+    
+    /*
+        hi ha dos maneres de ferho. La anterior amb periodesPossibles o amb un while i anant afegint el periode necessari a la hora inici
+        pero si no coincideix mai el periode final sempre s'executara.
+    */
+
+    $tableHeader = array(
+        "Period",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+    );
+
+    $hores = array();
+
+
+    for ($i=0; $i <= $periodesPossibles; $i++) { 
+        if($i==0){
+            array_push($hores, $horariEntrada);
+        }
+        else{
+            array_push($hores, $usuari->retornaHoraAmbPeriodeAfegit(end($hores),$periodeMin));
+        }
+    }
+
+    // var_dump($hores);
+    // die();
+
+    $resposta->set("periodesPossibles", $periodesPossibles);
+    $resposta->set("hores", $hores);
+    $resposta->set("tableHeader", $tableHeader);
+
+
+    
+
 
 
     $email = $peticio->getRaw("SESSION", "user");
