@@ -79,7 +79,17 @@ $('input[name=closedSunday]').click(function enable_disable() {
 }
 
 
-/* ----- DATATABLES ----- */
-$(document).ready( function () {
-  $('#taulaAdmin').DataTable();
+
+/* ----- DATATABLES DATEPIKER ----- */
+
+
+
+/* ----- EXPORT TABLE ----- */
+$(document).ready(function() {
+  $('#taulaAdmin').DataTable( {
+      dom: 'Bfrtip',
+      buttons: [
+          'copy', 'csv', 'excel', 'pdf', 'print'
+      ]
+  } );
 } );

@@ -22,7 +22,7 @@
     require_once "../src/2-controls/actualitzarDades.php";
     require_once "../src/2-controls/adminResControl.php";
     require_once "../src/2-controls/deleteResControl.php";
-    require_once "../src/2-controls/deleteDateControl.php";    
+    require_once "../src/2-controls/deleteDateControl.php";  
 
     require_once "../src/3-models/connexio.php";
     require_once "../src/3-models/usuari.php";
