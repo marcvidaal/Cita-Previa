@@ -103,5 +103,35 @@ namespace bd;
     
     }
 
+    public function updateFirstName($email,$name)
+    {
+        $stm = $this->sql->prepare('update client_tb set client_first_name=:name where client_email=:email;');
+        $stm->execute([':name' => $name, ':email' => $email]);
+    
+    }
+
+    public function updateSecondName($email,$secondName)
+    {
+        $stm = $this->sql->prepare('update client_tb set client_second_name=:secondName where client_email=:email;');
+        $stm->execute([':secondName' => $secondName, ':email' => $email]);
+    
+    }
+
+    public function updatePassword($email,$password)
+    {
+        $stm = $this->sql->prepare('update client_tb set client_password=:password where client_email=:email;');
+        $stm->execute([':password' => $password, ':email' => $email]);
+    
+    }
+
+    // public function provaa($email)
+    // {
+    //     $stm = $this->sql->prepare('select client_password from client_tb where client_email=:email;');
+    //     $stm->execute([':email' => $email]);
+    //     $diferenciaHores = $stm->fetchColumn() ;
+    //     return $diferenciaHores;
+    
+    // }
+
 
  }

@@ -6,7 +6,6 @@
 
     /* ----- CONTROLLERS ----- */
     require_once "../src/2-controls/mainControl.php";
-    require_once "../src/2-controls/profileControl.php";
     require_once "../src/2-controls/signinControl.php";
     require_once "../src/2-controls/signupControl.php";
     require_once "../src/2-controls/homeControl.php";
@@ -19,7 +18,8 @@
     require_once "../src/2-controls/showReserves.php";
     require_once "../src/2-controls/deleteControl.php";
     require_once "../src/2-controls/reserveControl.php";
-
+    require_once "../src/2-controls/profilePageControl.php";
+    require_once "../src/2-controls/actualitzarDades.php";
 
     require_once "../src/3-models/connexio.php";
     require_once "../src/3-models/usuari.php";
@@ -86,9 +86,16 @@
         $resposta = profilePageControl($peticio,$resposta,$contenidor);
         // $resposta = mainController($peticio, $resposta, $contenidor);
     }
+    elseif($r === "actualitzarDades"){
+        $resposta = actualitzarDades($peticio, $resposta, $contenidor);
+        // $resposta = mainController($peticio, $resposta, $contenidor);
+    }
+
 
 
     else {
+        var_dump($r);
+        die();
         //$resposta = ctrlError($peticio, $resposta, $contenidor);
     }
 
