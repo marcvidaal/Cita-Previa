@@ -27,6 +27,7 @@ function ferReserva($peticio, $resposta, $contenidor){
     //Obtenim un array amb la hora entrada i sortida segons el dia especificat
     $horariEntradaiSortida= $usuari->periodePerDia($nomDiaSetmana);
 
+    
 
     //Creem dues variables per guardar el valor de l'entrada i la sortida del dia especificat. Hi guardem el valor recorrent l'array obtingut amb el for each
     $horariEntrada = "";
@@ -53,16 +54,7 @@ function ferReserva($peticio, $resposta, $contenidor){
         pero si no coincideix mai el periode final sempre s'executara.
     */
 
-    $tableHeader = array(
-        "Period",
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday"
-    );
+    
 
     $hores = array();
 
@@ -81,7 +73,6 @@ function ferReserva($peticio, $resposta, $contenidor){
 
     $resposta->set("periodesPossibles", $periodesPossibles);
     $resposta->set("hores", $hores);
-    $resposta->set("tableHeader", $tableHeader);
 
 
     

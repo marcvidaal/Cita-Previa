@@ -80,27 +80,37 @@
                                     echo "<table>";
                                     for ($i=0; $i <= $periodesPossibles; $i++) { 
                                         echo "<tr>";
-                                            for ($j=0; $j < 9; $j++) {
-                                                if($i==0){?>
-                                                    <th><?=$tableHeader[$j];?></th>
+                                            for ($j=0; $j < 11; $j++) {
+                                                if($i==0 and $j==0){
+                                                    echo '<th>Period</th>';
+                                                }
+                                                elseif($i==0 and $j>0){?>
+                                                    <th>Carril <?=$j;?></th>
                                                 <?php
                                                 }
-                                                elseif ($j==0) {
-                                                    if($i==$periodesPossibles){
+
+                                                elseif ($j==0 and $i>0) {
+                                                    
                                                     ?>
                                                 
-                                                    <td><?=$hores[$i-1];?></td>
+                                                    <td><?=$hores[$i-1].' '.$hores[$i];?></td>
 
 
                                                     <?php
-                                                    }
+                                                    
+                                                    
 
-                                                    else {?>
-                                                        
-                                                    <?php
-                                                    }
+                                                    
 
                                                 }
+                                                elseif ($j>0 and $i>0) {
+                                                    ?>
+                                                <td><button type="button" class="btn btn-primary" id="<?php echo 'Carril'.$j.'Hora'.$hores[$i-1];?>">Next</button></td>
+<?php
+                                                }
+
+
+                                                
 
                                                 
 
