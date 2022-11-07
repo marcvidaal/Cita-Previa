@@ -53,23 +53,50 @@
 
 
 
-                            <div class="row">
-                                <!-- <div class="col-sm-3">
-                                    <div class="row">
-                                        <div class="col-sm-6">
+                        <div class="row">
+                                <div class="col-sm-10">
+                               
+                                
+                                <?php
+                                    echo "<table>";
+                                    for ($i=0; $i <= $periodesPossibles; $i++) { 
+                                        echo "<tr>";
+                                            for ($j=0; $j < 9; $j++) {
+                                                if($i==0){?>
+                                                    <th><?=$tableHeader[$j];?></th>
+                                                <?php
+                                                }
+                                                elseif ($j==0) {
+                                                    if($i==$periodesPossibles){
+                                                    ?>
+                                                
+                                                    <td><?=$hores[$i-1];?></td>
 
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
+
+                                                    <?php
+                                                    }
+
+                                                    else {?>
+                                                        
+                                                    <?php
+                                                    }
+
+                                                }
+
+                                                
+
+                                                
+
+                                               
+                                                 }
+                                        echo "</tr>";
+                                    }
+                                    echo "</table>";
                                     
+                                     ?>
+
                                 </div>
-                                <div class="col-sm-3">
-                                    
-                                </div>
-                                <div class="col-sm-3">
-                                    
-                                </div> -->
+        
                             </div> 
                        
                     </div>  

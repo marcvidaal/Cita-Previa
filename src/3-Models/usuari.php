@@ -103,5 +103,14 @@ namespace bd;
     
     }
 
+    public function retornaHoraAmbPeriodeAfegit($hora,$periode)
+    {
+        $stm = $this->sql->prepare('select addtime(:hora,"0:'.$periode.':0");');
+        $stm->execute([':hora' => $hora]);
+        $horaAfegida = $stm->fetchColumn();
+        return $horaAfegida;
+    
+    }
+
 
  }
