@@ -19,7 +19,7 @@
     require_once "../src/2-controls/showReserves.php";
     require_once "../src/2-controls/adminResControl.php";
     require_once "../src/2-controls/deleteResControl.php";
-    require_once "../src/2-controls/deleteDateControl.php";    
+    require_once "../src/2-controls/deleteDateControl.php";  
 
 
     /* ----- MODELS ----- */
