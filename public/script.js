@@ -77,3 +77,9 @@ $('input[name=closedSunday]').click(function enable_disable() {
   }
 });
 }
+
+
+/* ----- DATATABLES ----- */
+$(document).ready( function () {
+  $('#taulaAdmin').DataTable();
+} );
