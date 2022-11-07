@@ -56,9 +56,22 @@ function ferReserva($peticio, $resposta, $contenidor){
     */
 
 
-    $resposta->set("peridesPossibles", $periodesPossibles);
+    // $email = $peticio->getRaw("SESSION", "user");
 
-    $email = $peticio->getRaw("SESSION", "user");
+    $resposta->set("periodesPossibles", $periodesPossibles);
+    
+    
+    
+    // $list = $entries->list($user["id"]);
+    // $resposta->set("list", $list);
+
+
+
+
+    
+    
+
+     
 
     
 

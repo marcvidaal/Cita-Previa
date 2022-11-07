@@ -25,7 +25,7 @@
                     
                     <!--MY PROFILE - COLUMN-->
                     <div class="col-sm-2 text-end">
-                        <a href="link NOT WORKINK" >
+                        <a href="index.php" >
                             <button data-toggle="button" aria-pressed="false" autocomplete="off" class="rounded btn btn-info btn-lg text-light">
                                 Log out
                             </button>
@@ -54,22 +54,24 @@
 
 
                             <div class="row">
-                                <!-- <div class="col-sm-3">
-                                    <div class="row">
-                                        <div class="col-sm-6">
+                                <div class="col-sm-10">
+                               
+                                    <?php 
+                                    echo "<table>";
+                                    for ($i=0; $i < $periodesPossibles; $i++) { 
+                                        echo "<tr>";
+                                            for ($j=0; $j < 9; $j++) { ?>
+                                                
+                                                <td>
 
-                                        </div>
-                                    </div>
+                                                </td>
+                                                <?php }
+                                    }
+                                    echo "</table>";
+                                    ?>
+
                                 </div>
-                                <div class="col-sm-3">
-                                    
-                                </div>
-                                <div class="col-sm-3">
-                                    
-                                </div>
-                                <div class="col-sm-3">
-                                    
-                                </div> -->
+        
                             </div> 
                        
                     </div>  
