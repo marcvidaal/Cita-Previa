@@ -80,16 +80,21 @@ $('input[name=closedSunday]').click(function enable_disable() {
 
 
 
-/* ----- DATATABLES DATEPIKER ----- */
-
-
-
-/* ----- EXPORT TABLE ----- */
+/* ----- DATA TABLES ----- */
 $(document).ready(function() {
   $('#taulaAdmin').DataTable( {
       dom: 'Bfrtip',
+
+      /* ----- EXPORT TABLE ----- */
       buttons: [
           'copy', 'csv', 'excel', 'pdf', 'print'
       ]
   } );
 } );
+
+
+$(document).ready(function () {
+    $('#taulaAdminBlock').DataTable({
+        dom: '<"toolbar">frtip',
+    });
+});

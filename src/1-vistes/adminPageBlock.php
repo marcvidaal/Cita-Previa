@@ -7,7 +7,10 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"  integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="styles.css">
-        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/jq-3.6.0/dt-1.12.1/datatables.min.css"/>    </head>
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/jq-3.6.0/dt-1.12.1/datatables.min.css"/>
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css"/>
+
+        </head>
     
         <body class="p-2">
             <!--CONTAINER-->
@@ -52,7 +55,7 @@
 
                     <!--RIGHT - COLUMN-->
                     <div class="col-sm-8 rounded mid p-2">
-                        <table class ="table table-striped" id = "taulaAdmin">
+                        <table class ="table table-striped" id = "taulaAdminBlock">
                             <thead>
                                 <tr>
                                     <th scope="col" >#</th>
@@ -78,6 +81,15 @@
                             ?>
                             </tbody>
                         </table>
+                        <form method="POST" action="index.php" class="row g-0">
+                            <input type="hidden" name="r" value="addBlockDate">
+                            <div class="col-sm-3 NextButtonSignUp">
+                                <input type = date name=blkDay class= "col-sm-5 form-control form-control-sm">
+                            </div>
+                            <div class="col-sm-9 NextButtonSignUp">
+                                <input type="submit" class="btn btn-primary" value= "Add entry">
+                            </div>
+                        </form>
                     </div>  
                 </div>
             </div>
@@ -86,5 +98,8 @@
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.js"   integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="   crossorigin="anonymous"></script>
         <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/jq-3.6.0/dt-1.12.1/datatables.min.js"></script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
+
         <script type="text/javascript" src="script.js"></script>
 </html>

@@ -49,4 +49,12 @@
             $stmt->bindParam(':id', $id);
             $stmt->execute();
         }
+
+        public function addDate($date)
+        {
+            $stmt = $this->sql->prepare('INSERT INTO dia_bloquejat_tb (dia_bloquejat_piscina_id, dia_bloquejat) VALUES (1, :date);');
+            $stmt->bindParam(':date', $date);
+            $stmt->execute();
+        }
+
     }
