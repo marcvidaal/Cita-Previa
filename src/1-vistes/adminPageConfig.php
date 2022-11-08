@@ -24,7 +24,7 @@
                     
                     <!--MY PROFILE - COLUMN-->
                     <div class="col-sm-2 text-end">
-                        <a href="  " class="rounded btn btn-dark btn-lg">
+                        <a href="index.php?r=destroySession" class="rounded btn btn-dark btn-lg">
                             Log out    
                         </a>
                     </div>
