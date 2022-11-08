@@ -76,7 +76,7 @@
                                     <td>".$reserva['reserva_data_sortida']."</td>
                                     <td>".$reserva['carril_numero']."</td>
                                     <td>
-                                        <a href='index.php?r=deleteRow&id=".$reserva['reserva_id']."' type = 'button' class='btn btn-danger btn-sm' id='".$reserva['reserva_id']."'>eliminar</a>
+                                        <a href='index.php?r=deleteRes&id=".$reserva['reserva_id']."' type = 'button' class='btn btn-danger btn-sm' id='".$reserva['reserva_id']."'>eliminar</a>
                                     </td>
                                 </tr>
                                 ";
