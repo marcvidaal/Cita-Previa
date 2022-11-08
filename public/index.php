@@ -22,7 +22,8 @@
     require_once "../src/2-controls/actualitzarDades.php";
     require_once "../src/2-controls/adminResControl.php";
     require_once "../src/2-controls/deleteResControl.php";
-    require_once "../src/2-controls/deleteDateControl.php";  
+    require_once "../src/2-controls/deleteDateControl.php";
+    require_once "../src/2-controls/addBlockDateControl.php";
 
     require_once "../src/3-models/connexio.php";
     require_once "../src/3-models/usuari.php";
@@ -97,9 +98,9 @@
     elseif($r === "deleteDate"){   
         $resposta = deleteDateControl($peticio,$resposta,$contenidor);
     }
-
-
-
+    elseif($r === "addBlockDate"){   
+        $resposta = addBlockDateControl($peticio,$resposta,$contenidor);
+    }
     else {
         var_dump($r);
         die();
