@@ -7,7 +7,7 @@ function ferReserva($peticio, $resposta, $contenidor){
     //obtenim data introduïda per fer la reserva
     $data = $peticio->get(INPUT_POST, "data");
 
-
+    
 
     //Array que retorna els dies bloquejats  retorna totes les dates bloquejades
     $diesBloquejats= $usuari->getBlockedDays();
@@ -73,7 +73,7 @@ function ferReserva($peticio, $resposta, $contenidor){
 
     $resposta->set("periodesPossibles", $periodesPossibles);
     $resposta->set("hores", $hores);
-
+    $resposta->set("data", $data);
 
     
 
