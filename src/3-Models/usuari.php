@@ -27,7 +27,7 @@ namespace bd;
 
     public function comprovarCompteUsuari($email)
     {
-        $query = 'SELECT client_email, client_password FROM client_tb WHERE client_email=:email;';
+        $query = 'SELECT client_email, client_password, client_admin FROM client_tb WHERE client_email=:email;';
         $stm = $this->sql->prepare($query);
         $stm->execute([':email' => $email]);
 
