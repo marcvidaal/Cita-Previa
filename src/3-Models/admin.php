@@ -2,7 +2,7 @@
 
     namespace bd;
 
-    class adminRes{
+    class admin{
         
         public $sql = null;
 
@@ -30,4 +30,31 @@
             $stmt->bindParam(':id', $id);
             $stmt->execute();
         }
+
+        /* ----- RETORNA ELS VALORS DE LES DATES BLOQUEJADES----- */
+        public function llistBlockDates()
+        {
+            $stm = $this->sql->prepare('SELECT d.dia_bloquejat_id, p.piscina_nom, d.dia_bloquejat FROM dia_bloquejat_tb d JOIN piscina_tb p ON (d.dia_bloquejat_piscina_id = p.piscina_id);');
+            $stm->execute();
+
+            /* ----- GUARRDEM TOT LA INFO DINS DE L'ARRAY DATES ----- */
+            $dates = $stm->fetchAll(\PDO::FETCH_ASSOC) ;
+
+            return $dates;
+        }
+
+        public function deleteDate($id)
+        {
+            $stmt = $this->sql->prepare('DELETE FROM dia_bloquejat_tb WHERE dia_bloquejat_id = :id;');
+            $stmt->bindParam(':id', $id);
+            $stmt->execute();
+        }
+
+        public function addDate($date)
+        {
+            $stmt = $this->sql->prepare('INSERT INTO dia_bloquejat_tb (dia_bloquejat_piscina_id, dia_bloquejat) VALUES (1, :date);');
+            $stmt->bindParam(':date', $date);
+            $stmt->execute();
+        }
+
     }
