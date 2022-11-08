@@ -22,15 +22,16 @@ namespace bd;
     {
         $stm = $this->sql->prepare('select client_email from client_tb where client_email=:email limit 1');
         $stm->execute([':email' => $email]);
-        return $stm->fetch();
+        return $stm->fetchColumn();
     }
 
-    public function comprovarCompteUsuari($email,$contrasenya)
+    public function comprovarCompteUsuari($email)
     {
-        $stm = $this->sql->prepare('select * from client_tb where client_email=:email and client_password=:password limit 1');
-        $stm->execute([':email' => $email, ':password' => $contrasenya]);
+        $query = 'SELECT client_email, client_password FROM client_tb WHERE client_email=:email;';
+        $stm = $this->sql->prepare($query);
+        $stm->execute([':email' => $email]);
 
-        return $stm->fetch();
+        return $stm->fetch(\PDO::FETCH_ASSOC);
     }
 
     public function llistarReserves($email)

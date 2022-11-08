@@ -25,7 +25,7 @@
                     
                     <!--MY PROFILE - COLUMN-->
                     <div class="col-sm-2 text-end">
-                        <a href="index.php" >
+                        <a href="index.php?r=destroySession" >
                             <button data-toggle="button" aria-pressed="false" autocomplete="off" class="rounded btn btn-info btn-lg text-light">
                                 Log out
                             </button>

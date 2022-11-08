@@ -23,7 +23,9 @@
     require_once "../src/2-controls/deleteResControl.php";
     require_once "../src/2-controls/deleteDateControl.php";
     require_once "../src/2-controls/addBlockDateControl.php";
+    require_once "../src/2-controls/destroySesion.php";
 
+    /* ----- CONTROLERS ----- */
     require_once "../src/3-models/connexio.php";
     require_once "../src/3-models/usuari.php";
     require_once "../src/3-models/time.php";
@@ -34,6 +36,10 @@
     require_once "../src/4-Emeset/Contenidor.php";
     require_once "../src/4-Emeset/Peticio.php";
     require_once "../src/4-Emeset/Resposta.php";
+
+    /* ----- MIDDLEWARES ----- */
+    require_once "../src/5-Middleware/isAuth.php";
+
 
     $contenidor = new \Emeset\Contenidor($config);
     $peticio = $contenidor->peticio();
@@ -53,47 +59,50 @@
     if($r == "") {
         $resposta = homeControl($peticio, $resposta, $contenidor);
     }
-    elseif($r === "signup"){ 
-        $resposta = signUpPageControl($peticio, $resposta, $contenidor);
-    }
-    elseif($r === "adminPageRes"){ 
-        $resposta = adminResControl($peticio, $resposta, $contenidor);
-    }
-    elseif($r === "adminPageConfig"){ 
-        $resposta = adminConfigControl($peticio, $resposta, $contenidor);
-    }
-    elseif($r === "adminPageBlock"){ 
-        $resposta = adminBlockControl($peticio, $resposta, $contenidor);
-    }
     elseif($r === "createuser"){   
         $resposta = crearUsuari($peticio,$resposta,$contenidor);
     }
-    elseif($r === "timeConfigs"){ 
-        $resposta = timeControl($peticio, $resposta, $contenidor);
+    elseif($r === "signup"){ 
+        $resposta = signUpPageControl($peticio, $resposta, $contenidor);
     }
     elseif($r === "login"){   
         $resposta = login($peticio,$resposta,$contenidor);
     }
     elseif($r === "mainPage"){   
-        $resposta = mostrarReserves($peticio,$resposta,$contenidor);
+        $resposta = isAuth($peticio,$resposta,$contenidor,"mostrarReserves");
     }
     elseif($r === "reserve"){   
-        $resposta = ferReserva($peticio,$resposta,$contenidor);
+        $resposta = isAuth($peticio,$resposta,$contenidor, "ferReserva");
     }
-    elseif($r === "profilePage"){   
-        $resposta = profilePageControl($peticio,$resposta,$contenidor);
+    elseif($r === "adminPageRes"){ 
+        $resposta = isAuth($peticio, $resposta, $contenidor, "adminResControl");
     }
-    elseif($r === "actualitzarDades"){
-        $resposta = actualitzarDades($peticio, $resposta, $contenidor);
+    elseif($r === "adminPageConfig"){ 
+        $resposta = isAuth($peticio, $resposta, $contenidor, "adminConfigControl");
+    }
+    elseif($r === "adminPageBlock"){ 
+        $resposta = isAuth($peticio, $resposta, $contenidor, "adminBlockControl");
+    }
+    elseif($r === "timeConfigs"){ 
+        $resposta = isAuth($peticio, $resposta, $contenidor, "timeControl");
     }
     elseif($r === "deleteRes"){
-        $resposta = deleteResControl($peticio,$resposta,$contenidor);
+        $resposta = isAuth($peticio,$resposta,$contenidor, "deleteResControl");
     }
     elseif($r === "deleteDate"){   
-        $resposta = deleteDateControl($peticio,$resposta,$contenidor);
+        $resposta = isAuth($peticio,$resposta,$contenidor, "deleteDateControl");
     }
     elseif($r === "addBlockDate"){   
-        $resposta = addBlockDateControl($peticio,$resposta,$contenidor);
+        $resposta = isAuth($peticio,$resposta,$contenidor, "addBlockDateControl");
+    }
+    elseif($r === "profilePage"){   
+        $resposta = isAuth($peticio,$resposta,$contenidor, "profilePageControl");
+    }
+    elseif($r === "actualitzarDades"){
+        $resposta = isAuth($peticio, $resposta, $contenidor, "actualitzarDades");
+    }
+    elseif($r === "destroySession"){
+        $resposta = destroySession($peticio, $resposta, $contenidor);
     }
     else {
         var_dump($r);
