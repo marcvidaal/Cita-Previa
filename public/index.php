@@ -19,6 +19,7 @@
     require_once "../src/2-controls/showReserves.php";
     require_once "../src/2-controls/reserveControl.php";
     require_once "../src/2-controls/profilePageControl.php";
+    require_once "../src/2-controls/reservatControl.php";
 
 
     /* ----- MODELS ----- */
@@ -73,15 +74,15 @@
     }
     elseif($r === "mainPage"){   
         $resposta = mostrarReserves($peticio,$resposta,$contenidor);
-        // $resposta = mainController($peticio, $resposta, $contenidor);
     }
     elseif($r === "reserve"){   
         $resposta = ferReserva($peticio,$resposta,$contenidor);
-        // $resposta = mainController($peticio, $resposta, $contenidor);
     }
     elseif($r === "profilePage"){   
         $resposta = profilePageControl($peticio,$resposta,$contenidor);
-        // $resposta = mainController($peticio, $resposta, $contenidor);
+    }
+    elseif($r === "reservat"){   
+        $resposta = reservaEnviada($peticio, $resposta, $contenidor);
     }
 
 

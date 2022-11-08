@@ -86,7 +86,26 @@
                                                 }
                                                 elseif ($j>0 and $i>0) {
                                                     ?>
-                                                <td><button type="button" class="btn btn-primary" id="<?php echo 'Carril'.$j.'Hora'.$hores[$i-1];?>">Next</button></td>
+                                                <td>
+                                                    <form action="index.php" method="POST">
+                                                        <input type="hidden" name="r" value="reservat">
+                                                        <button type="submit" name="reserveAction" class="btn btn-primary" value="<?php echo $j.'_'.$data." ".$hores[$i-1].":00";?>" id="<?php echo $j.'-'.$hores[$i-1];?>">Reserve</button>
+                                                    </form>
+                                                    <!-- <script>
+                                                        var a = 'echo aaa'; 
+
+
+                                                    $('input[id=closedMonday]').click(function enable_disable() {
+                                                    if (this.checked) {
+                                                        $("input[name=startMonday]").prop('disabled', true);
+                                                        $("input[name=endMonday]").prop('disabled', true);
+                                                    } else {
+                                                        $("input[name=startMonday]").prop('disabled', false);
+                                                        $("input[name=endMonday]").prop('disabled', false);
+                                                    }
+                                                    });
+                                                    </script> -->
+                                                </td>
 <?php
                                                 }
 
