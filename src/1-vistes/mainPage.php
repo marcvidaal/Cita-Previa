@@ -77,6 +77,8 @@
                                
                                 
                                 <?php
+
+                                if(isset($periodesPossibles)){
                                     echo "<table>";
                                     for ($i=0; $i <= $periodesPossibles; $i++) { 
                                         echo "<tr>";
@@ -108,40 +110,53 @@
                                                 <td>
                                                     <form action="index.php" method="POST">
                                                         <input type="hidden" name="r" value="reservat">
-                                                        <button type="submit" name="reserveAction" class="btn btn-primary" value="<?php echo $j.'_'.$data." ".$hores[$i-1].":00";?>" id="<?php echo $j.'-'.$hores[$i-1];?>">Reserve</button>
+                                                        <?php
+                                                        
+                                                        $reservaDisponible = true;
+                                                        foreach ($horarisOcupats as $entry) {
+                                                            if ($entry["reserva_carril_id"]==$j and $entry["reserva_data_entrada"]==$data." ".$hores[$i-1].":00") {
+                                                                $reservaDisponible = false;
+                                                                break;
+                                                            }
+                                                            else {
+                                                                $reservaDisponible = true;
+                                                            }
+
+                                                        }
+
+                                                        if($reservaDisponible===true){?>
+
+                                                            <button type="submit" name="reserveAction" class="btn btn-primary" value="<?php echo $j.'_'.$data." ".$hores[$i-1].":00";?>" id="<?php echo $j.'-'.$hores[$i-1];?>">Reserve</button>
+
+                                                            <?php
+                                                        }
+                                                        else {?>
+                                                            <p>no disp</p>
+                                                            <?php
+                                                        }
+                                                        
+                                                        // if ($j==) {
+
+                                                        // }
+                                                        // else {
+                                                            
+                                                        // }
+                                                        
+                                                        ?>
                                                     </form>
-                                                    <!-- <script>
-                                                        var a = 'echo aaa'; 
-
-
-                                                    $('input[id=closedMonday]').click(function enable_disable() {
-                                                    if (this.checked) {
-                                                        $("input[name=startMonday]").prop('disabled', true);
-                                                        $("input[name=endMonday]").prop('disabled', true);
-                                                    } else {
-                                                        $("input[name=startMonday]").prop('disabled', false);
-                                                        $("input[name=endMonday]").prop('disabled', false);
-                                                    }
-                                                    });
-                                                    </script> -->
                                                 </td>
 <?php
-                                                }
-
-
-                                                
-
-                                                
-
-                                                
-
-                                               
+                                                }         
                                                  }
                                         echo "</tr>";
                                     }
                                     echo "</table>";
                                     
-                                     ?>
+                                     
+                                }
+                                ?>
+
+                                    
 
 >>>>>>> 2407cf8 (Afegeix quasi totes les hores a la taula)
                                 </div>

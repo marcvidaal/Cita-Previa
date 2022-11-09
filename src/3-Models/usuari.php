@@ -37,7 +37,7 @@ namespace bd;
     public function llistarReserves($email)
     {
         // $stm = $this->sql->prepare('select reserva_data_entrada, reserva_data_sortida, reserva_carril_id from reserva_tb where reserva_client_email=:reserva_client_email;');
-        $stm = $this->sql->prepare('select r.reserva_data_entrada, r.reserva_data_sortida, c.carril_numero from reserva_tb r join carril_tb c on(r.reserva_carril_id=c.carril_id) where r.reserva_client_email=:reserva_client_email;');
+        $stm = $this->sql->prepare('select r.reserva_data_entrada, r.reserva_data_sortida, c.carril_numero from reserva_tb r join carril_tb c on(r.reserva_carril_id=c.carril_id) where r.reserva_client_email=:reserva_client_email and r.reserva_data_entrada > NOW();');
         $stm->execute([':reserva_client_email' => $email]);
 
         $entries = $stm->fetchAll(\PDO::FETCH_ASSOC) ;
@@ -154,7 +154,22 @@ namespace bd;
         $stm = $this->sql->prepare('insert into reserva_tb (reserva_data_entrada, reserva_data_sortida, reserva_carril_id, reserva_client_email) values (:reserva_data_entrada, :reserva_data_sortida, :carril, :email)');
         $stm->execute([':reserva_data_entrada' => $reservaDataEntrada, ':reserva_data_sortida' => $reservaDataSortida, ':carril' => $carril, ':email' => $email]);
     }
-    
+
+
+
+    //prova2
+
+    public function horariOcupat()
+    {
+        $stm = $this->sql->prepare('select reserva_data_entrada,reserva_carril_id from reserva_tb where reserva_data_entrada > NOW();');
+        $stm->execute();
+        return $stm->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
+
+
+
+
 
 
  }
