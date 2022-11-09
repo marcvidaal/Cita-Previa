@@ -64,6 +64,10 @@ class Contenidor
     {
         return new \bd\admin($this->connexio());;
     }
+    public function adminUser()
+    {
+        return new \bd\adminUser($this->connexio());;
+    }
 
 
 }

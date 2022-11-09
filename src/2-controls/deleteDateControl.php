@@ -2,14 +2,11 @@
 
     function deleteDateControl($peticio, $resposta, $contenidor){
 
-        $id = $peticio->get(INPUT_GET,"id");        
-
         $admin = $contenidor->admin();
 
+        $id = $peticio->get(INPUT_GET,"id");        
         $admin->deleteDate($id);
-        $dates = $admin->llistBlockDates();
 
-        $resposta->set("dates", $dates);
-        $resposta->setTemplate("adminPageBlock.php");
+        $resposta->redirect("location: index.php?r=adminPageBlock");
         return $resposta;
     }
