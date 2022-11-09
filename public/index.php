@@ -24,14 +24,11 @@
     require_once "../src/2-controls/deleteDateControl.php";
     require_once "../src/2-controls/addBlockDateControl.php";
     require_once "../src/2-controls/destroySesion.php";
-<<<<<<< HEAD
     require_once "../src/2-controls/reservatControl.php";
-=======
     require_once "../src/2-controls/adminUserControl.php";
     require_once "../src/2-controls/toggleAdminControl.php";
     require_once "../src/2-controls/deleteUserControl.php";
     require_once "../src/2-controls/deleteUserResControl.php";
->>>>>>> 5c1c37a (jasta)
 
     /* ----- CONTROLERS ----- */
     require_once "../src/3-models/connexio.php";
