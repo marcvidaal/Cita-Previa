@@ -10,10 +10,15 @@ function ferReserva($peticio, $resposta, $contenidor){
     //Array que retorna els dies bloquejats  retorna totes les dates bloquejades
     $diesBloquejats= $usuari->getBlockedDays();
 
+    $blockedDay;
+    
     foreach($diesBloquejats as $entry) {
         if($data == $entry["dia_bloquejat"]){
-            var_dump('this day is not available');
-            die();
+            
+            $blockedDay=1;
+            $resposta->set("blockedDay", $blockedDay);
+            $resposta->setTemplate("mainPage.php");
+            return $resposta;
         }
     }
 
@@ -66,6 +71,10 @@ function ferReserva($peticio, $resposta, $contenidor){
     $resposta->set("hores", $hores);
     $resposta->set("data", $data);
     $resposta->set("horarisOcupats", $horarisOcupats);
+    $resposta->set("nomDiaSetmana", $nomDiaSetmana);
+    
+    
+
 
     $resposta->setTemplate("mainPage.php");
 
