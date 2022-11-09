@@ -98,3 +98,19 @@ $(document).ready(function () {
         dom: '<"toolbar">frtip',
     });
 });
+
+//test if password equals confirm password
+$('#alertPassword').hide();
+
+$('#submit').click(function match_contrasenya() {
+  if ($('#password').val() != $('#confirm').val()) {
+    $('#alertPassword').show();
+    $("form").submit(function(e){
+      e.preventDefault(e);
+  });
+  } 
+  else{
+    $('#alertPassword').hide();
+    $("form").unbind('submit').submit();
+  }
+});
