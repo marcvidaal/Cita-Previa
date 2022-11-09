@@ -72,18 +72,28 @@ function ferReserva($peticio, $resposta, $contenidor){
         }
     }
 
+
+
     // var_dump($hores);
     // die();
+    $horarisOcupats=$usuari->horariOcupat();
+    
+    // print_r($horarisOcupats);
+    // die();
+    
+    
+
 
     $resposta->set("periodesPossibles", $periodesPossibles);
     $resposta->set("hores", $hores);
     $resposta->set("data", $data);
-
+    $resposta->set("horarisOcupats", $horarisOcupats);
+    
     
 
 
 
-    $email = $peticio->getRaw("SESSION", "user");
+    // $email = $peticio->getRaw("SESSION", "user");
 
     
 
