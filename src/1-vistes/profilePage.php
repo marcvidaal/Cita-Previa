@@ -41,7 +41,7 @@
                                 </div>
 
                                 <div class="col-md-6">
-                                    <input type="password" placeholder="Confirm New Password" name="confirm"                    class="form-control">
+                                    <input type="password" placeholder="Confirm New Password" name="confirm"    id="confirm"   class="form-control">
                                 </div>
                                 
                             </div>
@@ -51,6 +51,12 @@
                                 <div class="col-md-12 ms-3">
                                     <input type="checkbox" name="showPassword" onclick="togglePassword()">
                                     <label id="etiquetaShowPassword" for="showPassword">Show password</label>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12 mt-1" id="alertPassword">
+                                <div class="alert alert-danger" role="alert" id="alertPassword">The passwords not match</div>
                                 </div>
                             </div>
                             
@@ -65,7 +71,7 @@
                                 <div class="col-6 col-sm-6 col-md-6 NextButtonSignUp">
                                     <!-- <input type="submit" value="Next" name="next"                                           class="btn btn-primary"> -->
                                     <!-- vigilar amb el text end ja que quan es torna en mida telefon mobil l'alinea de totes maneres a la dreta i queda mal soci -->
-                                    <button type="submit" class="btn btn-primary">Save changes</button>
+                                    <button type="submit" class="btn btn-primary" id="submit">Save changes</button>
 
                                 </div>    
                          </div>
@@ -74,6 +80,7 @@
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-        <script src="../public/system.js"></script>
+          <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+        <script src="script.js"></script>
     </body>
 </html> 
