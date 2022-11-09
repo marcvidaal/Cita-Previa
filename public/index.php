@@ -24,6 +24,7 @@
     require_once "../src/2-controls/deleteDateControl.php";
     require_once "../src/2-controls/addBlockDateControl.php";
     require_once "../src/2-controls/destroySesion.php";
+    require_once "../src/2-controls/reservatControl.php";
 
     /* ----- CONTROLERS ----- */
     require_once "../src/3-models/connexio.php";
@@ -103,6 +104,9 @@
     }
     elseif($r === "destroySession"){
         $resposta = destroySession($peticio, $resposta, $contenidor);
+    }
+    elseif($r === "reservat"){   
+        $resposta = reservaEnviada($peticio, $resposta, $contenidor);
     }
     else {
         var_dump($r);
