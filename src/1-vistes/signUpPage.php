@@ -46,7 +46,7 @@
                                 </div>
 
                                 <div class="col-md-6">
-                                    <input type="password" placeholder="Confirm" name="confirm" required                    class="form-control">
+                                    <input type="password" placeholder="Confirm" name="confirm"id="confirm" required                    class="form-control">
                                 </div>
                                 
                             </div>
@@ -57,6 +57,12 @@
                                     <label id="etiquetaShowPassword" for="showPassword">Show password</label>
                                 </div>
                             </div>
+
+                            <div class="row">
+                                <div class="col-md-12 mt-1" id="alertPassword">
+                                <div class="alert alert-danger" role="alert" id="alertPassword">The passwords not match</div>
+                                </div>
+                            </div>
                             
                         </div>
                         <div class="row mt-4 mb-4">
@@ -64,7 +70,7 @@
                                     <a href="index.php"  class="btn text-primary" >Sign in instead</a>
                                 </div>
                                 <div class="col-6 col-sm-6 col-md-6 NextButtonSignUp">
-                                    <button type="submit" class="btn btn-primary">Next</button>
+                                    <button type="submit" class="btn btn-primary" id="submit">Next</button>
                                 </div>
                          </div>
                     </form>
@@ -72,6 +78,7 @@
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
         <script src="script.js"></script>
     </body>
 </html>
