@@ -40,7 +40,7 @@
                             <input type="hidden" name="r" value="reserve">
                                 <div class="row d-flex justify-content-center align-items-center m-4">
                                     <div class="col-sm-12">
-                                        <input type="date" name="data" class="rounded form-control text-center" min="<?php echo date('Y-m-d'); ?>" max="<?php echo date('Y-m-d', strtotime(date('Y-m-d'). ' + 1 month')); ?>">
+                                        <input type="date" name="data" class="rounded form-control text-center" required min="<?php echo date('Y-m-d'); ?>" max="<?php echo date('Y-m-d', strtotime(date('Y-m-d'). ' + 1 month')); ?>">
                                     </div>
                                 </div>
                                 <div class="row d-flex justify-content-center align-items-center m-4">
@@ -53,13 +53,16 @@
 
 
 
-                        <div class="row">
-                                <div class="col-sm-10">
+                        <div class="row d-flex justify-content-center align-items-center">
+                                <div class="col-sm-10 d-flex justify-content-center">
                                
                                 
                                 <?php
-
-                                if(isset($periodesPossibles)){
+                                if($periodesPossibles==0 and isset($periodesPossibles)){?>
+                            <div class="alert alert-danger" role="alert">On <?php echo $nomDiaSetmana."s the swimming pool is closed. Choose another day"?></div>
+                            <?php
+                                }
+                                elseif(isset($periodesPossibles)){
                                     echo "<table>";
                                     for ($i=0; $i <= $periodesPossibles; $i++) { 
                                         echo "<tr>";
@@ -100,7 +103,6 @@
                                                             }
 
                                                         }
-
                                                         if($reservaDisponible===true){?>
 
                                                             <button type="submit" name="reserveAction" class="btn btn-primary" value="<?php echo $j.'_'.$data." ".$hores[$i-1].":00";?>" id="<?php echo $j.'-'.$hores[$i-1];?>">Reserve</button>
@@ -108,7 +110,9 @@
                                                             <?php
                                                         }
                                                         else {?>
-                                                            <p>no disp</p>
+
+                                                        <p class="d-flex justify-content-center">Ocupat</p>
+                                                            
                                                             <?php
                                                         }                                                        
                                                         ?>
@@ -122,6 +126,10 @@
                                     echo "</table>";
                                     
                                      
+                                }
+                                elseif (isset($blockedDay)) {?>
+                                    <div class="alert alert-danger" role="alert">Aquest dia està bloquejat. Prova de triar-ne un altre.</div>
+                                    <?php
                                 }
                                 ?>
 
