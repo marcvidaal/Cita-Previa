@@ -12,6 +12,8 @@
         $password = $peticio->get(INPUT_POST, "confirm");
         
 
+        $usuariDB = $usuari->comprovarCompteUsuari($email);
+
 
         if ($name!="") {
             $usuari->updateFirstName($email,$name);
@@ -27,9 +29,14 @@
         // die();
 
 
+        if ($usuariDB["client_admin"] == 0) {
+            $resposta->redirect("location: index.php?r=mainPage");
+        }
+        else{
+            $resposta->redirect("location: index.php?r=adminPageRes");
+        }
 
 
-       $resposta->redirect("location: index.php?r=mainPage");
         
         return $resposta;
     }
