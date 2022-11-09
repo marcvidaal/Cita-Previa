@@ -2,14 +2,11 @@
 
     function addBlockDateControl($peticio, $resposta, $contenidor){
 
-        $day = $peticio->get(INPUT_POST,"blkDay");        
-
         $admin = $contenidor->admin();
 
+        $day = $peticio->get(INPUT_POST,"blkDay");        
         $admin->addDate($day);
-        $dates = $admin->llistBlockDates();
 
-        $resposta->set("dates", $dates);
-        $resposta->setTemplate("adminPageBlock.php");
+        $resposta->redirect("location: index.php?r=adminPageBlock");
         return $resposta;
     }

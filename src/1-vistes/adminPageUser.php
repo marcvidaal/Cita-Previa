@@ -18,7 +18,7 @@
                 <div class="row d-flex justify-content-between g-0 mb-4">
                     <!--MY PROFILE - COLUMN-->
                     <div class="col-sm-2">
-                        <a href="index.php?r=profilePage" class="rounded btn btn-dark btn-lg">
+                        <a href="  " class="rounded btn btn-dark btn-lg">
                             My profile
                         </a>
                     </div>
@@ -62,26 +62,32 @@
                         <table class ="table table-striped" id = "taulaAdmin">
                             <thead>
                                 <tr>
-                                    <th scope="col" >#</th>
-                                    <th scope="col" >EMAIL</th>
-                                    <th scope="col" >HORA ENTRADA</th>
-                                    <th scope="col" >HORA SORTIDA</th>
-                                    <th class="col" >CARRIL</th>
-                                    <th class="col" ></th>
+                                    <th scope="col" >USER</th>
+                                    <th scope="col" >NAME</th>
+                                    <th scope="col" >SURNAME</th>
+                                    <th scope="col" >ADMIN</th>
+                                    <th scope="col" >admin</th>
+                                    <th scope="col" >reserves</th>
+                                    <th class="col" >delete</th>
                                 </tr>
                             </thead>
                             <tbody>
                             <?php 
-                            foreach ($reserves as $reserva) {
+                            foreach ($users as $user) {
                                 echo"
                                 <tr>
-                                    <td>".$reserva['reserva_id']."</td>
-                                    <td>".$reserva['reserva_client_email']."</td>
-                                    <td>".$reserva['reserva_data_entrada']."</td>
-                                    <td>".$reserva['reserva_data_sortida']."</td>
-                                    <td>".$reserva['carril_numero']."</td>
+                                    <td>".$user['client_email']."</td>
+                                    <td>".$user['client_first_name']."</td>
+                                    <td>".$user['client_second_name']."</td>
+                                    <td>".$user['client_admin']."</td>
                                     <td>
-                                        <a href='index.php?r=deleteRes&id=".$reserva['reserva_id']."' type = 'button' class='btn btn-danger btn-sm' id='".$reserva['reserva_id']."'>eliminar</a>
+                                        <a href='index.php?r=toggleAdmin&id=".$user['client_email']."&admin=".$user['client_admin']."' type = 'button' class='btn btn-danger btn-sm' id='".$user['client_email']."'>toggle</a>
+                                    </td>
+                                    <td>
+                                        <a href='index.php?r=deleteUserRes&id=".$user['client_email']."' type = 'button' class='btn btn-danger btn-sm' id='".$user['client_email']."'>delete</a>
+                                    </td>
+                                    <td>
+                                        <a href='index.php?r=deleteUser&id=".$user['client_email']."' type = 'button' class='btn btn-danger btn-sm' id='".$user['client_email']."'>X</a>
                                     </td>
                                 </tr>
                                 ";

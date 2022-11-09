@@ -24,14 +24,21 @@
     require_once "../src/2-controls/deleteDateControl.php";
     require_once "../src/2-controls/addBlockDateControl.php";
     require_once "../src/2-controls/destroySesion.php";
+<<<<<<< HEAD
     require_once "../src/2-controls/reservatControl.php";
+=======
+    require_once "../src/2-controls/adminUserControl.php";
+    require_once "../src/2-controls/toggleAdminControl.php";
+    require_once "../src/2-controls/deleteUserControl.php";
+    require_once "../src/2-controls/deleteUserResControl.php";
+>>>>>>> 5c1c37a (jasta)
 
     /* ----- CONTROLERS ----- */
     require_once "../src/3-models/connexio.php";
     require_once "../src/3-models/usuari.php";
     require_once "../src/3-models/time.php";
     require_once "../src/3-models/admin.php";
-
+    require_once "../src/3-models/adminUsers.php";
     
     /* ----- EMESET ----- */
     require_once "../src/4-Emeset/Contenidor.php";
@@ -84,6 +91,12 @@
     elseif($r === "adminPageBlock"){ 
         $resposta = isAuth($peticio, $resposta, $contenidor, "adminBlockControl");
     }
+    elseif($r === "adminPageUser"){ 
+        $resposta = isAuth($peticio, $resposta, $contenidor, "adminUserControl");
+    }
+    elseif($r === "toggleAdmin"){ 
+        $resposta = isAuth($peticio, $resposta, $contenidor, "toggleAdminControl");
+    }
     elseif($r === "timeConfigs"){ 
         $resposta = isAuth($peticio, $resposta, $contenidor, "timeControl");
     }
@@ -92,6 +105,12 @@
     }
     elseif($r === "deleteDate"){   
         $resposta = isAuth($peticio,$resposta,$contenidor, "deleteDateControl");
+    }
+    elseif($r === "deleteUser"){   
+        $resposta = isAuth($peticio,$resposta,$contenidor, "deleteUserControl");
+    }
+    elseif($r === "deleteUserRes"){   
+        $resposta = isAuth($peticio,$resposta,$contenidor, "deleteUserResControl");
     }
     elseif($r === "addBlockDate"){   
         $resposta = isAuth($peticio,$resposta,$contenidor, "addBlockDateControl");
