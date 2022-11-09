@@ -18,7 +18,7 @@
                 <div class="row d-flex justify-content-between g-0 mb-4">
                     <!--MY PROFILE - COLUMN-->
                     <div class="col-sm-2">
-                        <a href="  " class="rounded btn btn-dark btn-lg">
+                        <a href="index.php?r=profilePage" class="rounded btn btn-dark btn-lg">
                             My profile
                         </a>
                     </div>

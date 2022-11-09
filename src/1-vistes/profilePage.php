@@ -59,7 +59,7 @@
                                 <div class="col-6 col-sm-6 col-md-6 SignIntButtonSignUp">
                                     <!-- <input type="button" value="Sign in instead" name="singIn"                              class="btn text-primary"> -->
                                     <!-- <button type="button" class="btn text-primary">Discard changes</button> -->
-                                    <a class="btn text-primary" href="index.php?r=mainPage">Discard changes</a>
+                                    <a class="btn text-primary" href="index.php?r=actualitzarDades">Discard changes</a>
 
                                 </div>
                                 <div class="col-6 col-sm-6 col-md-6 NextButtonSignUp">
