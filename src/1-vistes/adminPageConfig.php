@@ -49,6 +49,11 @@
                                 BLOCK DATES
                             </a>
                         </div>
+                        <div class="row d-flex justify-content-center g-0">
+                            <a href="index.php?r=adminPageUser" class="col-sm-10 btn d-flex justify-content-center rounded g-0 mb-3 p-3 configurations">
+                                USERS
+                            </a>
+                        </div>
                     </div> 
 
                     <!--RIGHT - COLUMN-->
