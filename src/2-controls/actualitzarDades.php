@@ -13,9 +13,10 @@ function actualitzarDades($peticio, $resposta, $contenidor)
     /* ---- ACCES TO SESIONS ----  */
     $email = $peticio->getRaw("SESSION", "user");
 
-    /* ---- MODEL FUNCTIONS ----  */
+    /* ---- MODEL FUNCTIONS VARIABLES ----  */
     $usuariDB = $usuari->comprovarCompteUsuari($email);
 
+    /* ---- MODEL FUNCTIONS ----  */
     if ($name != "") {$usuari->updateFirstName($email, $name);}
     if ($secondName != "") {$usuari->updateSecondName($email, $secondName);}
     if ($password != "") {$usuari->updatePassword($email, $password);}
