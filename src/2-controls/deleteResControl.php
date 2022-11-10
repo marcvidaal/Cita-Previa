@@ -1,12 +1,15 @@
 <?php
 
-    function deleteResControl($peticio, $resposta, $contenidor){
+function deleteResControl($peticio, $resposta, $contenidor)
+{
+    /* ---- ACCES TO DATABASE ----  */
+    $admin = $contenidor->admin();
 
-        $admin = $contenidor->admin();
+    
 
-        $id = $peticio->get(INPUT_GET,"id");        
-        $admin->deleteRes($id);
+    $id = $peticio->get(INPUT_GET, "id");
+    $admin->deleteRes($id);
 
-        $resposta->redirect("location: index.php?r=adminPageRes");
-        return $resposta;
-    }
+    $resposta->redirect("location: index.php?r=adminPageRes");
+    return $resposta;
+}

@@ -1,43 +1,38 @@
 <?php
 
-    function actualitzarDades($peticio, $resposta, $contenidor){
-
-        $usuari = $contenidor->usuari();
-
-        $email = $peticio->getRaw("SESSION", "user");
-
-        $name = $peticio->get(INPUT_POST, "firstName");
-        
-        $secondName = $peticio->get(INPUT_POST, "secondName");
-        $password = $peticio->get(INPUT_POST, "confirm");
-        
-
-        $usuariDB = $usuari->comprovarCompteUsuari($email);
+function actualitzarDades($peticio, $resposta, $contenidor)
+{
+    /* ---- ACCES TO DATABASE ----  */
+    $usuari = $contenidor->usuari();
 
 
-        if ($name!="") {
-            $usuari->updateFirstName($email,$name);
-        }
-        if ($secondName!="") {
-            $usuari->updateSecondName($email,$secondName);
-        }
-        if ($password!="") {
-            $usuari->updatePassword($email,$password);
-        }
+    
+    $email = $peticio->getRaw("SESSION", "user");
 
-        // var_dump($usuari->provaa($email));
-        // die();
+    $name = $peticio->get(INPUT_POST, "firstName");
+
+    $secondName = $peticio->get(INPUT_POST, "secondName");
+    $password = $peticio->get(INPUT_POST, "confirm");
 
 
-        if ($usuariDB["client_admin"] == 0) {
-            $resposta->redirect("location: index.php?r=mainPage");
-        }
-        else{
-            $resposta->redirect("location: index.php?r=adminPageRes");
-        }
+    $usuariDB = $usuari->comprovarCompteUsuari($email);
 
 
-        
-        return $resposta;
+    if ($name != "") {
+        $usuari->updateFirstName($email, $name);
+    }
+    if ($secondName != "") {
+        $usuari->updateSecondName($email, $secondName);
+    }
+    if ($password != "") {
+        $usuari->updatePassword($email, $password);
     }
 
+    if ($usuariDB["client_admin"] == 0) {
+        $resposta->redirect("location: index.php?r=mainPage");
+    } else {
+        $resposta->redirect("location: index.php?r=adminPageRes");
+    }
+
+    return $resposta;
+}

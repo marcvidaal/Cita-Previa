@@ -1,8 +1,9 @@
 <?php
 
-    function signUpPageControl($peticio, $resposta, $contenidor){
+function signUpPageControl($peticio, $resposta, $contenidor)
+{
 
-        $resposta->setTemplate("signUpPage.php");
-        
-        return $resposta;
-    }
+    $resposta->setTemplate("signUpPage.php");
+
+    return $resposta;
+}

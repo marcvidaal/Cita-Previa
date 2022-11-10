@@ -1,8 +1,12 @@
 <?php
 
-function mostrarReserves($peticio, $resposta, $contenidor){
-
+function mostrarReserves($peticio, $resposta, $contenidor)
+{
+    /* ---- ACCES TO DATABASE ----  */
     $usuari = $contenidor->usuari();
+
+
+
 
     $email = $peticio->getRaw("SESSION", "user");
 

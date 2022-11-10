@@ -1,9 +1,9 @@
 <?php
 
-    function homeControl($peticio, $resposta, $contenidor){
+function homeControl($peticio, $resposta, $contenidor)
+{
 
-        $resposta->setTemplate("signInPage.php");
-        
-        return $resposta;
-    }
+    $resposta->setTemplate("signInPage.php");
 
+    return $resposta;
+}

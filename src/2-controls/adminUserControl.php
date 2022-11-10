@@ -1,12 +1,16 @@
 <?php
 
-    function adminUserControl($peticio, $resposta, $contenidor){
+function adminUserControl($peticio, $resposta, $contenidor)
+{
+    /* ---- ACCES TO DATABASE ----  */
+    $adminUser = $contenidor->adminUser();
 
-        $adminUser = $contenidor->adminUser();
-        $users = $adminUser->pullUsers();
-        
-        $resposta->set("users", $users);
-        $resposta->setTemplate("adminPageUser.php");
-        
-        return $resposta;
-    }
+
+    
+    $users = $adminUser->pullUsers();
+
+    $resposta->set("users", $users);
+    $resposta->setTemplate("adminPageUser.php");
+
+    return $resposta;
+}
