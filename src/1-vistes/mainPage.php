@@ -49,14 +49,8 @@
                                     </div>
                                 </div>
                         </form>
-                    
-
-
-
                         <div class="row d-flex justify-content-center align-items-center">
                                 <div class="col-sm-10 d-flex justify-content-center">
-                               
-                                
                                 <?php
                                 if($periodesPossibles==0 and isset($periodesPossibles)){?>
                             <div class="alert alert-danger" role="alert">On <?php echo $nomDiaSetmana."s the swimming pool is closed. Choose another day"?></div>
@@ -74,16 +68,10 @@
                                                     <th>Carril <?=$j;?></th>
                                                 <?php
                                                 }
-
-                                                elseif ($j==0 and $i>0) {
-                                                    
+                                                elseif ($j==0 and $i>0) { 
                                                     ?>
-                                                
                                                     <td><?=$hores[$i-1].' '.$hores[$i];?></td>
-
-
                                                     <?php
-
                                                 }
                                                 elseif ($j>0 and $i>0) {
                                                     ?>
@@ -91,7 +79,6 @@
                                                     <form action="index.php" method="POST">
                                                         <input type="hidden" name="r" value="reservat">
                                                         <?php
-                                                        
                                                         $reservaDisponible = true;
                                                         foreach ($horarisOcupats as $entry) {
                                                             if ($entry["reserva_carril_id"]==$j and $entry["reserva_data_entrada"]==$data." ".$hores[$i-1].":00") {
@@ -101,55 +88,40 @@
                                                             else {
                                                                 $reservaDisponible = true;
                                                             }
-
                                                         }
                                                         if($reservaDisponible===true){?>
-
                                                             <button type="submit" name="reserveAction" class="btn btn-primary" value="<?php echo $j.'_'.$data." ".$hores[$i-1].":00";?>" id="<?php echo $j.'-'.$hores[$i-1];?>">Reserve</button>
-
                                                             <?php
                                                         }
                                                         else {?>
-
                                                         <p class="d-flex justify-content-center">Ocupat</p>
-                                                            
                                                             <?php
                                                         }                                                        
                                                         ?>
                                                     </form>
                                                 </td>
-<?php
+                                                <?php
                                                 }         
                                                  }
                                         echo "</tr>";
                                     }
-                                    echo "</table>";
-                                    
-                                     
+                                    echo "</table>";   
                                 }
                                 elseif (isset($blockedDay)) {?>
                                     <div class="alert alert-danger" role="alert">Aquest dia està bloquejat. Prova de triar-ne un altre.</div>
                                     <?php
                                 }
                                 ?>
-
-                                    
-
                                 </div>
-        
                             </div> 
-                       
                     </div>  
                     <!--LEFT - COLUMN-->
-                    
                 </div>
                 <!--ROW - BOTTOM-->
                 <div class="row g-0 justify-content-end"> <!--float-end-->
                     <!--COLUMN - RESEVES-->
                     <div class="box col-sm-12 rounded">
                         <div class="scrollmenu rounded">
-
-
                             <?php foreach($list as $entry) { ?>
                                 <div class="col-sm-3 p-3 m-3 rounded text-light reserves">
                                 <p class="m-2">Inici: <?=$entry["reserva_data_entrada"];?></p>
