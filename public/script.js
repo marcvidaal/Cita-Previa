@@ -114,3 +114,12 @@ $('#submit').click(function match_contrasenya() {
     $("form").unbind('submit').submit();
   }
 });
+
+/* ----- ICS CALENDAIR ----- */
+function createICS() 
+{
+  document.getElementById("")
+  var cal = ics();
+  cal.addEvent(subject, description, location, begin, end);
+  cal.download(filename);
+}
