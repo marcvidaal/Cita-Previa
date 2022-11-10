@@ -98,3 +98,13 @@ $(document).ready(function () {
         dom: '<"toolbar">frtip',
     });
 });
+
+
+/* ----- ICS CALENDAIR ----- */
+function createICS() 
+{
+  document.getElementById("")
+  var cal = ics();
+  cal.addEvent(subject, description, location, begin, end);
+  cal.download(filename);
+}
