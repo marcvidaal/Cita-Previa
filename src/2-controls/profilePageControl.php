@@ -1,9 +1,9 @@
 <?php
 
-    function profilePageControl($peticio, $resposta, $contenidor){
+function profilePageControl($peticio, $resposta, $contenidor)
+{
+    /* ---- REDIRECTS ----  */
+    $resposta->setTemplate("profilePage.php");
 
-        $resposta->setTemplate("profilePage.php");
-        
-        return $resposta;
-    }
-
+    return $resposta;
+}

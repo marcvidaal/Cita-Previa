@@ -1,30 +1,28 @@
 <?php
 
-    function reservaEnviada($peticio, $resposta, $contenidor){
+function reservaEnviada($peticio, $resposta, $contenidor)
+{
+    /* ---- ACCES TO DATABASE ----  */
+    $usuari = $contenidor->usuari();
 
-        $usuari=$contenidor->usuari();
-        $valorCarrilHora = $peticio->get(INPUT_POST, "reserveAction");
-        
-        $arr1 = explode("_",$valorCarrilHora);
+    /* ---- ACCES TO VARIABLES ----  */
+    $valorCarrilHora = $peticio->get(INPUT_POST, "reserveAction");
 
-        $carril=$arr1[0];
-        $dateTime=$arr1[1];
+    /* ---- VARIABLES ----  */
+    $arr1 = explode("_", $valorCarrilHora);
+    $carril = $arr1[0];
+    $dateTime = $arr1[1];
 
-        $dateTimeSortida=$usuari->reservaDateTimeSortida($dateTime);
-        $email = $peticio->getRaw("SESSION", "user");
+    /* ---- ACCES TO SESIONS ----  */
+    $email = $peticio->getRaw("SESSION", "user");
 
-        $usuari->inserirReserva($dateTime,$dateTimeSortida,$carril,$email);
+    /* ---- MODEL FUNCTIONS VARIABLES ----  */
+    $dateTimeSortida = $usuari->reservaDateTimeSortida($dateTime);
+    
+    /* ---- MODEL FUNCTIONS ----  */
+    $usuari->inserirReserva($dateTime, $dateTimeSortida, $carril, $email);
 
-
-
-
-
-        //mirar si fa falta passar a int num carril
-
-        
-        $resposta->redirect("location: index.php?r=mainPage");
-        
-        
-        return $resposta;
-    }
-
+    /* ---- REDIRECTS ----  */
+    $resposta->redirect("location: index.php?r=mainPage");
+    return $resposta;
+}

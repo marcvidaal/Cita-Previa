@@ -1,12 +1,18 @@
 <?php
 
-    function addBlockDateControl($peticio, $resposta, $contenidor){
+function addBlockDateControl($peticio, $resposta, $contenidor)
+{
+    /* ---- ACCES TO DATABASE ----  */
+    $admin = $contenidor->admin();
 
-        $admin = $contenidor->admin();
+    /* ---- ACCES TO VARIABLES ----  */
+    $day = $peticio->get(INPUT_POST, "blkDay");
 
-        $day = $peticio->get(INPUT_POST,"blkDay");        
-        $admin->addDate($day);
+    /* ---- MODEL FUNCTIONS ----  */
+    $admin->addDate($day);
 
-        $resposta->redirect("location: index.php?r=adminPageBlock");
-        return $resposta;
-    }
+    /* ---- REDIRECTS ----  */
+    $resposta->redirect("location: index.php?r=adminPageBlock");
+
+    return $resposta;
+}

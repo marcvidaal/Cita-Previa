@@ -1,9 +1,9 @@
 <?php
 
-    function mainController($peticio, $resposta, $contenidor){
+function mainController($peticio, $resposta, $contenidor)
+{
+    /* ---- REDIRECTS ----  */
+    $resposta->setTemplate("mainPage.php");
 
-        $resposta->setTemplate("mainPage.php");
-        
-        return $resposta;
-    }
-
+    return $resposta;
+}

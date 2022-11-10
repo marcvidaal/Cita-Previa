@@ -1,12 +1,18 @@
 <?php
 
-    function deleteDateControl($peticio, $resposta, $contenidor){
+function deleteDateControl($peticio, $resposta, $contenidor)
+{
+    /* ---- ACCES TO DATABASE ----  */
+    $admin = $contenidor->admin();
 
-        $admin = $contenidor->admin();
+    /* ---- ACCES TO VARIABLES ----  */
+    $id = $peticio->get(INPUT_GET, "id");
 
-        $id = $peticio->get(INPUT_GET,"id");        
-        $admin->deleteDate($id);
+    /* ---- MODEL FUNCTIONS ----  */
+    $admin->deleteDate($id);
 
-        $resposta->redirect("location: index.php?r=adminPageBlock");
-        return $resposta;
-    }
+    /* ---- REDIRECTS ----  */
+    $resposta->redirect("location: index.php?r=adminPageBlock");
+    
+    return $resposta;
+}

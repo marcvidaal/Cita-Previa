@@ -1,8 +1,9 @@
 <?php
 
-    function signInPageControl($peticio, $resposta, $contenidor){
+function signInPageControl($peticio, $resposta, $contenidor)
+{
+    /* ---- REDIRECTS ----  */
+    $resposta->setTemplate("signInPage.php");
 
-        $resposta->setTemplate("signInPage.php");
-        
-        return $resposta;
-    }
+    return $resposta;
+}

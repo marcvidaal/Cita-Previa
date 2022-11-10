@@ -1,12 +1,18 @@
 <?php
 
-    function adminConfigControl($peticio, $resposta, $contenidor){
+function adminConfigControl($peticio, $resposta, $contenidor)
+{
+    /* ---- ACCES TO DATABASE ----  */
+    $time = $contenidor->time();
 
-        $time = $contenidor->time();
-        $times = $time->pullTime();
-        
-        $resposta->set("times", $times);
-        $resposta->setTemplate("adminPageConfig.php");
-        
-        return $resposta;
-    }
+    /* ---- MODEL FUNCTIONS ----  */
+    $times = $time->pullTime();
+
+    /* ---- ACCES TO VARIABLES IN VEWS ----  */
+    $resposta->set("times", $times);
+    
+    /* ---- REDIRECTS ----  */
+    $resposta->setTemplate("adminPageConfig.php");
+
+    return $resposta;
+}

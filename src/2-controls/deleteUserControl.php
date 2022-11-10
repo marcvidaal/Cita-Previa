@@ -1,13 +1,18 @@
 <?php
 
-    function deleteUserControl($peticio, $resposta, $contenidor){
+function deleteUserControl($peticio, $resposta, $contenidor)
+{
+    /* ---- ACCES TO DATABASE ----  */
+    $adminUser = $contenidor->adminUser();
 
-        $adminUser = $contenidor->adminUser();
+    /* ---- ACCES TO VARIABLES ----  */
+    $email = $peticio->get(INPUT_GET, "id");
 
-        //CRIDEM LA FUNCIO QUE ELIMINARA L'USUARI
-        $email = $peticio->get(INPUT_GET,"id"); 
-        $adminUser->deleteUser($email);
+    /* ---- MODEL FUNCTIONS ----  */
+    $adminUser->deleteUser($email);
 
-        $resposta->redirect("location: index.php?r=adminPageUser");
-        return $resposta;
-    }
+    /* ---- REDIRECTS ----  */
+    $resposta->redirect("location: index.php?r=adminPageUser");
+    
+    return $resposta;
+}

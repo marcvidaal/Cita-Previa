@@ -1,12 +1,18 @@
 <?php
 
-    function adminResControl($peticio, $resposta, $contenidor){
+function adminResControl($peticio, $resposta, $contenidor)
+{
+    /* ---- ACCES TO DATABASE ----  */
+    $admin = $contenidor->admin();
 
-        $admin = $contenidor->admin();
-        $reserves = $admin->pullRes();
-        
-        $resposta->set("reserves", $reserves);
-        $resposta->setTemplate("adminPageRes.php");
-        
-        return $resposta;
-    }
+    /* ---- MODEL FUNCTIONS VARIABLES ----  */
+    $reserves = $admin->pullRes();
+
+    /* ---- ACCES TO VARIABLES IN VEWS ----  */
+    $resposta->set("reserves", $reserves);
+    
+    /* ---- REDIRECTS ----  */
+    $resposta->setTemplate("adminPageRes.php");
+
+    return $resposta;
+}
