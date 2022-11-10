@@ -5,11 +5,11 @@ function toggleAdminControl($peticio, $resposta, $contenidor)
     /* ---- ACCES TO DATABASE ----  */
     $adminUser = $contenidor->adminUser();
 
-    //RECUPEREM EL USUARI I SI ES O NO ADMIN
+    /* ---- ACCES TO VARIABLES ----  */
     $id = $peticio->get(INPUT_GET, "id");
     $admin = $peticio->get(INPUT_GET, "admin");
 
-    //FEM LA FUNCIO TOGGLE ADMIN
+    /* ---- MODEL FUNCTIONS VARIABLES ----  */
     if ($admin == 1) {
         $admin = 0;
         $adminUser->toggleAdmin($id, $admin);
@@ -18,6 +18,7 @@ function toggleAdminControl($peticio, $resposta, $contenidor)
         $adminUser->toggleAdmin($id, $admin);
     }
 
+    /* ---- REDIRECTS ----  */
     $resposta->redirect("location: index.php?r=adminPageUser");
 
     return $resposta;

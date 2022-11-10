@@ -5,10 +5,7 @@ function timeControl($peticio, $resposta, $contenidor)
     /* ---- ACCES TO DATABASE ----  */
     $time = $contenidor->time();
 
-
-    
-
-    /* ---- DAYS ---- */
+    /* ---- ACCES TO VARIABLES ----  */
     $weekdays = array(
         /* ---- MONDAY EDIT ---- */
         "dilluns" => $monday = array(
@@ -54,9 +51,11 @@ function timeControl($peticio, $resposta, $contenidor)
         )
     );
 
+    /* ---- MODEL FUNCTIONS ----  */
     $time->updateTime($weekdays);
-    $resposta->redirect("location: index.php?r=adminPageConfig");
 
+    /* ---- REDIRECTS ----  */
+    $resposta->redirect("location: index.php?r=adminPageConfig");
 
     return $resposta;
 }
