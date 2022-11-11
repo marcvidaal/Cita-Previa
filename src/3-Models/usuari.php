@@ -34,6 +34,7 @@ namespace bd;
         return $stm->fetch(\PDO::FETCH_ASSOC);
     }
 
+/**------------------------------------------------ */
     public function llistarReserves($email)
     {
         // $stm = $this->sql->prepare('select reserva_data_entrada, reserva_data_sortida, reserva_carril_id from reserva_tb where reserva_client_email=:reserva_client_email;');
@@ -120,15 +121,6 @@ namespace bd;
         $stm->execute([':password' => $password, ':email' => $email]);
     
     }
-
-    // public function provaa($email)
-    // {
-    //     $stm = $this->sql->prepare('select client_password from client_tb where client_email=:email;');
-    //     $stm->execute([':email' => $email]);
-    //     $diferenciaHores = $stm->fetchColumn() ;
-    //     return $diferenciaHores;
-    
-    // }
 
     public function retornaHoraAmbPeriodeAfegit($hora,$periode)
     {
