@@ -52,6 +52,7 @@ class admin
         return $dates;
     }
 
+    /* ----- ELIMINA DATES BLOQUEJADES DATES BLOQUEJADES----- */
     public function deleteDate($id)
     {
         $stmt = $this->sql->prepare('DELETE FROM dia_bloquejat_tb WHERE dia_bloquejat_id = :id;');
@@ -59,6 +60,7 @@ class admin
         $stmt->execute();
     }
 
+    /* ----- AFAGEIX DATES BLOQUEJADES DATES BLOQUEJADES----- */  
     public function addDate($date)
     {
         $stmt = $this->sql->prepare('INSERT INTO dia_bloquejat_tb (dia_bloquejat_piscina_id, dia_bloquejat) VALUES (1, :date);');

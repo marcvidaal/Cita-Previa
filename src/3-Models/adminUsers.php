@@ -21,6 +21,7 @@ class adminUser
         $this->sql = $connexioDB->getConnection();
     }
 
+    /* ----- RETORNA UN ARRAY AMB TOTS ELS USUARIS----- */
     public function pullUsers()
     {
         $stm = $this->sql->prepare('SELECT client_email, client_first_name, client_second_name, client_admin FROM client_tb');
@@ -29,6 +30,7 @@ class adminUser
         return $entries;
     }
 
+    /* ----- ET PERMET GESTIONAR ELS ADMINISTRADORS----- */
     public function toggleAdmin($email, $admin)
     {
         $stm = $this->sql->prepare('UPDATE client_tb SET client_admin = :admin WHERE client_email = :email');

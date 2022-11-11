@@ -121,15 +121,6 @@ namespace bd;
     
     }
 
-    // public function provaa($email)
-    // {
-    //     $stm = $this->sql->prepare('select client_password from client_tb where client_email=:email;');
-    //     $stm->execute([':email' => $email]);
-    //     $diferenciaHores = $stm->fetchColumn() ;
-    //     return $diferenciaHores;
-    
-    // }
-
     public function retornaHoraAmbPeriodeAfegit($hora,$periode)
     {
         $stm = $this->sql->prepare('select time_format(addtime(:hora,"0:'.$periode.':0"),"%H:%i");');
