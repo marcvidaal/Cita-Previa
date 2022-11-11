@@ -99,6 +99,12 @@ $(document).ready(function () {
     });
 });
 
+$(document).ready(function () {
+  $('#main').DataTable({
+      dom: '<"toolbar">frtip',
+  });
+});
+
 //test if password equals confirm password
 $('#alertPassword').hide();
 

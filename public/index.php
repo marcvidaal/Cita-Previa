@@ -5,37 +5,47 @@
 
 
     /* ----- CONTROLLERS ----- */
-    require_once "../src/2-controls/mainControl.php";
-    require_once "../src/2-controls/signinControl.php";
-    require_once "../src/2-controls/signupControl.php";
-    require_once "../src/2-controls/homeControl.php";
-    require_once "../src/2-controls/adminResControl.php";
-    require_once "../src/2-controls/adminBlockControl.php";
-    require_once "../src/2-controls/adminConfigControl.php";
-    require_once "../src/2-controls/createUserControl.php";
-    require_once "../src/2-controls/loginTester.php";
-    require_once "../src/2-controls/timeControl.php";
-    require_once "../src/2-controls/showReserves.php";
-    require_once "../src/2-controls/reserveControl.php";
-    require_once "../src/2-controls/profilePageControl.php";
-    require_once "../src/2-controls/actualitzarDades.php";
-    require_once "../src/2-controls/adminResControl.php";
-    require_once "../src/2-controls/deleteResControl.php";
-    require_once "../src/2-controls/deleteDateControl.php";
-    require_once "../src/2-controls/addBlockDateControl.php";
-    require_once "../src/2-controls/destroySesion.php";
-    require_once "../src/2-controls/reservatControl.php";
-    require_once "../src/2-controls/adminUserControl.php";
-    require_once "../src/2-controls/toggleAdminControl.php";
-    require_once "../src/2-controls/deleteUserControl.php";
-    require_once "../src/2-controls/deleteUserResControl.php";
 
-    /* ----- CONTROLERS ----- */
+    require_once "../src/2-controls/homeControl.php";
+
+        /* ----- admin ----- */
+        require_once "../src/2-controls/admin/addBlockDateControl.php";
+        require_once "../src/2-controls/admin/adminBlockControl.php";
+        require_once "../src/2-controls/admin/adminConfigControl.php";
+        require_once "../src/2-controls/admin/adminResControl.php";
+        require_once "../src/2-controls/admin/adminUserControl.php";
+        require_once "../src/2-controls/admin/deleteResControl.php";
+        require_once "../src/2-controls/admin/deleteUserControl.php";
+        require_once "../src/2-controls/admin/deleteUserResControl.php";
+        require_once "../src/2-controls/admin/timeControl.php";
+        require_once "../src/2-controls/admin/toggleAdminControl.php";
+        require_once "../src/2-controls/admin/addBlockDateControl.php";
+        require_once "../src/2-controls/admin/deleteDateControl.php";
+
+        /* ----- common ----- */
+        require_once "../src/2-controls/common/actualitzarDades.php";
+        require_once "../src/2-controls/common/destroySesion.php";
+        require_once "../src/2-controls/common/profilePageControl.php";
+
+        /* ----- authenthicator ----- */
+        require_once "../src/2-controls/authenthicator/createUserControl.php";
+        require_once "../src/2-controls/authenthicator/loginTester.php";
+        require_once "../src/2-controls/authenthicator/signinControl.php";
+        require_once "../src/2-controls/authenthicator/signupControl.php";
+
+        /* ----- user ----- */
+        require_once "../src/2-controls/user/mainControl.php";
+        require_once "../src/2-controls/user/reservatControl.php";
+        require_once "../src/2-controls/user/reserveControl.php";
+        require_once "../src/2-controls/user/showReserves.php";
+
+    /* ----- MODELS ----- */
     require_once "../src/3-models/connexio.php";
     require_once "../src/3-models/usuari.php";
     require_once "../src/3-models/time.php";
     require_once "../src/3-models/admin.php";
     require_once "../src/3-models/adminUsers.php";
+    require_once "../src/3-models/reserves.php";
     
     /* ----- EMESET ----- */
     require_once "../src/4-Emeset/Contenidor.php";
