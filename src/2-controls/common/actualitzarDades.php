@@ -14,7 +14,7 @@ function actualitzarDades($peticio, $resposta, $contenidor)
     $email = $peticio->getRaw("SESSION", "user");
 
     /* ---- MODEL FUNCTIONS VARIABLES ----  */
-    $usuariDB = $usuari->comprovarCompteUsuari($email);
+    $usuariDB = $usuari->getUser($email);
 
     /* ---- MODEL FUNCTIONS ----  */
     if ($name != "") {$usuari->updateFirstName($email, $name);}

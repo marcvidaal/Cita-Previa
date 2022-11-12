@@ -25,7 +25,7 @@ namespace bd;
         return $stm->fetchColumn();
     }
 
-    public function comprovarCompteUsuari($email)
+    public function getUser($email)
     {
         $query = 'SELECT client_email, client_password, client_admin FROM client_tb WHERE client_email=:email;';
         $stm = $this->sql->prepare($query);
@@ -34,7 +34,7 @@ namespace bd;
         return $stm->fetch(\PDO::FETCH_ASSOC);
     }
 
-/**------------------------------------------------ */
+/**---------------------------------------------------------- */
     public function llistarReserves($email)
     {
         // $stm = $this->sql->prepare('select reserva_data_entrada, reserva_data_sortida, reserva_carril_id from reserva_tb where reserva_client_email=:reserva_client_email;');
