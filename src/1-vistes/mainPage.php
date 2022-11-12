@@ -54,6 +54,7 @@
                             <p class='m-2'>Begin: ". $entry['reserva_data_entrada'] . "</p>
                             <p class='m-2'>End: ". $entry['reserva_data_sortida'] . "</p>
                             <p class='m-2'>Lane: ". $entry['carril_numero'] . "</p>
+                            <a href='index.php?r=deleteRes&id=" . $entry['reserva_id'] . "' type = 'button' class='btn btn-danger btn-sm' id='" . $entry['reserva_id'] . "'>eliminar</a>
                         </div>
                         ";
                     } ?>

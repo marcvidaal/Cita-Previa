@@ -14,7 +14,6 @@
         require_once "../src/2-controls/admin/adminConfigControl.php";
         require_once "../src/2-controls/admin/adminResControl.php";
         require_once "../src/2-controls/admin/adminUserControl.php";
-        require_once "../src/2-controls/admin/deleteResControl.php";
         require_once "../src/2-controls/admin/deleteUserControl.php";
         require_once "../src/2-controls/admin/deleteUserResControl.php";
         require_once "../src/2-controls/admin/timeControl.php";
@@ -26,6 +25,7 @@
         require_once "../src/2-controls/common/actualitzarDades.php";
         require_once "../src/2-controls/common/destroySesion.php";
         require_once "../src/2-controls/common/profilePageControl.php";
+        require_once "../src/2-controls/common/deleteResControl.php";
 
         /* ----- authenthicator ----- */
         require_once "../src/2-controls/authenthicator/createUserControl.php";
