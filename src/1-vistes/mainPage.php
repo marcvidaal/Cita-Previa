@@ -43,8 +43,8 @@
                         </div>
                     </div>
                     <div class="row d-flex justify-content-center align-items-center m-4">
-                        <div class="col-sm-12">
-                            <button type="submit" class="btn btn-primary col-sm-12">Next</button>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary col-12">Next</button>
                         </div>
                     </div>
                 </form>
