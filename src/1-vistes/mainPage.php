@@ -38,8 +38,8 @@
                 <form action="index.php" method="POST" class="mx-3">
                     <input type="hidden" name="r" value="reserve">
                     <div class="row d-flex justify-content-center align-items-center m-4">
-                        <div class="col-sm-12">
-                            <input type="date" name="data" class="rounded form-control text-center" required min="<?php echo date('Y-m-d'); ?>" max="<?php echo date('Y-m-d', strtotime(date('Y-m-d') . ' + 1 month')); ?>">
+                        <div class="col-12">
+                            <input type="date" name="data" class="rounded form-control text-center col-12" required min="<?php echo date('Y-m-d'); ?>" max="<?php echo date('Y-m-d', strtotime(date('Y-m-d') . ' + 1 month')); ?>">
                         </div>
                     </div>
                     <div class="row d-flex justify-content-center align-items-center m-4">
@@ -49,7 +49,7 @@
                     </div>
                 </form>
                 <div class="row d-flex justify-content-center align-items-center">
-                    <div class="col-sm-10 d-flex justify-content-center scrollmenu">
+                    <div class="col-10 d-flex justify-content-center scrollmenu">
                         <?php
                         if (isset($periodesPossibles)) {
                             if ($periodesPossibles == 0 and isset($periodesPossibles)) { ?>
