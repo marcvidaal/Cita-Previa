@@ -1,6 +1,6 @@
 <?php
 
-function loadMainPage($peticio, $resposta, $contenidor)
+function loadMainPageControl($peticio, $resposta, $contenidor)
 {
     /* ---- ACCES TO MODEL ----  */
     $admin = $contenidor->admin();

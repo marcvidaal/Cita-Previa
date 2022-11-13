@@ -39,6 +39,8 @@
         // require_once "../src/2-controls/user/reserveControl.php";
         // require_once "../src/2-controls/user/showReserves.php";
         require_once "../src/2-controls/user/loadMainPage.php";
+        require_once "../src/2-controls/user/loadMainTable.php";
+
 
 
     /* ----- MODELS ----- */
@@ -47,7 +49,7 @@
     require_once "../src/3-models/time.php";
     require_once "../src/3-models/admin.php";
     require_once "../src/3-models/adminUsers.php";
-    require_once "../src/3-models/reserves.php";
+    require_once "../src/3-models/pool.php";
     
     /* ----- EMESET ----- */
     require_once "../src/4-Emeset/Contenidor.php";
@@ -87,7 +89,10 @@
         $resposta = login($peticio,$resposta,$contenidor);
     }
     elseif($r === "mainPage"){   
-        $resposta = isAuth($peticio,$resposta,$contenidor, "loadMainPage");
+        $resposta = isAuth($peticio,$resposta,$contenidor, "loadMainPageControl");
+    }
+    elseif($r === "loadMainTable"){   
+        $resposta = isAuth($peticio,$resposta,$contenidor, "loadMainTableControl");
     }
     // elseif($r === "mainPage"){   
     //     $resposta = isAuth($peticio,$resposta,$contenidor,"mostrarReserves");

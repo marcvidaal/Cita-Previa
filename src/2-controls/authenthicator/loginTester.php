@@ -27,7 +27,7 @@ function login($peticio, $resposta, $contenidor)
             $resposta->setSession("user", $user);
             //SI ES ADNIM REDIRIGIM AUN LLOC O A UN ALTRE
             if ($usuariDB["client_admin"] == 0) {
-                $resposta->redirect("location: index.php?r=mainPage");
+                $resposta->redirect("location: index.php?r=loadMainTable");
             } else {
                 $resposta->redirect("location: index.php?r=adminPageRes");
             }

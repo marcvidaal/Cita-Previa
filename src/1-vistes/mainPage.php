@@ -35,10 +35,38 @@
         <div class="row mb-5 g-0 justify-content-between">
             <!--RIGHT - COLUMN-->
             <div class="box col-sm-12 rounded prova">
-            <form action="index.php" method="POST">
-                <input type="hidden" name="r" value="reservat">
+                <form action="index.php" method="POST">
+                    <input type="hidden" name="r" value="reservat">
                 
                 </form>
+                <?php
+                if($print){
+                    echo"
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Day</th>
+                                <th>Time</th>
+                                <th>Reserve</th>
+                            </tr>
+                        </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>";
+                }
+                elseif (isset($closed)) {
+                    if ($closed = "todayClosed") {
+                        echo "<div class='alert alert-danger' role='alert'>Today the pool is cloded.</div>";
+                    }
+                    elseif ($closed == "dateClosed") {
+                        echo "<div class='alert alert-danger' role='alert'>Pool is closed on".$weekday.". Try choosing another date.</div>";
+                    }
+                    elseif ($closed == "dateBloked") {
+                        echo "<div class='alert alert-danger' role='alert'>This date has been locked. Try choosing another date.</div>";
+                    }
+                }
+                ?>
             </div>
         </div>
         <!--ROW - BOTTOM-->
@@ -48,16 +76,20 @@
                 <!--SCROLMEMU - RESEVES-->
                 <div class="scrollmenu rounded">
                     <!--RESERVES - CARD-->
-                    <?php foreach ($list as $entry) {
-                        echo"
-                        <div class='col-sm-3 p-3 m-3 rounded text-light reserves'>
-                            <p class='m-2'>Begin: ". $entry['reserva_data_entrada'] . "</p>
-                            <p class='m-2'>End: ". $entry['reserva_data_sortida'] . "</p>
-                            <p class='m-2'>Lane: ". $entry['carril_numero'] . "</p>
-                            <a href='index.php?r=deleteRes&id=" . $entry['reserva_id'] . "' type = 'button' class='btn btn-danger btn-sm' id='" . $entry['reserva_id'] . "'>eliminar</a>
-                        </div>
-                        ";
-                    } ?>
+                    <?php 
+                    if (isset($list)){
+                        foreach ($list as $entry) {
+                            echo"
+                            <div class='col-sm-3 p-3 m-3 rounded text-light reserves'>
+                                <p class='m-2'>Begin: ". $entry['reserva_data_entrada'] . "</p>
+                                <p class='m-2'>End: ". $entry['reserva_data_sortida'] . "</p>
+                                <p class='m-2'>Lane: ". $entry['carril_numero'] . "</p>
+                                <a href='index.php?r=deleteRes&id=" . $entry['reserva_id'] . "' type = 'button' class='btn btn-danger btn-sm' id='" . $entry['reserva_id'] . "'>eliminar</a>
+                            </div>
+                            ";
+                        } 
+                    }
+                    ?>
                 </div>
             </div>
         </div>
