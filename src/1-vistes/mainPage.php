@@ -23,6 +23,18 @@
                     <?=$email?>
                 </a>
             </div>
+            <?php
+            if($adminSet){
+                echo "
+                <!--GO ADMIN-->
+                <div class='col-sm-2'>
+                    <a href='index.php?r=adminPageRes' class='rounded btn btn-info btn-lg ml-2 text-light'>
+                        Go admin
+                    </a>
+                </div>
+                ";
+            }
+            ?>
             <!--LOGOUT- COLUMN-->
             <div class="col-sm-2 text-end">
                 <a href="index.php?r=destroySession" class="rounded btn btn-info btn-lg text-light">
@@ -92,7 +104,7 @@
                 }
                 elseif (isset($closed)) {
                     if ($closed = "todayClosed") {
-                        echo "<div class='alert alert-danger' role='alert'>Date unabliable</div>";
+                        echo "<div class='alert alert-danger' role='alert'>Date unavailable</div>";
                     }
                     elseif ($closed == "dateClosed") {
                         echo "<div class='alert alert-danger' role='alert'>Pool is closed on".$weekday.". Try choosing another date.</div>";
@@ -107,7 +119,7 @@
                     <input type="hidden" name="r" value="mainPage">
                     <!--DATE SELECT-->
                     <div class="col-sm-2 NextButtonSignUp">
-                        <input type=date name=data class='col-sm-5 form-control form-control-sm' value = '<?isset($data)?>' min='<?php echo date('Y-m-d'); ?>' max='<?php echo date('Y-m-d', strtotime(date('Y-m-d') . ' + 1 month')); ?>'>
+                        <input type=date name=data class='col-sm-5 form-control form-control-sm' required value = '<?$data?>' min='<?php echo date('Y-m-d'); ?>' max='<?php echo date('Y-m-d', strtotime(date('Y-m-d') . ' + 1 month')); ?>'>
                     </div>
                     <!--DATE SUBMIT-->
                     <div class="col-sm-10 NextButtonSignUp">

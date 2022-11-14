@@ -23,6 +23,11 @@
                     My profile
                 </a>
             </div>
+            <div class="col-sm-2">
+                <a href="index.php?r=mainPage" class="rounded btn btn-dark btn-lg ml-2 text-light">
+                    Main Page
+                </a>
+            </div>
             <!--LOGOUT- COLUMN-->
             <div class="col-sm-2 text-end">
                 <a href="index.php?r=destroySession" class="rounded btn btn-dark btn-lg">

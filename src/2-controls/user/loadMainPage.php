@@ -4,6 +4,7 @@ function loadMainPageControl($peticio, $resposta, $contenidor)
 {
     /* ---- ACCES TO MODEL ----  */
     $admin = $contenidor->admin();
+    $usuari = $contenidor->usuari();
 
     /* ---- ACCES TO SESIONS ----  */
     $email = $peticio->getRaw("SESSION", "user");
@@ -19,6 +20,9 @@ function loadMainPageControl($peticio, $resposta, $contenidor)
             $userRes[] = $reserva;
         }
     }
+
+    $userDB = $usuari->getUser($email);
+    $adminSet = ($userDB["client_admin"] == 1) ? true : false;
 
     /* ---- ACCES TO MODELS ----  */
     $pool = $contenidor->pool();
@@ -91,7 +95,7 @@ function loadMainPageControl($peticio, $resposta, $contenidor)
             array_push($occupied, $key);
         }
     }
-    
+
     //COMPROBEM SI PODEM O NO IMPRIMIR
     $print = true;
     if (!$blockedDay) {
@@ -103,8 +107,9 @@ function loadMainPageControl($peticio, $resposta, $contenidor)
         $print = false;
     }
     /* ---------------------------------------------------------------------- */
-    
+
     /* ---- ACCES TO VARIABLES IN VEWS ----  */
+    $resposta->set("adminSet", $adminSet);
     $resposta->set("occupied", $occupied);
     $resposta->set("weekday", $weekday);
     $resposta->set("data", $data);

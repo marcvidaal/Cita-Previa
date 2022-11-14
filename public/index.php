@@ -34,10 +34,6 @@
         require_once "../src/2-controls/authenthicator/signupControl.php";
 
         /* ----- user ----- */
-        // require_once "../src/2-controls/user/mainControl.php";
-        // require_once "../src/2-controls/user/reservatControl.php";
-        // require_once "../src/2-controls/user/reserveControl.php";
-        // require_once "../src/2-controls/user/showReserves.php";
         require_once "../src/2-controls/user/loadMainPage.php";
         require_once "../src/2-controls/user/pushReserve.php";
 
@@ -136,14 +132,9 @@
     elseif($r === "destroySession"){
         $resposta = destroySession($peticio, $resposta, $contenidor);
     }
-    // elseif($r === "reservat"){   
-    //     $resposta = reservaEnviada($peticio, $resposta, $contenidor);
-    // }
     else {
         print_r($r);
         die();
-        //echo "<div class='alert alert-danger' role='alert'>Peticio no trobada </div>";
-        //$resposta = ctrlError($peticio, $resposta, $contenidor);
     }
 
     $resposta->resposta();
