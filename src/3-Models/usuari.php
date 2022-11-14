@@ -143,7 +143,7 @@ namespace bd;
     }
 
 
-    public function inserirReserva($reservaDataEntrada,$reservaDataSortida,$carril,$email)
+    public function pushReserve($reservaDataEntrada,$reservaDataSortida,$carril,$email)
     {
         $stm = $this->sql->prepare('insert into reserva_tb (reserva_data_entrada, reserva_data_sortida, reserva_carril_id, reserva_client_email) values (:reserva_data_entrada, :reserva_data_sortida, :carril, :email)');
         $stm->execute([':reserva_data_entrada' => $reservaDataEntrada, ':reserva_data_sortida' => $reservaDataSortida, ':carril' => $carril, ':email' => $email]);

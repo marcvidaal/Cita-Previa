@@ -39,7 +39,7 @@
         // require_once "../src/2-controls/user/reserveControl.php";
         // require_once "../src/2-controls/user/showReserves.php";
         require_once "../src/2-controls/user/loadMainPage.php";
-        require_once "../src/2-controls/user/loadMainTable.php";
+        require_once "../src/2-controls/user/pushReserve.php";
 
 
 
@@ -91,15 +91,9 @@
     elseif($r === "mainPage"){   
         $resposta = isAuth($peticio,$resposta,$contenidor, "loadMainPageControl");
     }
-    elseif($r === "loadMainTable"){   
-        $resposta = isAuth($peticio,$resposta,$contenidor, "loadMainTableControl");
+    elseif($r === "reserve"){   
+        $resposta = isAuth($peticio,$resposta,$contenidor, "pushReserve");
     }
-    // elseif($r === "mainPage"){   
-    //     $resposta = isAuth($peticio,$resposta,$contenidor,"mostrarReserves");
-    // }
-    // elseif($r === "reserve"){   
-    //     $resposta = isAuth($peticio,$resposta,$contenidor, "ferReserva");
-    // }
     elseif($r === "adminPageRes"){ 
         $resposta = isAdmin($peticio, $resposta, $contenidor, "adminResControl");
     }
@@ -146,8 +140,9 @@
     //     $resposta = reservaEnviada($peticio, $resposta, $contenidor);
     // }
     else {
-        var_dump($r);
+        print_r($r);
         die();
+        //echo "<div class='alert alert-danger' role='alert'>Peticio no trobada </div>";
         //$resposta = ctrlError($peticio, $resposta, $contenidor);
     }
 

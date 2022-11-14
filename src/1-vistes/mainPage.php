@@ -20,7 +20,7 @@
             <!--MY PROFILE - COLUMN-->
             <div class="col-sm-2">
                 <a href="index.php?r=profilePage" class="rounded btn btn-info btn-lg text-light">
-                    My profile
+                    <?=$email?>
                 </a>
             </div>
             <!--LOGOUT- COLUMN-->
@@ -34,11 +34,7 @@
         <!--ROW - MID-->
         <div class="row mb-5 g-0 justify-content-between">
             <!--RIGHT - COLUMN-->
-            <div class="box col-sm-12 rounded p-2 prova">
-                <form action="index.php" method="POST">
-                    <input type="hidden" name="r" value="reservat">
-                
-                </form>
+            <div class="box col-sm-12 rounded p-2 prova scrollmenu2">
                 <?php
                 if($print){
                     echo"
@@ -69,7 +65,10 @@
                                 for ($lane=1; $lane <= $lanes; $lane++) {
                                     $unocupied = true;
                                     foreach ($occupied as $key => $value) {
-                                        $unocupied = ($value[0] == $lane && $value[1] == substr($timetable[$range], 0, 5)) ? false : true;            
+                                        $unocupied = ($value[0] == $lane && $value[1] == substr($timetable[$range], 0, 5)) ? false : true; 
+                                        if (!$unocupied) {
+                                            break;
+                                        }           
                                     }
                                     if(!$unocupied)
                                         echo"
@@ -77,7 +76,9 @@
                                         ";
                                     else {
                                         echo"
-                                        <td> <a href='index.php?r=reserve&lane=".$lane."&start=".substr($timetable[$range], 0, 5)."' class= 'd-flex justify-content-center btn btn-primary'>Reserve</<</td>
+                                        <td> 
+                                            <a href='index.php?r=reserve&lane=".$lane."&day=".$data."&start=".substr($timetable[$range], 0, 5)."&end=".substr($timetable[$range], 9, 15)."' class= 'd-flex justify-content-center btn btn-primary'>Reserve</a>
+                                        </td>
                                         ";
                                     }
                                 }
@@ -91,7 +92,7 @@
                 }
                 elseif (isset($closed)) {
                     if ($closed = "todayClosed") {
-                        echo "<div class='alert alert-danger' role='alert'>Today the pool is cloded.</div>";
+                        echo "<div class='alert alert-danger' role='alert'>Date unabliable</div>";
                     }
                     elseif ($closed == "dateClosed") {
                         echo "<div class='alert alert-danger' role='alert'>Pool is closed on".$weekday.". Try choosing another date.</div>";
@@ -101,6 +102,18 @@
                     }
                 }
                 ?>
+                <form action="index.php" method="POST" class= "row">
+                    <!--R VALUE-->
+                    <input type="hidden" name="r" value="mainPage">
+                    <!--DATE SELECT-->
+                    <div class="col-sm-2 NextButtonSignUp">
+                        <input type=date name=data class='col-sm-5 form-control form-control-sm' value = '<?isset($data)?>' min='<?php echo date('Y-m-d'); ?>' max='<?php echo date('Y-m-d', strtotime(date('Y-m-d') . ' + 1 month')); ?>'>
+                    </div>
+                    <!--DATE SUBMIT-->
+                    <div class="col-sm-10 NextButtonSignUp">
+                        <input type="submit" class="btn btn-primary" value="Go">
+                    </div>
+                </form>
             </div>
         </div>
         <!--ROW - BOTTOM-->
@@ -118,7 +131,7 @@
                                 <p class='m-2'>Begin: ". $entry['reserva_data_entrada'] . "</p>
                                 <p class='m-2'>End: ". $entry['reserva_data_sortida'] . "</p>
                                 <p class='m-2'>Lane: ". $entry['carril_numero'] . "</p>
-                                <a href='index.php?r=deleteRes&id=" . $entry['reserva_id'] . "' type = 'button' class='btn btn-danger btn-sm' id='" . $entry['reserva_id'] . "'>eliminar</a>
+                                <a href='index.php?r=deleteRes&id=" . $entry['reserva_id'] . "' type = 'button' class='btn btn-danger btn-sm' id='" . $entry['reserva_id'] . "'>remove</a>
                             </div>
                             ";
                         } 

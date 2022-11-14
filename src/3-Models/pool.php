@@ -54,10 +54,20 @@ class pool
         return $stm->fetchColumn();
     
     }
+
+    //RETORNA LA CANTITAT DE CARRILS DE UNA PISCINA
     public function getLanes(){
         $query = 'SELECT COUNT(carril_numero) FROM carril_tb';
         $stm = $this->sql->prepare($query);
         $stm->execute();
         return $stm->fetchColumn();
+    }
+
+    //INSERIR UNA NOVA RESERVA
+    public function pushReserve($start,$end,$lane,$email)
+    {
+        $query = 'INSERT INTO reserva_tb (reserva_data_entrada, reserva_data_sortida, reserva_carril_id, reserva_client_email) VALUES (:reserva_data_entrada, :reserva_data_sortida, :carril, :email)';
+        $stm = $this->sql->prepare($query);
+        $stm->execute([':reserva_data_entrada' => $start, ':reserva_data_sortida' => $end, ':carril' => $lane, ':email' => $email]);
     }
 }
