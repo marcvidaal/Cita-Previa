@@ -10,9 +10,19 @@ function deleteResControl($peticio, $resposta, $contenidor)
 
     /* ---- MODEL FUNCTIONS ----  */
     $admin->deleteRes($id);
-    
+
     /* ---- REDIRECTS ----  */
-    $resposta->redirect("location: index.php?r=adminPageRes");
+    $usuari = $contenidor->usuari();
+
+    $email = $peticio->getRaw("SESSION", "user");
+
+    $userDB = $usuari->getUser($email);
+
+    if ($userDB["client_admin"] == 1) {
+        $resposta->redirect("location: index.php?r=adminPageRes");
+    } else {
+        $resposta->redirect("location: index.php?r=mainPage");
+    }
 
     return $resposta;
 }

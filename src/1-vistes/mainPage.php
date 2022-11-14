@@ -20,7 +20,7 @@
             <!--MY PROFILE - COLUMN-->
             <div class="col-sm-2">
                 <a href="index.php?r=profilePage" class="rounded btn btn-info btn-lg text-light">
-                    My profile
+                    <?=$email?>
                 </a>
             </div>
             <!--LOGOUT- COLUMN-->
@@ -34,98 +34,109 @@
         <!--ROW - MID-->
         <div class="row mb-5 g-0 justify-content-between">
             <!--RIGHT - COLUMN-->
-            <div class="box col-sm-12 rounded prova">
-                <form action="index.php" method="POST" class="mx-3">
-                    <input type="hidden" name="r" value="reserve">
-                    <div class="row d-flex justify-content-center align-items-center m-4">
-                        <div class="col-sm-12">
-                            <input type="date" name="data" class="rounded form-control text-center" required min="<?php echo date('Y-m-d'); ?>" max="<?php echo date('Y-m-d', strtotime(date('Y-m-d') . ' + 1 month')); ?>">
-                        </div>
+            <div class="box col-sm-12 rounded p-2 prova scrollmenu2">
+                <?php
+                if($print){
+                    echo"
+                    <table id= 'mainTalbe'>
+                        <thead>
+                            <tr>
+                                <!-- Times Blank -->
+                                <th></th>
+                                ";
+                                //Imprimim els carrils
+                                for ($lane=1; $lane <= $lanes; $lane++) { 
+                                    echo"
+                                    <th>Lane: ".$lane."</th>
+                                    ";
+                                }
+                                echo "
+                            </tr>
+                        </thead>
+                        <tbody>
+                        ";
+                        //Per a cada rang (FILES TOTALS)
+                        for ($range=0; $range < count($timetable) ; $range++) { 
+                            echo"
+                            <tr>
+                                <td>".$timetable[$range]."</td>
+                                ";
+                                //Per a cada carril (COLUMNA DE CADA FILA)
+                                for ($lane=1; $lane <= $lanes; $lane++) {
+                                    $unocupied = true;
+                                    foreach ($occupied as $key => $value) {
+                                        $unocupied = ($value[0] == $lane && $value[1] == substr($timetable[$range], 0, 5)) ? false : true; 
+                                        if (!$unocupied) {
+                                            break;
+                                        }           
+                                    }
+                                    if(!$unocupied)
+                                        echo"
+                                        <td> <a class= 'd-flex justify-content-center btn btn-danger'>Unable</<</td>
+                                        ";
+                                    else {
+                                        echo"
+                                        <td> 
+                                            <a href='index.php?r=reserve&lane=".$lane."&day=".$data."&start=".substr($timetable[$range], 0, 5)."&end=".substr($timetable[$range], 9, 15)."' class= 'd-flex justify-content-center btn btn-primary'>Reserve</a>
+                                        </td>
+                                        ";
+                                    }
+                                }
+                                echo"
+                                </tr>
+                                ";
+                            }
+                            echo"
+                        </tbody>
+                    </table>";
+                }
+                elseif (isset($closed)) {
+                    if ($closed = "todayClosed") {
+                        echo "<div class='alert alert-danger' role='alert'>Date unabliable</div>";
+                    }
+                    elseif ($closed == "dateClosed") {
+                        echo "<div class='alert alert-danger' role='alert'>Pool is closed on".$weekday.". Try choosing another date.</div>";
+                    }
+                    elseif ($closed == "dateBloked") {
+                        echo "<div class='alert alert-danger' role='alert'>This date has been locked. Try choosing another date.</div>";
+                    }
+                }
+                ?>
+                <form action="index.php" method="POST" class= "row">
+                    <!--R VALUE-->
+                    <input type="hidden" name="r" value="mainPage">
+                    <!--DATE SELECT-->
+                    <div class="col-sm-2 NextButtonSignUp">
+                        <input type=date name=data class='col-sm-5 form-control form-control-sm' value = '<?isset($data)?>' min='<?php echo date('Y-m-d'); ?>' max='<?php echo date('Y-m-d', strtotime(date('Y-m-d') . ' + 1 month')); ?>'>
                     </div>
-                    <div class="row d-flex justify-content-center align-items-center m-4">
-                        <div class="col-sm-12">
-                            <button type="submit" class="btn btn-primary col-sm-12">Next</button>
-                        </div>
+                    <!--DATE SUBMIT-->
+                    <div class="col-sm-10 NextButtonSignUp">
+                        <input type="submit" class="btn btn-primary" value="Go">
                     </div>
                 </form>
-                <div class="row d-flex justify-content-center align-items-center">
-                    <div class="col-sm-10 d-flex justify-content-center scrollmenu">
-                        <?php
-                        if (isset($periodesPossibles)) {
-                            if ($periodesPossibles == 0 and isset($periodesPossibles)) { ?>
-                                <div class="alert alert-danger" role="alert">On <?php echo $nomDiaSetmana . "s the swimming pool is closed. Choose another day" ?></div>
-                                <?php
-                            } elseif (isset($periodesPossibles)) {
-                                echo "<table>";
-                                for ($i = 0; $i <= $periodesPossibles; $i++) {
-                                    echo "<tr>";
-                                    for ($j = 0; $j < 11; $j++) {
-                                        if ($i == 0 and $j == 0) {
-                                            echo '<th>Period</th>';
-                                        } elseif ($i == 0 and $j > 0) {
-                                            echo"<th>Lane ".$j."</th>";
-                                        } elseif ($j == 0 and $i > 0) {
-                                        ?>
-                                            <td><?= $hores[$i - 1] . ' ' . $hores[$i]; ?></td>
-                                        <?php
-                                        } elseif ($j > 0 and $i > 0) {
-                                        ?>
-                                            <td>
-                                                <form action="index.php" method="POST">
-                                                    <input type="hidden" name="r" value="reservat">
-                                                    <?php
-                                                    $reservaDisponible = true;
-                                                    foreach ($horarisOcupats as $entry) {
-                                                        if ($entry["reserva_carril_id"] == $j and $entry["reserva_data_entrada"] == $data . " " . $hores[$i - 1] . ":00") {
-                                                            $reservaDisponible = false;
-                                                            break;
-                                                        } else {
-                                                            $reservaDisponible = true;
-                                                        }
-                                                    }
-                                                    if ($reservaDisponible === true) { ?>
-                                                        <button type="submit" name="reserveAction" class="btn btn-primary" value="<?php echo $j . '_' . $data . " " . $hores[$i - 1] . ":00"; ?>" id="<?php echo $j . '-' . $hores[$i - 1]; ?>">Reserve</button>
-                                                    <?php
-                                                    } else { ?>
-                                                        <a class="d-flex justify-content-center btn btn-danger">Unable</a>
-                                                    <?php
-                                                    }
-                                                    ?>
-                                                </form>
-                                            </td>
-                                        <?php
-                                        }
-                                    }
-                                    echo "</tr>";
-                                }
-                                echo "</table>";
-                            } elseif (isset($blockedDay)) { ?>
-                                <div class="alert alert-danger" role="alert">This date has been locked. Try choosing another date.</div>
-                        <?php
-                            }
-                        } else {
-                            echo "<div class='alert alert-secondary' role='alert'>Choose a date to begin the reserve prosces</div>";
-                        }
-
-                        ?>
-                    </div>
-                </div>
             </div>
-            <!--LEFT - COLUMN-->
         </div>
         <!--ROW - BOTTOM-->
         <div class="row g-0 justify-content-end">
-            <!--float-end-->
             <!--COLUMN - RESEVES-->
             <div class="box col-sm-12 rounded">
+                <!--SCROLMEMU - RESEVES-->
                 <div class="scrollmenu rounded">
-                    <?php foreach ($list as $entry) { ?>
-                        <div class="col-sm-3 p-3 m-3 rounded text-light reserves">
-                            <p class="m-2">Begin: <?= $entry["reserva_data_entrada"]; ?></p>
-                            <p class="m-2">End: <?= $entry["reserva_data_sortida"]; ?></p>
-                            <p class="m-2">Lane: <?= $entry["carril_numero"]; ?></p>
-                        </div>
-                    <?php } ?>
+                    <!--RESERVES - CARD-->
+                    <?php 
+                    if (isset($list)){
+                        foreach ($list as $entry) {
+                            echo"
+                            <div class='col-sm-3 p-3 m-3 rounded text-light reserves'>
+                                <p class='m-2'>Begin: ". $entry['reserva_data_entrada'] . "</p>
+                                <p class='m-2'>End: ". $entry['reserva_data_sortida'] . "</p>
+                                <p class='m-2'>Lane: ". $entry['carril_numero'] . "</p>
+                                <a href='index.php?r=deleteRes&id=" . $entry['reserva_id'] . "' type = 'button' class='btn btn-danger btn-sm' id='" . $entry['reserva_id'] . "'>remove</a>
+                            </div>
+                            ";
+                        } 
+                    }
+                    ?>
                 </div>
             </div>
         </div>
@@ -133,8 +144,10 @@
 </body>
 <!--text/javascript-->
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/v/bs5/jq-3.6.0/dt-1.12.1/date-1.1.2/datatables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/v/bs5/jq-3.6.0/dt-1.12.1/datatables.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
 <script type="text/javascript" src="script.js"></script>
+
 </html>

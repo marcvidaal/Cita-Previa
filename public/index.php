@@ -14,7 +14,6 @@
         require_once "../src/2-controls/admin/adminConfigControl.php";
         require_once "../src/2-controls/admin/adminResControl.php";
         require_once "../src/2-controls/admin/adminUserControl.php";
-        require_once "../src/2-controls/admin/deleteResControl.php";
         require_once "../src/2-controls/admin/deleteUserControl.php";
         require_once "../src/2-controls/admin/deleteUserResControl.php";
         require_once "../src/2-controls/admin/timeControl.php";
@@ -26,6 +25,7 @@
         require_once "../src/2-controls/common/actualitzarDades.php";
         require_once "../src/2-controls/common/destroySesion.php";
         require_once "../src/2-controls/common/profilePageControl.php";
+        require_once "../src/2-controls/common/deleteResControl.php";
 
         /* ----- authenthicator ----- */
         require_once "../src/2-controls/authenthicator/createUserControl.php";
@@ -34,10 +34,14 @@
         require_once "../src/2-controls/authenthicator/signupControl.php";
 
         /* ----- user ----- */
-        require_once "../src/2-controls/user/mainControl.php";
-        require_once "../src/2-controls/user/reservatControl.php";
-        require_once "../src/2-controls/user/reserveControl.php";
-        require_once "../src/2-controls/user/showReserves.php";
+        // require_once "../src/2-controls/user/mainControl.php";
+        // require_once "../src/2-controls/user/reservatControl.php";
+        // require_once "../src/2-controls/user/reserveControl.php";
+        // require_once "../src/2-controls/user/showReserves.php";
+        require_once "../src/2-controls/user/loadMainPage.php";
+        require_once "../src/2-controls/user/pushReserve.php";
+
+
 
     /* ----- MODELS ----- */
     require_once "../src/3-models/connexio.php";
@@ -45,7 +49,7 @@
     require_once "../src/3-models/time.php";
     require_once "../src/3-models/admin.php";
     require_once "../src/3-models/adminUsers.php";
-    require_once "../src/3-models/reserves.php";
+    require_once "../src/3-models/pool.php";
     
     /* ----- EMESET ----- */
     require_once "../src/4-Emeset/Contenidor.php";
@@ -54,6 +58,7 @@
 
     /* ----- MIDDLEWARES ----- */
     require_once "../src/5-Middleware/isAuth.php";
+    require_once "../src/5-Middleware/isAdmin.php";
 
 
     $contenidor = new \Emeset\Contenidor($config);
@@ -84,43 +89,43 @@
         $resposta = login($peticio,$resposta,$contenidor);
     }
     elseif($r === "mainPage"){   
-        $resposta = isAuth($peticio,$resposta,$contenidor,"mostrarReserves");
+        $resposta = isAuth($peticio,$resposta,$contenidor, "loadMainPageControl");
     }
     elseif($r === "reserve"){   
-        $resposta = isAuth($peticio,$resposta,$contenidor, "ferReserva");
+        $resposta = isAuth($peticio,$resposta,$contenidor, "pushReserve");
     }
     elseif($r === "adminPageRes"){ 
-        $resposta = isAuth($peticio, $resposta, $contenidor, "adminResControl");
+        $resposta = isAdmin($peticio, $resposta, $contenidor, "adminResControl");
     }
     elseif($r === "adminPageConfig"){ 
-        $resposta = isAuth($peticio, $resposta, $contenidor, "adminConfigControl");
+        $resposta = isAdmin($peticio, $resposta, $contenidor, "adminConfigControl");
     }
     elseif($r === "adminPageBlock"){ 
-        $resposta = isAuth($peticio, $resposta, $contenidor, "adminBlockControl");
+        $resposta = isAdmin($peticio, $resposta, $contenidor, "adminBlockControl");
     }
     elseif($r === "adminPageUser"){ 
-        $resposta = isAuth($peticio, $resposta, $contenidor, "adminUserControl");
+        $resposta = isAdmin($peticio, $resposta, $contenidor, "adminUserControl");
     }
     elseif($r === "toggleAdmin"){ 
-        $resposta = isAuth($peticio, $resposta, $contenidor, "toggleAdminControl");
+        $resposta = isAdmin($peticio, $resposta, $contenidor, "toggleAdminControl");
     }
     elseif($r === "timeConfigs"){ 
-        $resposta = isAuth($peticio, $resposta, $contenidor, "timeControl");
+        $resposta = isAdmin($peticio, $resposta, $contenidor, "timeControl");
     }
     elseif($r === "deleteRes"){
         $resposta = isAuth($peticio,$resposta,$contenidor, "deleteResControl");
     }
     elseif($r === "deleteDate"){   
-        $resposta = isAuth($peticio,$resposta,$contenidor, "deleteDateControl");
+        $resposta = isAdmin($peticio,$resposta,$contenidor, "deleteDateControl");
     }
     elseif($r === "deleteUser"){   
-        $resposta = isAuth($peticio,$resposta,$contenidor, "deleteUserControl");
+        $resposta = isAdmin($peticio,$resposta,$contenidor, "deleteUserControl");
     }
     elseif($r === "deleteUserRes"){   
-        $resposta = isAuth($peticio,$resposta,$contenidor, "deleteUserResControl");
+        $resposta = isAdmin($peticio,$resposta,$contenidor, "deleteUserResControl");
     }
     elseif($r === "addBlockDate"){   
-        $resposta = isAuth($peticio,$resposta,$contenidor, "addBlockDateControl");
+        $resposta = isAdmin($peticio,$resposta,$contenidor, "addBlockDateControl");
     }
     elseif($r === "profilePage"){   
         $resposta = isAuth($peticio,$resposta,$contenidor, "profilePageControl");
@@ -131,12 +136,13 @@
     elseif($r === "destroySession"){
         $resposta = destroySession($peticio, $resposta, $contenidor);
     }
-    elseif($r === "reservat"){   
-        $resposta = reservaEnviada($peticio, $resposta, $contenidor);
-    }
+    // elseif($r === "reservat"){   
+    //     $resposta = reservaEnviada($peticio, $resposta, $contenidor);
+    // }
     else {
-        var_dump($r);
+        print_r($r);
         die();
+        //echo "<div class='alert alert-danger' role='alert'>Peticio no trobada </div>";
         //$resposta = ctrlError($peticio, $resposta, $contenidor);
     }
 

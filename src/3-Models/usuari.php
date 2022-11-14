@@ -25,7 +25,7 @@ namespace bd;
         return $stm->fetchColumn();
     }
 
-    public function comprovarCompteUsuari($email)
+    public function getUser($email)
     {
         $query = 'SELECT client_email, client_password, client_admin FROM client_tb WHERE client_email=:email;';
         $stm = $this->sql->prepare($query);
@@ -34,7 +34,28 @@ namespace bd;
         return $stm->fetch(\PDO::FETCH_ASSOC);
     }
 
-/**------------------------------------------------ */
+    public function updateFirstName($email,$name)
+    {
+        $stm = $this->sql->prepare('update client_tb set client_first_name=:name where client_email=:email;');
+        $stm->execute([':name' => $name, ':email' => $email]);
+    
+    }
+
+    public function updateSecondName($email,$secondName)
+    {
+        $stm = $this->sql->prepare('update client_tb set client_second_name=:secondName where client_email=:email;');
+        $stm->execute([':secondName' => $secondName, ':email' => $email]);
+    
+    }
+
+    public function updatePassword($email,$password)
+    {
+        $stm = $this->sql->prepare('update client_tb set client_password=:password where client_email=:email;');
+        $stm->execute([':password' => $password, ':email' => $email]);
+    
+    }
+
+/**---------------------------------------------------------- */
     public function llistarReserves($email)
     {
         // $stm = $this->sql->prepare('select reserva_data_entrada, reserva_data_sortida, reserva_carril_id from reserva_tb where reserva_client_email=:reserva_client_email;');
@@ -101,26 +122,7 @@ namespace bd;
     
     }
 
-    public function updateFirstName($email,$name)
-    {
-        $stm = $this->sql->prepare('update client_tb set client_first_name=:name where client_email=:email;');
-        $stm->execute([':name' => $name, ':email' => $email]);
-    
-    }
 
-    public function updateSecondName($email,$secondName)
-    {
-        $stm = $this->sql->prepare('update client_tb set client_second_name=:secondName where client_email=:email;');
-        $stm->execute([':secondName' => $secondName, ':email' => $email]);
-    
-    }
-
-    public function updatePassword($email,$password)
-    {
-        $stm = $this->sql->prepare('update client_tb set client_password=:password where client_email=:email;');
-        $stm->execute([':password' => $password, ':email' => $email]);
-    
-    }
 
     public function retornaHoraAmbPeriodeAfegit($hora,$periode)
     {
@@ -141,7 +143,7 @@ namespace bd;
     }
 
 
-    public function inserirReserva($reservaDataEntrada,$reservaDataSortida,$carril,$email)
+    public function pushReserve($reservaDataEntrada,$reservaDataSortida,$carril,$email)
     {
         $stm = $this->sql->prepare('insert into reserva_tb (reserva_data_entrada, reserva_data_sortida, reserva_carril_id, reserva_client_email) values (:reserva_data_entrada, :reserva_data_sortida, :carril, :email)');
         $stm->execute([':reserva_data_entrada' => $reservaDataEntrada, ':reserva_data_sortida' => $reservaDataSortida, ':carril' => $carril, ':email' => $email]);

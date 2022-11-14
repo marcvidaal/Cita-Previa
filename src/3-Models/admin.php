@@ -24,7 +24,7 @@ class admin
     /* ----- RETORNA ELS VALORS DE LA BASSE DE DADES I ELS GUARDA A UN ARRAY ----- */
     public function pullRes()
     {
-        $stmt = $this->sql->prepare('SELECT r.reserva_id, r.reserva_client_email, r.reserva_data_entrada, r.reserva_data_sortida, c.carril_numero  FROM reserva_tb r JOIN carril_tb c ON (r.reserva_carril_id = c.carril_id);');
+        $stmt = $this->sql->prepare('SELECT r.reserva_id, r.reserva_client_email, r.reserva_data_entrada, r.reserva_data_sortida, c.carril_numero  FROM reserva_tb r JOIN carril_tb c ON (r.reserva_carril_id = c.carril_id) WHERE r.reserva_data_entrada > NOW();');
         $stmt->execute();
         /* ----- GUARRDEM TOT LA INFO DINS DE L'ARRAY RESERVES ----- */
         $reserves = $stmt->fetchAll(\PDO::FETCH_ASSOC);

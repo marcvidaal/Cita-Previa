@@ -100,7 +100,7 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
-  $('#main').DataTable({
+  $('#mainTalbe').DataTable({
       dom: '<"toolbar">frtip',
   });
 });

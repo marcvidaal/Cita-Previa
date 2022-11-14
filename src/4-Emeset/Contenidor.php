@@ -69,9 +69,9 @@ class Contenidor
         return new \bd\adminUser($this->connexio());;
     }
 
-    public function reserves()
+    public function pool()
     {
-        return new \bd\reserves($this->connexio());;
+        return new \bd\pool($this->connexio());;
     }
 
 }

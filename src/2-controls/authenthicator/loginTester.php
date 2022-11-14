@@ -10,7 +10,7 @@ function login($peticio, $resposta, $contenidor)
     $contrasenya = $peticio->get(INPUT_POST, "contrasenyaSignIn");
 
     /* ---- MODEL FUNCTIONS VARIABLES ----  */
-    $usuariDB = $usuari->comprovarCompteUsuari($email);
+    $usuariDB = $usuari->getUser($email);
     $user = $usuari->comprovarExistenciaUsuari($email);
 
     /* ---- FUNCTION ----  */
