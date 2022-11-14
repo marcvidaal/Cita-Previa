@@ -49,7 +49,7 @@
                     </div>
                 </form>
                 <div class="row d-flex justify-content-center align-items-center">
-                    <div class="col-10 d-flex justify-content-center scrollmenu">
+                    <div class="col-10 d-flex justify-content-center">
                         <?php
                         if (isset($periodesPossibles)) {
                             if ($periodesPossibles == 0 and isset($periodesPossibles)) { ?>
@@ -62,6 +62,7 @@
                                     for ($j = 0; $j < 11; $j++) {
                                         if ($i == 0 and $j == 0) {
                                             echo '<th>Period</th>';
+                                            
                                         } elseif ($i == 0 and $j > 0) {
                                             echo"<th>Lane ".$j."</th>";
                                         } elseif ($j == 0 and $i > 0) {
@@ -84,10 +85,10 @@
                                                         }
                                                     }
                                                     if ($reservaDisponible === true) { ?>
-                                                        <button type="submit" name="reserveAction" class="btn btn-primary" value="<?php echo $j . '_' . $data . " " . $hores[$i - 1] . ":00"; ?>" id="<?php echo $j . '-' . $hores[$i - 1]; ?>">Reserve</button>
+                                                        <button type="submit" name="reserveAction" class="btn btn-primary text-nowrap" value="<?php echo $j . '_' . $data . " " . $hores[$i - 1] . ":00"; ?>" id="<?php echo $j . '-' . $hores[$i - 1]; ?>">Reserve</button>
                                                     <?php
                                                     } else { ?>
-                                                        <a class="d-flex justify-content-center btn btn-danger">Unable</a>
+                                                        <a class="d-flex justify-content-center btn btn-danger text-nowrap">Unable</a>
                                                     <?php
                                                     }
                                                     ?>
@@ -99,11 +100,14 @@
                                     echo "</tr>";
                                 }
                                 echo "</table>";
-                            } elseif (isset($blockedDay)) { ?>
-                                <div class="alert alert-danger" role="alert">This date has been locked. Try choosing another date.</div>
-                        <?php
                             }
-                        } else {
+                        } 
+                        elseif (isset($blockedDay)) {?>
+                            <div class="alert alert-danger" role="alert">This date has been locked. Try choosing another date.</div>
+                    <?php
+                        }
+                        
+                        else {
                             echo "<div class='alert alert-secondary' role='alert'>Choose a date to begin the reserve prosces</div>";
                         }
 
@@ -117,10 +121,10 @@
         <div class="row g-0 justify-content-end">
             <!--float-end-->
             <!--COLUMN - RESEVES-->
-            <div class="box col-sm-12 rounded">
+            <div class="box col-12 rounded">
                 <div class="scrollmenu rounded">
                     <?php foreach ($list as $entry) { ?>
-                        <div class="col-sm-3 p-3 m-3 rounded text-light reserves">
+                        <div class="col-3 p-3 m-3 rounded text-light reserves">
                             <p class="m-2">Begin: <?= $entry["reserva_data_entrada"]; ?></p>
                             <p class="m-2">End: <?= $entry["reserva_data_sortida"]; ?></p>
                             <p class="m-2">Lane: <?= $entry["carril_numero"]; ?></p>
