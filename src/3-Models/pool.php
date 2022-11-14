@@ -45,6 +45,7 @@ class pool
         return $day;
     }
 
+    //RETORNA EL PERIODE DE TRIA DE PISCINA
     public function getPeriode()
     {
         $query = 'SELECT piscina_periode FROM piscina_tb';
@@ -52,5 +53,11 @@ class pool
         $stm->execute();
         return $stm->fetchColumn();
     
+    }
+    public function getLanes(){
+        $query = 'SELECT COUNT(carril_numero) FROM carril_tb';
+        $stm = $this->sql->prepare($query);
+        $stm->execute();
+        return $stm->fetchColumn();
     }
 }

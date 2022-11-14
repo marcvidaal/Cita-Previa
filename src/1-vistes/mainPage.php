@@ -34,7 +34,7 @@
         <!--ROW - MID-->
         <div class="row mb-5 g-0 justify-content-between">
             <!--RIGHT - COLUMN-->
-            <div class="box col-sm-12 rounded prova">
+            <div class="box col-sm-12 rounded p-2 prova">
                 <form action="index.php" method="POST">
                     <input type="hidden" name="r" value="reservat">
                 
@@ -42,18 +42,52 @@
                 <?php
                 if($print){
                     echo"
-                    <table>
+                    <table id= 'mainTalbe'>
                         <thead>
                             <tr>
-                                <th>Day</th>
-                                <th>Time</th>
-                                <th>Reserve</th>
+                                <!-- Times Blank -->
+                                <th></th>
+                                ";
+                                //Imprimim els carrils
+                                for ($lane=1; $lane <= $lanes; $lane++) { 
+                                    echo"
+                                    <th>Lane: ".$lane."</th>
+                                    ";
+                                }
+                                echo "
                             </tr>
                         </thead>
-                    <tbody>
-
-                    </tbody>
-                </table>";
+                        <tbody>
+                        ";
+                        //Per a cada rang (FILES TOTALS)
+                        for ($range=0; $range < count($timetable) ; $range++) { 
+                            echo"
+                            <tr>
+                                <td>".$timetable[$range]."</td>
+                                ";
+                                //Per a cada carril (COLUMNA DE CADA FILA)
+                                for ($lane=1; $lane <= $lanes; $lane++) {
+                                    $unocupied = true;
+                                    foreach ($occupied as $key => $value) {
+                                        $unocupied = ($value[0] == $lane && $value[1] == substr($timetable[$range], 0, 5)) ? false : true;            
+                                    }
+                                    if(!$unocupied)
+                                        echo"
+                                        <td> <a class= 'd-flex justify-content-center btn btn-danger'>Unable</<</td>
+                                        ";
+                                    else {
+                                        echo"
+                                        <td> <a href='index.php?r=reserve&lane=".$lane."&start=".substr($timetable[$range], 0, 5)."' class= 'd-flex justify-content-center btn btn-primary'>Reserve</<</td>
+                                        ";
+                                    }
+                                }
+                                echo"
+                                </tr>
+                                ";
+                            }
+                            echo"
+                        </tbody>
+                    </table>";
                 }
                 elseif (isset($closed)) {
                     if ($closed = "todayClosed") {
@@ -97,9 +131,10 @@
 </body>
 <!--text/javascript-->
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/v/bs5/jq-3.6.0/dt-1.12.1/date-1.1.2/datatables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/v/bs5/jq-3.6.0/dt-1.12.1/datatables.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
 <script type="text/javascript" src="script.js"></script>
 
 </html>
